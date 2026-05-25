@@ -1,0 +1,191 @@
+\begin{thebibliography}{31}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Krashen(1985)]{krashen1985}
+Stephen~D. Krashen.
+\newblock \emph{The input hypothesis : issues and implications}.
+\newblock Longman, 1985.
+\newblock URL \url{https://cir.nii.ac.jp/crid/1130282270300036096}.
+
+\bibitem[Mayer(2009)]{Mayer_2009}
+Richard~E. Mayer.
+\newblock \emph{Multimedia Learning}.
+\newblock Cambridge University Press, 2 edition, 2009.
+
+\bibitem[Cychosz et~al.(2021)Cychosz, Villanueva, and Weisleder]{cychosz2021}
+Margaret Cychosz, Anele Villanueva, and Adriana Weisleder.
+\newblock Efficient estimation of children's language exposure in two bilingual communities.
+\newblock \emph{Journal of Speech, Language, and Hearing Research}, 64\penalty0 (10):\penalty0 3843--3866, 2021.
+\newblock \doi{10.1044/2021\_JSLHR-20-00755}.
+\newblock URL \url{https://pubs.asha.org/doi/abs/10.1044/2021_JSLHR-20-00755}.
+
+\bibitem[Gowenlock et~al.(2024)Gowenlock, Norbury, and Rodd]{gowenlock2024}
+Anna~Elizabeth Gowenlock, Courtenay Norbury, and Jennifer~M. Rodd.
+\newblock Exposure to language in video and its impact on linguistic development in children aged 3–11: A scoping review.
+\newblock \emph{Journal of Cognition}, Jul 2024.
+\newblock \doi{10.5334/joc.385}.
+
+\bibitem[{Chinese Testing International}(2025)]{hsk2}
+{Chinese Testing International}.
+\newblock Hsk test syllabus, 2025.
+\newblock URL \url{https://www.chinesetest.cn/HSK}.
+\newblock Official HSK Chinese Proficiency Standards.
+
+\bibitem[Rodrigo et~al.(2004)Rodrigo, Krashen, and Gribbons]{RODRIGO2004}
+Victoria Rodrigo, Stephen Krashen, and Barry Gribbons.
+\newblock The effectiveness of two comprehensible-input approaches to foreign language instruction at the intermediate level.
+\newblock \emph{System}, 32\penalty0 (1):\penalty0 53--60, 2004.
+\newblock ISSN 0346-251X.
+\newblock \doi{https://doi.org/10.1016/j.system.2003.08.003}.
+\newblock URL \url{https://www.sciencedirect.com/science/article/pii/S0346251X03000964}.
+
+\bibitem[Krashen and Mason(2017)]{krashen2017}
+Stephen Krashen and Beniko Mason.
+\newblock Sustained silent reading in foreign language education: An update.
+\newblock \emph{Turkish Online Journal of English Language Teaching}, 2:\penalty0 70--73, 01 2017.
+
+\bibitem[Jones and Plass(2002)]{jones2002}
+Linda Jones and Jan Plass.
+\newblock Supporting listening comprehension and vocabulary acquisition in french with multimedia annotations.
+\newblock \emph{The Modern Language Journal}, 86:\penalty0 546 -- 561, 12 2002.
+\newblock \doi{10.1111/1540-4781.00160}.
+
+\bibitem[Shen(2010)]{shen2010}
+Helen Shen.
+\newblock Imagery and verbal coding approaches in chinese vocabulary instruction.
+\newblock \emph{Language Teaching Research}, 14:\penalty0 485--499, 10 2010.
+\newblock \doi{10.1177/1362168810375370}.
+
+\bibitem[Li and Hennebry-Leung(2022)]{li2022}
+Mingyue Li and Mairin Hennebry-Leung.
+\newblock Effects of monolingual and bilingual subtitles on l2 vocabulary acquisition.
+\newblock \emph{International Review of Applied Linguistics in Language Teaching}, 62, 12 2022.
+\newblock \doi{10.1515/iral-2022-0034}.
+
+\bibitem[Everson(2011)]{everson2011}
+Michael Everson.
+\newblock Best practices in teaching logographic and non-roman writing systems to l2 learners.
+\newblock \emph{Annual Review of Applied Linguistics}, 31, 03 2011.
+\newblock \doi{10.1017/S0267190511000171}.
+
+\bibitem[SHEN and KE(2007)]{shen2007}
+HELEN~H. SHEN and CHUANREN KE.
+\newblock Radical awareness and word acquisition among nonnative learners of chinese.
+\newblock \emph{The Modern Language Journal}, 91\penalty0 (1):\penalty0 97--111, 2007.
+\newblock \doi{https://doi.org/10.1111/j.1540-4781.2007.00511.x}.
+\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-4781.2007.00511.x}.
+
+\bibitem[Ye(2013)]{ye2013}
+Lijuan Ye.
+\newblock Shall we delay teaching characters in teaching chinese as a foreign language?
+\newblock \emph{Foreign Language Annals}, 46, 12 2013.
+\newblock \doi{10.1111/flan.12049}.
+
+\bibitem[Wang et~al.(1999)Wang, Spence, Jongman, and Sereno]{wang1999}
+Yue Wang, Michelle Spence, Allard Jongman, and Joan Sereno.
+\newblock Training american listeners to perceive mandarin tone.
+\newblock \emph{The Journal of the Acoustical Society of America}, 106:\penalty0 3649--58, 12 1999.
+\newblock \doi{10.1121/1.428217}.
+
+\bibitem[Xu and Hu(2020)]{xu2020}
+Hu~Xu and Wei Hu.
+\newblock \emph{Review of Enhancements and limitations to ICT-based informal language learning: Emerging research and opportunities}, volume~24.
+\newblock IGI Global, 06 2020.
+\newblock ISBN 9781799821168.
+\newblock \doi{10125/44724}.
+\newblock URL \url{http://hdl.handle.net/10125/4472}.
+
+\bibitem[Dizon and Gayed(2021)]{dizon2021}
+Gilbert Dizon and John~M. Gayed.
+\newblock An exploratory study on the use of interactive video via netflix to improve second language aural vocabulary learning.
+\newblock \emph{AsiaCALL Online Journal}, 12\penalty0 (5):\penalty0 100--113, Oct. 2021.
+\newblock URL \url{https://asiacall.info/acoj/index.php/journal/article/view/79}.
+
+\bibitem[Pujadas and Muñoz(2024)]{pujadas2024}
+Geòrgia Pujadas and Carmen Muñoz.
+\newblock When to switch captions off? exploring the effects of l2 proficiency and vocabulary knowledge on comprehension of captioned and uncaptioned tv.
+\newblock \emph{Studies in Second Language Learning and Teaching}, 06 2024.
+\newblock \doi{10.14746/ssllt.38036}.
+
+\bibitem[Buddi et~al.(2023)Buddi, Sarawgi, Heeramun, Sawnhey, Yanosik, Rathinam, and Adya]{buddi2023}
+Sai~Srujana Buddi, Utkarsh~Oggy Sarawgi, Tashweena Heeramun, Karan Sawnhey, Ed~Yanosik, Saravana Rathinam, and Saurabh Adya.
+\newblock Efficient multimodal neural networks for trigger-less voice assistants, 2023.
+\newblock URL \url{https://arxiv.org/abs/2305.12063}.
+
+\bibitem[ica(2019)]{icassp-2019}
+\emph{IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2019, Brighton, United Kingdom, May 12-17, 2019}, 2019. IEEE.
+\newblock ISBN 978-1-4799-8131-1.
+\newblock URL \url{http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8671773}.
+
+\bibitem[Chen et~al.(2020)Chen, Wang, Qian, and Yu]{chen2020}
+Yefei Chen, Shuai Wang, Yanmin Qian, and Kai Yu.
+\newblock End-to-end speaker-dependent voice activity detection, 2020.
+\newblock URL \url{https://arxiv.org/abs/2009.09906}.
+
+\bibitem[Kumar et~al.(2024)Kumar, Buddi, Sarawgi, Garg, Ranjan, Rudovic, Abdelaziz, and Adya]{kumar2024}
+Satyam Kumar, Sai~Srujana Buddi, Utkarsh~Oggy Sarawgi, Vineet Garg, Shivesh Ranjan, Ognjen~(Oggi) Rudovic, Ahmed~Hussen Abdelaziz, and Saurabh Adya.
+\newblock Comparative analysis of personalized voice activity detection systems: Assessing real-world effectiveness.
+\newblock In \emph{Interspeech}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.09443}.
+
+\bibitem[Pan et~al.(2025)Pan, Jiang, Hou, and Gao]{pan2025}
+Linrong Pan, Chenglong Jiang, Gaoze Hou, and Ying Gao.
+\newblock Teochew-wild: The first in-the-wild teochew dataset with orthographic annotations.
+\newblock In \emph{Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies}, 05 2025.
+\newblock \doi{10.48550/arXiv.2505.05056}.
+
+\bibitem[Team(2024)]{sileroVAD}
+Silero Team.
+\newblock Silero vad: pre-trained enterprise-grade voice activity detector (vad), number detector and language classifier.
+\newblock \url{https://github.com/snakers4/silero-vad}, 2024.
+
+\bibitem[Juang and Rabiner(2005)]{juang2005}
+Biing-Hwang Juang and Lawrence~R Rabiner.
+\newblock Automatic speech recognition--a brief history of the technology development.
+\newblock \emph{Georgia Institute of Technology. Atlanta Rutgers University and the University of California. Santa Barbara}, 1\penalty0 (67):\penalty0 1, 2005.
+
+\bibitem[Radford et~al.(2023)Radford, Kim, Xu, Brockman, McLeavey, and Sutskever]{radford2023robust}
+Alec Radford, Jong~Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever.
+\newblock Robust speech recognition via large-scale weak supervision.
+\newblock In \emph{International conference on machine learning}, pages 28492--28518. PMLR, 2023.
+
+\bibitem[Sutomo(2024)]{sutomo2024}
+Ngadiso Sutomo.
+\newblock The implementation of automated speech recognition (asr) in elt classroom: A systematic literature review from 2012-2023.
+\newblock \emph{VELES (Voices of English Language Education Society)}, 7:\penalty0 816--828, 01 2024.
+\newblock \doi{10.29408/veles.v7i3.23978}.
+
+\bibitem[Hassan et~al.(2018)Hassan, Aue, Chen, Chowdhary, Clark, Federmann, Huang, Junczys-Dowmunt, Lewis, Li, et~al.]{hassan2018}
+Hany Hassan, Anthony Aue, Chang Chen, Vishal Chowdhary, Jonathan Clark, Christian Federmann, Xuedong Huang, Marcin Junczys-Dowmunt, William Lewis, Mu~Li, et~al.
+\newblock Achieving human parity on automatic chinese to english news translation.
+\newblock \emph{arXiv preprint arXiv:1803.05567}, 2018.
+
+\bibitem[Barrault et~al.(2023)Barrault, Chung, Meglioli, Dale, Dong, Duppenthaler, Duquenne, Ellis, Elsahar, Haaheim, et~al.]{barrault2023seamless}
+Lo{\"\i}c Barrault, Yu-An Chung, Mariano~Coria Meglioli, David Dale, Ning Dong, Mark Duppenthaler, Paul-Ambroise Duquenne, Brian Ellis, Hady Elsahar, Justin Haaheim, et~al.
+\newblock Seamless: Multilingual expressive and streaming speech translation.
+\newblock \emph{arXiv preprint arXiv:2312.05187}, 2023.
+
+\bibitem[Murtisari et~al.(2024)Murtisari, Kristianto, and Bonar]{gary2024}
+Elisabet~Titik Murtisari, Andreas~Kukuh Kristianto, and Gary Bonar.
+\newblock Self-directed use of machine translation among language learners: Does it lead to disruptive l2 avoidance?
+\newblock \emph{Foreign Language Annals}, 57\penalty0 (4):\penalty0 1094--1114, 2024.
+\newblock \doi{https://doi.org/10.1111/flan.12768}.
+\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1111/flan.12768}.
+
+\bibitem[Singhto and Phakdee(2016)]{scrum}
+Wantana Singhto and Nuttaporn Phakdee.
+\newblock Adopting a combination of scrum and waterfall methodologies in developing tailor-made saas products for thai service and manufacturing smes.
+\newblock In \emph{2016 International Computer Science and Engineering Conference (ICSEC)}, pages 1--6, 2016.
+\newblock \doi{10.1109/ICSEC.2016.7859882}.
+
+\bibitem[Muay et~al.(2024)Muay, Sediyono, and Tambotoh]{scrum2}
+Nikson Muay, Eko Sediyono, and Johan Tambotoh.
+\newblock Integration waterfall and scrum methodology in the development of simarga web application.
+\newblock \emph{Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)}, 8:\penalty0 223--233, 04 2024.
+\newblock \doi{10.29207/resti.v8i2.5652}.
+
+\end{thebibliography}

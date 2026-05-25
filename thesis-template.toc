@@ -1,0 +1,74 @@
+
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{DECLARATION}}{ii}{section*.6}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{DEDICATION}}{iii}{section*.8}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{ACKNOWLEDGEMENT}}{iv}{section*.10}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{ABSTRACT}}{v}{section*.12}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{ABSTRAK}}{vi}{section*.14}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{TABLE OF CONTENTS}}{vii}{section*.16}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF TABLES}}{x}{section*.18}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF FIGURES}}{xi}{section*.20}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF ABBREVIATIONS}}{xii}{section*.22}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF APPENDICES}}{xiii}{section*.24}%
+\addvspace {\@twolinespacing }
+\contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 1}\MakeUppercase []{Introduction}}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Problem Background}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Project Aim}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Project Objectives}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Project Scopes}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Project Importance}{4}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Report Organization}{4}{section.1.7}%
+\addvspace {\@twolinespacing }
+\contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 2}\MakeUppercase []{LITERATURE REVIEW}}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Theories of Second Language Acquisition}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Krashen's Input Hypothesis}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Multimedia Learning Theory}{8}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Challenges of Mandarin as a Symbolic Language}{9}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Character Recognition and Sound Awareness}{9}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Tonal Perception and Production}{10}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Current System Analysis}{10}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Problem with Current System}{10}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Proposed Solution}{12}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Comparison of Similar Video-Based Learning Platforms}{13}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Technologies for Video-Based Learning Platform}{18}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Voice Activity Detection and Sentence Segmentation}{18}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Automatic Speech Recognition for Mandarin}{18}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Neural Machine Translation}{19}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}NoSQL Database Implementation}{20}{subsection.2.5.4}%
+\contentsline {section}{\numberline {2.6}Summary}{20}{section.2.6}%
+\addvspace {\@twolinespacing }
+\contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 3}\MakeUppercase []{SYSTEM DEVELOPMENT METHODOLOGY}}{22}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{22}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Methodology Choice and Justification}{22}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Methodology Phases}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Technology Stack}{27}{section.3.4}%
+\contentsline {section}{\numberline {3.5}System Requirement Analysis}{29}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Hardware Requirements}{29}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Software Requirements}{30}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Chapter Summary}{31}{section.3.6}%
+\addvspace {\@twolinespacing }
+\contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 4}\MakeUppercase []{REQUIREMENT ANALYSIS AND DESIGN}}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Requirements Gathering and Analysis}{32}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Functional Requirements}{34}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Non-Functional Requirements}{37}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Architectural Design}{37}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Chapter Summary}{39}{section.4.4}%
+\addvspace {\@twolinespacing }
+\contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 5}\MakeUppercase []{CONCLUSION}}{40}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{40}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Achievement of Project Objectives}{40}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Suggestions for Future Improvement}{41}{section.5.3}%
+\addvspace {\@twolinespacing }
+\contentsline {chapter}{\MakeUppercase {REFERENCES}}{43}{section*.44}%
+\save@tocdepth \setcounter {tocdepth}{0}
+\contentsline {section}{\numberline {B.1}Teaching Context \& Methods}{51}{section.A2.1}%
+\contentsline {section}{\numberline {B.2}Content Processing \& Management}{51}{section.A2.2}%
+\contentsline {section}{\numberline {B.3}Quality \& Accuracy Requirements}{52}{section.A2.3}%
+\contentsline {section}{\numberline {C.1}Maklumbalas saya adalah seperti berikut:}{53}{section.A3.1}%
+\contentsline {section}{\numberline {C.2}Terdapat 2 masalah utama:}{53}{section.A3.2}%
+\contentsline {subsection}{\numberline {C.2.1}Terjemahan}{53}{subsection.A3.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Kegagalan Transcribing}{54}{subsection.A3.2.2}%
+\contentsline {section}{\numberline {C.3}Cadangan dan Penambahbaikan:}{54}{section.A3.3}%
+\save@tocdepth \setcounter {tocdepth}{2}

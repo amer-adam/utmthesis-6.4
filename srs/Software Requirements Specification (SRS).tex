@@ -1,0 +1,266 @@
+\documentclass[oneside]{utmsrs}
+% Options
+% Size [a4draft, b5final]
+% Language [english, malay]
+% Printing [twoside, oneside]
+% Default option [a4draft, english, twoside]
+
+\usepackage{graphicx}
+\usepackage{url} 
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage{notoccite}
+\usepackage[numbers]{natbib}
+\usepackage{multirow}%
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{array}%
+\usepackage{color,soul}%
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage[caption=false]{subfig}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}m{#1}}%
+
+%This is to make sure vertical spacing non-stretchable
+\raggedbottom
+
+% Required information
+% \title{Software Requirements Specification}
+% \subtitle{SECJ 3032: Software Engineering FYP1}
+% \faculty{FACULTY OF COMPUTING}
+% \university{UNIVERSITI TEKNOLOGI MALAYSIA}
+% \location{UTM Johor Bahru}
+% \semester{Semester 01, 2024/2025}
+
+\begin{document}
+
+% Custom front page
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+        \textbf{\Large UTM}
+        
+        \vspace{0.5cm}
+        
+        \textbf{\large FACULTY OF COMPUTING}
+        
+        \vspace{0.5cm}
+        
+        \textbf{\large UTM Johor Bahru}
+        
+        \vspace{1cm}
+        
+        \textbf{\large SECJ 3032: Software Engineering FYP1}
+        
+        \vspace{0.5cm}
+        
+        \textbf{\large Semester 01, 2024/2025}
+        
+        \vspace{1.5cm}
+        
+        \textbf{\Huge Software Requirements Specification}
+        
+        \vspace{0.5cm}
+        
+        \textbf{\Large (SRS)}
+        
+        \vspace{2cm}
+        
+        \textbf{\LARGE <<Project Title>>}
+        
+        \vspace{1cm}
+        
+        \textbf{\large <<Version No.>>}
+        
+        \vspace{2cm}
+        
+        \textbf{\large Prepared by: <<Name>>}
+        
+        \vspace*{\fill}
+        
+        \textbf{\large \today}
+    \end{center}
+\end{titlepage}
+
+% Rest of the document remains the same
+\frontmatter
+
+% Revision Page
+\chapter*{Revision Page}
+\section*{Overview}
+This document specifies the software requirements for <<Project Title>>. It describes the functional and non-functional requirements, system features, and design constraints.
+
+\section*{Target Audience}
+The intended audience for this document includes:
+\begin{itemize}
+    \item Project stakeholders
+    \item Software developers
+    \item Testers
+    \item Project supervisors
+\end{itemize}
+
+\section*{Version Control History}
+\begin{longtable}{|l|l|l|l|}
+\hline
+\textbf{Version} & \textbf{Primary Author(s)} & \textbf{Description of Version} & \textbf{Date Completed} \\ \hline
+1.0 & Team leader 1 (Full Name) & Completed Chapter X, Section... & dd/mm/yyyy \\ \hline
+... & ... & ... & ... \\ \hline
+\end{longtable}
+
+\textbf{Note:} This Software Requirements Specification (SRS) template is adapted from IEEE Recommended Practice for Software Requirements Specification (SRS) (IEEE Std. 830-1998) that is simplified and customized to meet the need of SECJ3203 FYP1 SE course at Faculty of Computing, UTM.
+
+% Table of Contents
+\tableofcontents
+
+\mainmatter
+
+\chapter{Introduction}
+\section{Purpose}
+This Software Requirements Specification (SRS) document:
+\begin{itemize}
+    \item Delineates the purpose of the SRS
+    \item Specifies the intended audience for the SRS
+    \item Describes the software product to be developed
+\end{itemize}
+
+\section{Scope}
+The software product is <<Project Title>> which will:
+\begin{itemize}
+    \item Identify the software product(s) to be produced
+    \item Explain what the software product(s) will and will not do
+    \item Describe the application of the software being specified
+    \item Be consistent with higher-level specifications
+\end{itemize}
+
+\section{Definitions, Acronyms and Abbreviations}
+Definitions of all terms, acronyms and abbreviations used are to be defined here.
+
+\section{References}
+\begin{itemize}
+    \item IEEE Std. 830-1998, IEEE Recommended Practice for Software Requirements Specifications
+    \item Arlow and Neustadt (2002), UML and the Unified Process
+\end{itemize}
+
+\section{Overview}
+This document contains:
+\begin{itemize}
+    \item Introduction to the project
+    \item Specific requirements including user characteristics and system features
+    \item Performance and design constraints
+    \item Appendices with supporting materials
+\end{itemize}
+
+\chapter{Specific Requirements}
+This section contains all software requirements to enable designers to design the system and testers to verify it.
+
+\section{User Characteristics}
+The system will interact with the following user types:
+
+\subsection{<<User Type 1>>}
+\begin{itemize}
+    \item Expected technical skills
+    \item Knowledge level
+    \item Physical abilities
+    \item Specific requirements
+\end{itemize}
+
+\subsection{<<User Type 2>>}
+\begin{itemize}
+    \item Expected technical skills
+    \item Knowledge level
+    \item Physical abilities
+    \item Specific requirements
+\end{itemize}
+
+\section{System Features}
+The system will provide the following features:
+\begin{itemize}
+    \item Feature 1 with description
+    \item Feature 2 with description
+    \item Feature n with description
+\end{itemize}
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{use_case_diagram.png}
+%     \caption{Use Case Diagram for <<System Name>>}
+%     \label{fig:use_case}
+% \end{figure}
+
+\section{Use Case Details}
+\subsection{UC001: <<Use Case Name>>}
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{0.3\textwidth}|p{0.6\textwidth}|}
+\hline
+\textbf{Use Case ID} & UC001 \\ \hline
+\textbf{Use Case Name} & <<Action Verb>> \\ \hline
+\textbf{Description} & <<Brief description>> \\ \hline
+\textbf{Actor(s)} & <<List of actors>> \\ \hline
+\textbf{Pre-condition(s)} & <<List of constraints>> \\ \hline
+\textbf{Normal Flow(s)} & 
+1. The user performs action \\
+2. The system responds \\ \hline
+\textbf{Alternative Flow(s)} & AF1. Alternative scenario \\ \hline
+\textbf{Exception Flow(s)} & EF1. Error handling \\ \hline
+\textbf{Post-condition(s)} & <<System states>> \\ \hline
+\end{tabular}
+\caption{Use Case Description for <<Use Case Name>>}
+\label{tab:uc001}
+\end{table}
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{sequence_diagram_uc001.png}
+%     \caption{Sequence Diagram for UC001}
+%     \label{fig:seq_uc001}
+% \end{figure}
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{activity_diagram_uc001.png}
+%     \caption{Activity Diagram for UC001}
+%     \label{fig:act_uc001}
+% \end{figure}
+
+\section{Performance and Other Requirements}
+\subsection{Software System Attributes}
+\begin{itemize}
+    \item Usability: The system should be easy to use
+    \item Reliability: The system should perform consistently
+    \item Maintainability: The system should be easy to modify
+    \item Portability: The system should run on multiple platforms
+    \item Compatibility: The system should work with other systems
+\end{itemize}
+
+\subsection{Performance Requirements}
+\begin{itemize}
+    \item Response Time: Maximum 5 seconds
+    \item Throughput: 1000 requests per minute
+    \item Capacity: 500 concurrent users
+    \item Availability: 99.9\% uptime
+\end{itemize}
+
+\subsection{Other Requirements}
+\begin{itemize}
+    \item Security: Data encryption required
+    \item Safety: No harm to users
+    \item Legal: Compliance with regulations
+    \item Environmental: Low power consumption
+\end{itemize}
+
+\section{Design Constraints}
+\begin{itemize}
+    \item Environmental: Operating temperature range
+    \item Hardware: Minimum system requirements
+    \item Security: Encryption standards
+    \item Compatibility: Supported platforms
+    \item Performance: Maximum response times
+\end{itemize}
+
+\appendix
+\chapter{Evidence of Requirements Elicitation Artefacts}
+Appendix content goes here.
+
+\end{document}

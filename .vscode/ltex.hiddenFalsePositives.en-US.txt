@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe proposed platform will perform voice activity detection (VAD) and end-of-sentence detection to segment audio into linguistically meaningful sentence-level chunks.\\E$"}
