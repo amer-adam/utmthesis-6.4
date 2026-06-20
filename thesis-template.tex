@@ -676,6 +676,138 @@ As shown in Figure~\ref{fig:pipe_and_filter}, the LexiFlow system architecture c
 \section{Chapter Summary}
 Chapter 4 of the thesis delves into the requirement analysis and system design for LexiFlow, outlining a comprehensive approach to developing a language learning platform. The chapter begins with a systematic exploration of stakeholders' needs through interactive sessions, setting the foundation for detailed documentation in the Software Requirements Specification (SRS), Software Design Document (SDD), and Software Test Document (STD). It further details the pipe-and-filter architectural approach, ensuring scalability and efficiency, and discusses the user interface design, which is integral for enhancing user interaction and system functionality. This methodical approach not only aligns with the project's objectives but also ensures a robust framework for the successful implementation and operation of LexiFlow
 
+
+\chapter{System Implementation}\label{chap:implementation}
+
+\section{Introduction}
+This chapter discusses the technical implementation of the LexiFlow system. The development is divided into modular subsystems: User Management, Media Processing and AI, Interactive Learning, and Assessment. Each module is designed to fulfill the specific functional requirements outlined in the system design phase. The frontend is constructed using Vue 3, while the backend utilizes a dual-architecture consisting of a Node.js server for data management and a FastAPI Python server for heavy artificial intelligence (AI) media processing.
+
+\section{Module 1: User Management and Authentication}
+The User Management module handles user registration, authentication, and personalized data storage, utilizing the Node.js backend and a PostgreSQL database managed via Prisma ORM.
+
+\subsection{Create Account (UC01) and Login (UC02)}
+The user authentication pipeline is implemented within the \texttt{users.controller.js} and \texttt{users.service.js} backend components. When a new user registers or logs in, the incoming data is validated at runtime using Zod schema type guards (\texttt{users.validator.js}) to ensure structural integrity. Upon successful authentication, the system maintains the user state securely, allowing the frontend application to grant access to protected routes such as the learning dashboard and personal library. The Prisma \texttt{User} schema ensures all relational data, such as vocabulary and flashcards, is securely tied to the unique user ID.
+
+\subsection{Manage Profile (UC03)}
+Users can manage their personal information and system preferences via the \texttt{ProfileView.vue} interface. Updates to user configurations (e.g., target learning language or default study parameters) are routed through the Node.js backend to update the PostgreSQL database. 
+
+\section{Module 2: Media Processing and AI Engine}
+This module represents the core pipeline of LexiFlow, managed by the FastAPI subsystem. It handles the ingestion of media and the AI-driven generation of linguistic data.
+
+\subsection{Process YouTube URL (UC04) and Upload Local Media (UC05)}
+Media ingestion is handled via an asynchronous processing pipeline in the FastAPI server (\texttt{api.py} and \texttt{download.py}). 
+\begin{itemize}
+    \item \textbf{YouTube URL Processing (UC04):} The system utilizes a custom streaming pipeline that intercepts YouTube URLs, validates the format, and downloads the raw media into a temporary workspace.
+    \item \textbf{Local Media Upload (UC05):} Users can upload raw video/audio files directly. 
+\end{itemize}
+Regardless of the source, incoming media is routed through an FFmpeg subprocess that downsamples the audio into a clean 16kHz mono WAV PCM stream. This standardization is critical for optimizing the accuracy of the downstream speech recognition engines.
+
+\subsection{Generate Subtitles (UC06)}
+The subtitle generation process is a multi-step AI orchestration:
+\begin{enumerate}
+    \item \textbf{Voice Activity Detection (VAD):} The \texttt{SileroVADProcessor} divides the audio stream into distinct speech windows, employing multiprocessing to expand or fill gaps efficiently.
+    \item \textbf{Speech-to-Text:} The processed audio chunks are passed to an optimized C-Translate container (\texttt{faster-whisper}) instantiated via the \texttt{WhisperFactory}.
+    \item \textbf{Linguistic Augmentation:} For Mandarin content, the system invokes the \texttt{pypinyin} library to systematically extract tone-marked pinyin for each character. An external translation microservice is then queried via REST HTTP to provide context-aware English translations, compiling everything into a unified interactive subtitle format.
+\end{enumerate}
+
+\section{Module 3: Interactive Learning Environment}
+This module serves as the primary user workspace, bridging the media content with active language acquisition tools in the frontend.
+
+\subsection{Find Translated Content (UC07)}
+Users can browse and locate previously processed and translated media through the \texttt{LibraryView.vue} and \texttt{HomeView.vue} interfaces. The Node.js \texttt{videos.controller.js} retrieves paginated video metadata and user progress states, rendering a gallery of accessible learning materials.
+
+\subsection{Search Word Definition (UC08)}
+Within the \texttt{WatchView.vue} theater mode, the system renders a bilingual subtitle engine. Individual Chinese characters are bounded with custom HTML class tags indicating their HSK difficulty levels (e.g., \texttt{.hsk1}, \texttt{.hsk2}). Hovering over a word triggers a dictionary lookup via the \texttt{getDefinition} service, displaying the definition and pinyin dynamically without interrupting video playback.
+
+\subsection{Save Vocabulary (UC09) and Bookmark Video (UC10)}
+Vocabulary acquisition is deeply integrated with video playback. 
+\begin{itemize}
+    \item \textbf{Save Vocabulary (UC09):} Using the \texttt{syncWatchProgressToVocab} and \texttt{addWordToList} services, users can automatically save words. Zod schemas (\texttt{vocabulary.validator.js}) ensure that saved items contain the simplified character, pinyin, meaning, and contextual metadata.
+    \item \textbf{Context Bookmarking (UC10):} When a word is saved, the system captures the timestamp (\texttt{sourceVideoId}), context sentence, and translation, effectively bookmarking the video segment so users can revisit the exact origin of the vocabulary item.
+\end{itemize}
+
+\section{Module 4: Review and Assessment}
+To ensure the long-term retention of saved vocabulary, LexiFlow features a comprehensive spaced repetition system and an AI-driven quiz generator. These systems transition learners from passive media consumption to active recall.
+
+\subsection{Generate and Review Flashcards (UC13)}
+LexiFlow utilizes a Spaced Repetition System (SRS) for optimal vocabulary retention. The backend implementation of this feature is powered by the Free Spaced Repetition Scheduler (FSRS) algorithm, a modern, highly optimized memory model that outperforms traditional algorithms like SM-2. 
+
+The FSRS algorithm calculates three primary memory states for each vocabulary item: Retrievability (the probability of recalling the item), Stability (the memory's resistance to forgetting), and Difficulty (the inherent complexity of the word). In the frontend \texttt{FlashcardView.vue}, users interact with 3D-flipped flashcards and grade their recall using a four-button matrix:
+\begin{itemize}
+    \item \textbf{1 (Again):} User failed to recall. The system resets the stability and schedules an immediate review.
+    \item \textbf{2 (Hard):} User recalled with significant difficulty. The interval is slightly increased.
+    \item \textbf{3 (Good):} User recalled standardly. The stability coefficient increases, pushing the due date further out.
+    \item \textbf{4 (Easy):} User recalled effortlessly. The interval is maximally expanded.
+\end{itemize}
+Whenever a grade is submitted, the \texttt{flashcards.controller.js} processes the input, updates the FSRS variables in the PostgreSQL database, and schedules the exact timestamp for the next review.
+
+\subsection{Generate Quizzes (UC14)}
+Automated quiz generation is handled by the FastAPI AI engine, which dynamically synthesizes assessment materials from the user's saved vocabulary lists. The system explicitly supports four question variations: \texttt{MULTIPLE\_CHOICE}, \texttt{FILL\_BLANK}, \texttt{SHORT\_ANSWER}, and \texttt{TRUE\_FALSE}.
+
+\subsubsection{Question Types and Evaluation}
+\begin{itemize}
+    \item \textbf{Fill-in-the-Blank (\texttt{FILL\_BLANK}):} The \texttt{QuizTemplateEngine} utilizes regex-driven pattern matching to extract the contextual sentences saved from the media player. It intercepts the target vocabulary word and replaces it with underscore indicators (e.g., ``\_\_\_\_''), requiring the user to type the exact character or pinyin.
+    \item \textbf{Short Answer (\texttt{SHORT\_ANSWER}):} Instead of relying on rigid string matching, LexiFlow employs an open-ended semantic evaluator (\texttt{judge.py}). Using Sentence Transformers, the system generates embedding vectors for both the user's input and the reference definition, calculating their Cosine Similarity. The answers are rated across strict boundaries:
+    \begin{itemize}
+        \item \textbf{$>$ 0.90:} Exact match or perfect synonym.
+        \item \textbf{$>$ 0.80:} Acceptable meaning.
+        \item \textbf{$>$ 0.70:} Partial credit (contains related semantic value).
+        \item \textbf{$<$ 0.70:} Incorrect response.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Distractor Generation}
+For \texttt{MULTIPLE\_CHOICE} and \texttt{TRUE\_FALSE} questions, the system must generate plausible but incorrect answers, known as distractors (\texttt{distractors.py}). High-quality distractors are crucial to prevent the user from guessing the answer by basic elimination. The distractor algorithm fetches vocabulary from the same HSK tier or lexical category as the target word. To guarantee the distractors are not accidentally valid synonyms, the system evaluates them against the target word using the semantic Cosine Similarity judge. If the similarity score is too high (e.g., $>$ 0.70), the distractor is rejected and a new, more distinct word is selected.
+
+\section{Module 5: DevOps and Deployment Pipeline}
+The production environment of LexiFlow relies on a robust Continuous Integration and Continuous Deployment (CI/CD) architecture designed for scalability, low latency, and automated delivery across three distinct hosting environments.
+
+\subsection{Frontend Deployment}
+The Vue 3 frontend application is hosted on \textbf{Vercel}. Vercel acts as an Edge CDN (Content Delivery Network), ensuring that static assets and compiled JavaScript chunks are served to users with minimal latency globally. The CI/CD pipeline is integrated directly into the repository. Upon every push or pull request to the main branch, Vercel automatically triggers a build instance (\texttt{npm run build}), executes frontend linters, and immediately deploys the updated preview or production builds.
+
+\subsection{Backend and Database Hosting}
+The Node.js business logic backend and the PostgreSQL database are hosted on a \textbf{Tencent Cloud Lighthouse} server. To maintain environment consistency between development and production, the backend is fully containerized using Docker. 
+\begin{itemize}
+    \item \textbf{Automated CI/CD:} A GitHub Actions pipeline is configured to monitor commits. Upon a push to the main branch, the pipeline automatically builds the new Docker images and pushes them to a container registry. It then establishes an SSH connection to the Tencent Lighthouse server to execute a \texttt{docker-compose up -d --build} command, tearing down the old containers and spinning up the updated instances seamlessly.
+    \item \textbf{Database Management:} Prisma ORM migrations are executed automatically during the container startup sequence, ensuring the PostgreSQL schema remains synchronized with the Node.js application models.
+\end{itemize}
+
+\subsection{AI Media Engine Scaling}
+Because the FastAPI backend handles computationally expensive AI tasks—such as Whisper speech-to-text, video transcoding via FFmpeg, and NLP semantic evaluations—it cannot be statically hosted on a standard CPU server. To resolve this, the FastAPI environment is containerized and deployed on \textbf{SaladPool} (Salad Cloud), a distributed network of rented GPUs. 
+\begin{itemize}
+    \item \textbf{Auto-Scaling:} SaladPool provides elastic GPU node management. When a user uploads a video or requests a batch translation, the workload enters a queue. SaladPool dynamically scales up the required GPU containers to process the media concurrently. Once the workload completes and the queue empties, the cluster automatically scales down. This effectively provides LexiFlow with massive burst-processing power on demand while minimizing idle server costs.
+\end{itemize}
+
+\section{Module 6: Database Architecture and Polyglot Persistence}
+To optimally manage the diverse data structures within LexiFlow, the system adopts a polyglot persistence architecture. This approach utilizes two distinct database technologies—PostgreSQL and MongoDB—each tailored to specific workload requirements and data models.
+
+\subsection{Relational Data Management with PostgreSQL}
+PostgreSQL serves as the primary relational database for the application's core business logic. It is managed via the Prisma Object-Relational Mapper (ORM) within the Node.js backend. PostgreSQL is strictly utilized for highly structured entities that require ACID (Atomicity, Consistency, Isolation, Durability) compliance and rigid referential integrity. 
+\begin{itemize}
+    \item \textbf{Data Handled:} User profiles, vocabulary lists, saved words, flashcard decks, FSRS spaced repetition algorithms states, and user quiz scores.
+    \item \textbf{Implementation:} The Prisma schema enforces strict foreign key constraints and cascading deletions (e.g., deleting a user automatically removes their custom vocabulary lists). This guarantees relational data consistency across the learning and assessment modules.
+\end{itemize}
+
+\subsection{Document Storage and Queue Management with MongoDB}
+Conversely, MongoDB is implemented as a NoSQL document database to handle the unstructured and semi-structured data generated by the FastAPI media processing pipeline. Its flexible, document-oriented model is ideal for the high-throughput write operations required by the AI engine.
+\begin{itemize}
+    \item \textbf{Subtitle Storage:} The outputs from the Whisper AI model contain complex, hierarchical JSON data, including raw text, exact timestamps, word-level confidence scores, pinyin mappings, and translation layers. MongoDB stores these rich subtitle documents efficiently without requiring rigid schema migrations whenever the AI output format or metadata evolves.
+    \item \textbf{Queue System:} The asynchronous nature of media processing (downloading, audio extraction, transcription, and translation) requires a robust task queue. MongoDB is utilized to track the real-time status of these asynchronous jobs. It records the progress states of the backend worker nodes, allowing the system to update the frontend on video processing progress without locking or overloading the primary PostgreSQL database.
+\end{itemize}
+
+\section{Module 7: Security and Authentication}
+Ensuring secure access to user data and backend APIs is a critical requirement. LexiFlow offloads the complexity of credential management by integrating Auth0, a centralized Identity-as-a-Service (IDaaS) provider, to manage all authentication and authorization flows.
+
+\subsection{Auth0 Universal Login and Authentication Flow}
+The application utilizes the industry-standard OAuth 2.0 Authorization Code flow. When a user attempts to log in or create an account (UC01 and UC02), the Vue frontend redirects them to Auth0's Universal Login interface. This provides a secure, centralized authentication page that supports both traditional email/password login and external Single Sign-On (SSO) providers. By handling authentication on Auth0's isolated servers, LexiFlow abstracts the risks of password storage and protects the system against common vulnerabilities such as brute-force attacks.
+
+\subsection{Backend API Authorization via JWT}
+Once the user is successfully authenticated, Auth0 returns a cryptographically signed JSON Web Token (JWT). This token acts as the user's secure digital identity payload for the application's ecosystem.
+\begin{itemize}
+    \item \textbf{Frontend Handling:} The Vue application stores the JWT in memory and attaches it as a \texttt{Bearer} token within the \texttt{Authorization} header of all HTTP requests made to the Node.js backend.
+    \item \textbf{Middleware Verification:} The Node.js server implements an authentication middleware layer utilizing Auth0's validation libraries. Before any protected route (such as fetching a custom vocabulary list or saving a new word) is executed, the middleware extracts the JWT and validates it against the Auth0 tenant's public keys. It verifies the token's signature, expiration, and audience claims. If the token is valid, the user's ID is extracted and passed to the controller; if invalid or expired, the API immediately rejects the request with a \texttt{401 Unauthorized} status.
+\end{itemize}
+
 \chapter{CONCLUSION}
 \section{Introduction}
 This chapter will give an overview of the LexiFlow project's development, outcomes, and to what extent the project’s goals were achieved. It will emphasise the findings and insights, significant accomplishments and suggest areas for future improvement. This review outlines the overall effectiveness of the application for LexiFlow in addressing the concerns of educators, and learners, coupled with its future potential to improve and scale. The project of LexiFlow has been able to develop a good system of language learning, meeting the expectations set by users. Architecture and technology decisions taken in this project will be the solid base for any further enhancements. Through the relentless improvement and development, LexiFlow might stand out as one of the best language learning solutions for universities and across settings, being reliable and user-friendly to its users.
@@ -794,14 +926,14 @@ Kami mendapati terdapat video yang tidak berjaya untuk transcribe. Kami menjangk
 % \chapter{Project Timeline Management with Jira}\label{app:project-timeline-management-with-jira}
 % \pdfbookmark[0]{Project Timeline Management with Jira}{sec:project-timeline-management-with-jira}
 
-\chapter{Software Requirements Specification (SRS)}\label{app:srs}
-\pdfbookmark[0]{SRS}{sec:srs}
-\includepdf[pages=-]{figs/srs.pdf}
-\chapter{Software Design Document (SDD)}\label{app:sdd}
-\pdfbookmark[0]{SDD}{sec:sdd}
-\includepdf[pages=-]{figs/sdd.pdf}
-\chapter{Software Testing Document (STD)}\label{app:std}
-\pdfbookmark[0]{STD}{sec:std}
+% \chapter{Software Requirements Specification (SRS)}\label{app:srs}
+% \pdfbookmark[0]{SRS}{sec:srs}
+% \includepdf[pages=-]{figs/srs.pdf}
+% \chapter{Software Design Document (SDD)}\label{app:sdd}
+% \pdfbookmark[0]{SDD}{sec:sdd}
+% \includepdf[pages=-]{figs/sdd.pdf}
+% \chapter{Software Testing Document (STD)}\label{app:std}
+% \pdfbookmark[0]{STD}{sec:std}
 % \includepdf[pages=-]{figs/std.pdf}
 \hspace{\fill}
 

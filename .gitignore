@@ -1,0 +1,47 @@
+# Core latex/pdflatex auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# Intermediate documents
+*.dvi
+*.xdv
+*-converted-to.*
+# Note: usually we exclude PDF if it is generated, but keep it if it is the final artifact.
+# Let's ignore pdf, synctex, and log files.
+*.pdf
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.pdfsync
+
+# Bibliography auxiliary files (BibTeX/biber)
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# Build tool auxiliary files
+*.fdb_latexmk
+*.synctex.gz
+*.pdfsync
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Thesis-specific custom aux files (if any)
+*.loabbre
+*.loapp
+*.los

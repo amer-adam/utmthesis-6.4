@@ -5,10 +5,10 @@
 \contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{ABSTRACT}}{v}{section*.12}%
 \contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{ABSTRAK}}{vi}{section*.14}%
 \contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{TABLE OF CONTENTS}}{vii}{section*.16}%
-\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF TABLES}}{x}{section*.18}%
-\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF FIGURES}}{xi}{section*.20}%
-\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF ABBREVIATIONS}}{xii}{section*.22}%
-\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF APPENDICES}}{xiii}{section*.24}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF TABLES}}{xi}{section*.18}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF FIGURES}}{xii}{section*.20}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF ABBREVIATIONS}}{xiii}{section*.22}%
+\contentsline {chapter}{\hspace {\toc@tab@a }\MakeUppercase []{LIST OF APPENDICES}}{xiv}{section*.24}%
 \addvspace {\@twolinespacing }
 \contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 1}\MakeUppercase []{Introduction}}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
@@ -56,19 +56,47 @@
 \contentsline {section}{\numberline {4.3}Architectural Design}{37}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Chapter Summary}{39}{section.4.4}%
 \addvspace {\@twolinespacing }
-\contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 5}\MakeUppercase []{CONCLUSION}}{40}{chapter.5}%
+\contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 5}\MakeUppercase []{System Implementation}}{40}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Introduction}{40}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Achievement of Project Objectives}{40}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Suggestions for Future Improvement}{41}{section.5.3}%
+\contentsline {section}{\numberline {5.2}Module 1: User Management and Authentication}{40}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Create Account (UC01) and Login (UC02)}{40}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Manage Profile (UC03)}{41}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Module 2: Media Processing and AI Engine}{41}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Process YouTube URL (UC04) and Upload Local Media (UC05)}{41}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Generate Subtitles (UC06)}{42}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Module 3: Interactive Learning Environment}{42}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Find Translated Content (UC07)}{42}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Search Word Definition (UC08)}{43}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Save Vocabulary (UC09) and Bookmark Video (UC10)}{43}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}Module 4: Review and Assessment}{43}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Generate and Review Flashcards (UC13)}{44}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Generate Quizzes (UC14)}{44}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}Question Types and Evaluation}{45}{subsubsection.5.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}Distractor Generation}{45}{subsubsection.5.5.2.2}%
+\contentsline {section}{\numberline {5.6}Module 5: DevOps and Deployment Pipeline}{46}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Frontend Deployment}{46}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Backend and Database Hosting}{46}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}AI Media Engine Scaling}{47}{subsection.5.6.3}%
+\contentsline {section}{\numberline {5.7}Module 6: Database Architecture and Polyglot Persistence}{47}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Relational Data Management with PostgreSQL}{47}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Document Storage and Queue Management with MongoDB}{48}{subsection.5.7.2}%
+\contentsline {section}{\numberline {5.8}Module 7: Security and Authentication}{48}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Auth0 Universal Login and Authentication Flow}{49}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Backend API Authorization via JWT}{49}{subsection.5.8.2}%
 \addvspace {\@twolinespacing }
-\contentsline {chapter}{\MakeUppercase {REFERENCES}}{43}{section*.44}%
+\contentsline {chapter}{\numberline {\MakeUppercase []{Chapter} 6}\MakeUppercase []{CONCLUSION}}{50}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{50}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Achievement of Project Objectives}{50}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Suggestions for Future Improvement}{51}{section.6.3}%
+\addvspace {\@twolinespacing }
+\contentsline {chapter}{\MakeUppercase {REFERENCES}}{53}{section*.44}%
 \save@tocdepth \setcounter {tocdepth}{0}
-\contentsline {section}{\numberline {B.1}Teaching Context \& Methods}{51}{section.A2.1}%
-\contentsline {section}{\numberline {B.2}Content Processing \& Management}{51}{section.A2.2}%
-\contentsline {section}{\numberline {B.3}Quality \& Accuracy Requirements}{52}{section.A2.3}%
-\contentsline {section}{\numberline {C.1}Maklumbalas saya adalah seperti berikut:}{53}{section.A3.1}%
-\contentsline {section}{\numberline {C.2}Terdapat 2 masalah utama:}{53}{section.A3.2}%
-\contentsline {subsection}{\numberline {C.2.1}Terjemahan}{53}{subsection.A3.2.1}%
-\contentsline {subsection}{\numberline {C.2.2}Kegagalan Transcribing}{54}{subsection.A3.2.2}%
-\contentsline {section}{\numberline {C.3}Cadangan dan Penambahbaikan:}{54}{section.A3.3}%
+\contentsline {section}{\numberline {B.1}Teaching Context \& Methods}{61}{section.A2.1}%
+\contentsline {section}{\numberline {B.2}Content Processing \& Management}{61}{section.A2.2}%
+\contentsline {section}{\numberline {B.3}Quality \& Accuracy Requirements}{62}{section.A2.3}%
+\contentsline {section}{\numberline {C.1}Maklumbalas saya adalah seperti berikut:}{63}{section.A3.1}%
+\contentsline {section}{\numberline {C.2}Terdapat 2 masalah utama:}{63}{section.A3.2}%
+\contentsline {subsection}{\numberline {C.2.1}Terjemahan}{63}{subsection.A3.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Kegagalan Transcribing}{64}{subsection.A3.2.2}%
+\contentsline {section}{\numberline {C.3}Cadangan dan Penambahbaikan:}{64}{section.A3.3}%
 \save@tocdepth \setcounter {tocdepth}{2}
