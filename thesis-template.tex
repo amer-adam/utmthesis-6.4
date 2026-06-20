@@ -680,7 +680,7 @@ Chapter 4 of the thesis delves into the requirement analysis and system design f
 \chapter{System Implementation}\label{chap:implementation}
 
 \section{Introduction}
-This chapter discusses the technical implementation of the LexiFlow system. The development is divided into modular subsystems: User Management, Media Processing and AI, Interactive Learning, Assessment, Supplementary Services, DevOps and Deployment, Database Architecture, and Security. Each module is designed to fulfill the specific functional requirements outlined in the system design phase.
+This chapter discusses the technical implementation of the LexiFlow system. The development is divided into modular subsystems: User Management, Media Processing and AI, Interactive Learning, Assessment, DevOps and Deployment, Database Architecture, Security, and Supplementary Services. Each module is designed to fulfill the specific functional requirements outlined in the system design phase.
 
 The frontend is implemented in \textbf{React 18 with TypeScript}, built using Vite, rather than the Vue 3 framework originally proposed during the design phase in Chapter 4. This change was made because the specific ecosystem of libraries required for the project --- the official Auth0 React SDK for authentication, TanStack Query for server-state caching and request de-duplication, and the available component libraries for building the interactive subtitle viewer --- had more mature and better-documented support in the React ecosystem at the time of implementation. The underlying Pipe and Filter architecture, use case coverage, and component responsibilities described in Chapter 4 remain unchanged; only the rendering framework used to build the user interface differs from what was originally planned.
 
@@ -767,23 +767,6 @@ Automated quiz generation is handled by the FastAPI AI engine, which dynamically
 \subsubsection{Distractor Generation}
 For multiple-choice and true/false questions, the system must generate plausible but incorrect answers, known as distractors. High-quality distractors are crucial to prevent the user from guessing the answer by basic elimination. The distractor algorithm fetches vocabulary from the same HSK tier or lexical category as the target word. To guarantee the distractors are not accidentally valid synonyms, the system evaluates them against the target word using the same \texttt{paraphrase-multilingual-MiniLM-L12-v2} Sentence-Transformers embedding model described above. If the similarity score is too high (e.g., $>$ 0.70), the distractor is rejected and a new, more distinct word is selected.
 
-\section{Module 8: Supplementary Services}
-Beyond the core four modules, LexiFlow implements three supplementary services that support the learning experience: text-to-speech playback, on-demand translation, and community-driven quality reporting.
-
-\subsection{Text-to-Speech (TTS)}
-LexiFlow exposes an endpoint that converts Mandarin text into spoken audio. Two interchangeable TTS backends are supported, selected through configuration:
-\begin{itemize}
-    \item \textbf{Edge TTS (default):} An open-source wrapper around Microsoft Edge's cloud-based text-to-speech engine, which requires no local GPU resources and is used as the default backend for low-cost, low-latency synthesis.
-    \item \textbf{CosyVoice (optional):} \textbf{CosyVoice}, an open-source, GPU-accelerated speech synthesis model (the Fun-CosyVoice3-0.5B variant), self-hosted as its own containerised service and enabled selectively when higher-quality, locally controlled speech synthesis is required.
-\end{itemize}
-To avoid redundant computation, generated audio is cached to disk, keyed by a hash of the requested voice and text, and served back directly on subsequent identical requests.
-
-\subsection{On-Demand Translation}
-LexiFlow also allows the frontend to request an ad-hoc translation of arbitrary Mandarin or English text (e.g., outside the context of a processed video), independent of the main subtitle generation pipeline. This is backed by the same self-hosted \textbf{LibreTranslate} engine used in the media processing pipeline (Module 2). Results are cached in memory to avoid repeatedly translating identical strings.
-
-\subsection{Crowd-Reporting of Translation Errors (UC11)}
-To maintain content quality, users can flag a specific subtitle segment as incorrect (categorised as a translation error, a pinyin error, a transcription error, or other). A segment is automatically marked as flagged for review once it accumulates at least three distinct user reports \emph{and} at least 25\% of the users who viewed that segment have reported it, preventing a single user from flagging content unilaterally. At the current stage of implementation, flagged segments are surfaced for manual review only; automated, AI-assisted re-evaluation and correction of flagged segments has been scaffolded but is intentionally left unimplemented, and is identified as future work.
-
 \section{Module 5: DevOps and Deployment Pipeline}
 The production environment of LexiFlow is split across four distinct hosting environments, each chosen to match the resource profile of the component it serves: a static-asset CDN for the frontend, a low-cost always-on cloud VM for the relational backend, a managed cloud database for unstructured/legacy data, and a GPU-capable host for the AI media engine.
 
@@ -833,6 +816,23 @@ Once the user is successfully authenticated, Auth0 returns a cryptographically s
     \item \textbf{Frontend Handling:} The React application retrieves the access token through the Auth0 React SDK and attaches it as a \texttt{Bearer} token within the \texttt{Authorization} header of all HTTP requests made to the Node.js backend.
     \item \textbf{Middleware Verification:} The Node.js server implements an authentication middleware built on \textbf{\texttt{express-jwt}} and \textbf{\texttt{jwks-rsa}}, two open-source libraries for verifying JWTs against a remote JSON Web Key Set (JWKS). Before any protected route (such as fetching a custom vocabulary list or saving a new word) is executed, the middleware extracts the JWT and validates it against the Auth0 tenant's public JWKS, verifying the token's RS256 signature, expiration, and audience claims. If the token is valid, the user's Auth0 subject ID is extracted and passed to the relevant module (triggering the just-in-time user provisioning described in Module 1 on first use); if invalid or expired, the API immediately rejects the request with a \texttt{401 Unauthorized} status. This middleware is applied uniformly across every module described in this chapter --- vocabulary, videos, flashcards, quizzes, TTS, translation, and reports --- so that all user-owned data remains isolated per authenticated identity.
 \end{itemize}
+
+\section{Module 8: Supplementary Services}
+Beyond the core four modules, LexiFlow implements three supplementary services that support the learning experience: text-to-speech playback, on-demand translation, and community-driven quality reporting.
+
+\subsection{Text-to-Speech (TTS)}
+LexiFlow exposes an endpoint that converts Mandarin text into spoken audio. Two interchangeable TTS backends are supported, selected through configuration:
+\begin{itemize}
+    \item \textbf{Edge TTS (default):} An open-source wrapper around Microsoft Edge's cloud-based text-to-speech engine, which requires no local GPU resources and is used as the default backend for low-cost, low-latency synthesis.
+    \item \textbf{CosyVoice (optional):} \textbf{CosyVoice}, an open-source, GPU-accelerated speech synthesis model (the Fun-CosyVoice3-0.5B variant), self-hosted as its own containerised service and enabled selectively when higher-quality, locally controlled speech synthesis is required.
+\end{itemize}
+To avoid redundant computation, generated audio is cached to disk, keyed by a hash of the requested voice and text, and served back directly on subsequent identical requests.
+
+\subsection{On-Demand Translation}
+LexiFlow also allows the frontend to request an ad-hoc translation of arbitrary Mandarin or English text (e.g., outside the context of a processed video), independent of the main subtitle generation pipeline. This is backed by the same self-hosted \textbf{LibreTranslate} engine used in the media processing pipeline (Module 2). Results are cached in memory to avoid repeatedly translating identical strings.
+
+\subsection{Crowd-Reporting of Translation Errors (UC11)}
+To maintain content quality, users can flag a specific subtitle segment as incorrect (categorised as a translation error, a pinyin error, a transcription error, or other). A segment is automatically marked as flagged for review once it accumulates at least three distinct user reports \emph{and} at least 25\% of the users who viewed that segment have reported it, preventing a single user from flagging content unilaterally. At the current stage of implementation, flagged segments are surfaced for manual review only; automated, AI-assisted re-evaluation and correction of flagged segments has been scaffolded but is intentionally left unimplemented, and is identified as future work.
 
 \chapter{CONCLUSION}
 \section{Introduction}
