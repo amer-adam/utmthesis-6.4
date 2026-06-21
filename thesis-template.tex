@@ -556,7 +556,7 @@ The functional requirements of LexiFlow are derived from the use case diagram (F
 
 As an example, the use case for processing YouTube URLs (UC04), shown in Table~\ref{tab:use_case_uc04}, involves key actors such as the user and the YouTube Data API. The system extracts video content by validating the URL, retrieving metadata, and checking the duration of the video.
 
-All use cases, including detailed descriptions of the normal flow, alternative flows (such as handling invalid duration or restricted content), and exception flows, are fully documented in the Software Requirements Specification (SRS). The complete use case specifications can be found in Appendix B.
+All use cases, including detailed descriptions of the normal flow, alternative flows (such as handling invalid duration or restricted content), and exception flows, are fully documented in the Software Requirements Specification (SRS). The complete use case specifications can be found in Appendix~\ref{app:srs}.
 
 \begin{longtable}{|>{\columncolor[HTML]{D9D9D9}}l|p{10cm}|}
     \caption{Use Case Description for UC04 \textless{}Process YouTube URL\textgreater{}}\label{tab:use_case_uc04}
@@ -674,7 +674,7 @@ As shown in Figure~\ref{fig:pipe_and_filter}, the LexiFlow system architecture c
 \end{figure}
 
 \section{Chapter Summary}
-Chapter 4 of the thesis delves into the requirement analysis and system design for LexiFlow, outlining a comprehensive approach to developing a language learning platform. The chapter begins with a systematic exploration of stakeholders' needs through interactive sessions, setting the foundation for detailed documentation in the Software Requirements Specification (SRS), Software Design Document (SDD), and Software Test Document (STD). It further details the pipe-and-filter architectural approach, ensuring scalability and efficiency, and discusses the user interface design, which is integral for enhancing user interaction and system functionality. This methodical approach not only aligns with the project's objectives but also ensures a robust framework for the successful implementation and operation of LexiFlow
+Chapter 4 of the thesis delves into the requirement analysis and system design for LexiFlow, outlining a comprehensive approach to developing a language learning platform. The chapter begins with a systematic exploration of stakeholders' needs through interactive sessions, setting the foundation for detailed documentation in the Software Requirements Specification (SRS, Appendix~\ref{app:srs}) and Software Design Document (SDD, Appendix~\ref{app:sdd}). It further details the pipe-and-filter architectural approach, ensuring scalability and efficiency, and discusses the user interface design, which is integral for enhancing user interaction and system functionality. This methodical approach not only aligns with the project's objectives but also ensures a robust framework for the successful implementation and operation of LexiFlow. The system was subsequently validated through automated end-to-end testing and User Acceptance Testing, documented in Chapter 5 and Appendices~\ref{app:test-execution-report} and~\ref{app:uat-report}, rather than a separate, standalone Software Test Document.
 
 
 \chapter{System Implementation}\label{chap:implementation}
@@ -901,6 +901,13 @@ The LexiFlow project began with four main objectives, as elaborated in Section~\
     \item \textbf{To test and validate the platform using testing methodologies and domain expert's feedback to ensure accuracy in transcription, translation, and subtitle synchronization:} This objective, previously deferred to a later phase, has now been completed. An automated Playwright end-to-end test suite was executed against the live deployment, achieving 25 passes, 4 failures, and 1 documented skip out of 30 test cases (Appendix~\ref{app:test-execution-report}); the 4 failures were root-caused to two genuine, reproducible defects (an undismissable onboarding tour, and a missing single-page-application fallback route) rather than to test-script issues. Domain-expert validation was obtained directly through UAT with a native Mandarin speaker, who judged transcription and translation accuracy as acceptable for a learning tool but below the bar of mature commercial captioning services, and through the original instructor stakeholder, who remained satisfied with accuracy but identified the classroom-management gap discussed above (Appendix~\ref{app:uat-report}). This objective is considered successfully achieved, with both the strengths and the limitations of the implemented system now documented with concrete, traceable evidence rather than left as an open task for a later phase.
 \end{enumerate}
 
+\section{Service Enhancement and Practical Value}
+Beyond meeting its stated objectives, LexiFlow delivers value along two of the three dimensions typically used to assess a system's practical worth: it enhances quality of service, and it increases quality of life for its users; it does not currently have demonstrated commercial value, since no pricing model, payment integration, or market validation has been attempted.
+
+LexiFlow enhances quality of service by automating a task that the stakeholder interview (Appendix~\ref{app:stakeholder-interview-questions}) reported as taking 10-30 minutes of manual effort per simple three-minute video: transcribing, translating, and pinyin-annotating authentic Mandarin content. By reducing this to an automated pipeline that a learner or educator can trigger on demand, and by adding a crowd-correction mechanism so quality improves over time without re-doing that manual work, the system materially improves on the status quo described by the stakeholder, where authentic content was used sparingly because of this preparation cost.
+
+LexiFlow increases quality of life for its users in ways independently confirmed during UAT (Appendix~\ref{app:uat-report}): a struggling learner reflected that the platform would likely have improved their actual exam outcome, and a professional working in a Mandarin-speaking environment described it as something they would use daily to reduce real workplace miscommunication, neither of which their prior study methods (classroom drills, generic apps, or textbooks) addressed. These are direct, user-reported improvements to learning outcomes and everyday communication confidence, rather than abstract or assumed benefits.
+
 \section{Suggestions for Future Improvement}
 Building on the findings from automated testing and UAT, the following improvements are recommended for future iterations of LexiFlow. First, the two confirmed defects identified during test execution, the undismissable onboarding tour (LF-BUG-01) and the missing SPA fallback route causing direct navigation to return a raw 404 (LF-BUG-02), should be fixed before any production rollout, as both directly block or degrade core navigation for first-time and returning users respectively. Second, the accuracy gap identified by the native-speaker UAT participant, between LexiFlow's self-hosted faster-whisper and LibreTranslate pipeline and YouTube's own commercial-grade auto-captioning, should continue to be narrowed; the crowd-reporting and AI-assisted correction feature already implemented (Chapter 5) is well-positioned to do this over time, and its effectiveness should be measured directly in a future evaluation round. Third, and most significantly, a classroom-management module, allowing an instructor to create a class, assign specific videos or quizzes as coursework, and view a lecturer-facing progress dashboard across their students, should be scoped and implemented; this was identified as the primary unmet need by the instructor stakeholder during UAT and was never part of the original functional requirements, making it the clearest candidate for the next phase of development. Beyond these evidence-based priorities, the usage of a more lightweight, Mandarin-only local model instead of a large multilingual model would reduce processing time and server VRAM usage, in turn lowering server operating costs, and switching to more efficient model runtimes such as ONNX or TensorRT would further reduce processing time and resource usage. Together, these changes would make LexiFlow more accurate, more complete for institutional use, and more efficient to operate.
 
@@ -1013,15 +1020,12 @@ Kami mendapati terdapat video yang tidak berjaya untuk transcribe. Kami menjangk
 % \chapter{Project Timeline Management with Jira}\label{app:project-timeline-management-with-jira}
 % \pdfbookmark[0]{Project Timeline Management with Jira}{sec:project-timeline-management-with-jira}
 
-% \chapter{Software Requirements Specification (SRS)}\label{app:srs}
-% \pdfbookmark[0]{SRS}{sec:srs}
-% \includepdf[pages=-]{figs/srs.pdf}
-% \chapter{Software Design Document (SDD)}\label{app:sdd}
-% \pdfbookmark[0]{SDD}{sec:sdd}
-% \includepdf[pages=-]{figs/sdd.pdf}
-% \chapter{Software Testing Document (STD)}\label{app:std}
-% \pdfbookmark[0]{STD}{sec:std}
-% \includepdf[pages=-]{figs/std.pdf}
+\chapter{Software Requirements Specification (SRS)}\label{app:srs}
+\pdfbookmark[0]{SRS}{sec:srs}
+\includepdf[pages=-]{figs/srs.pdf}
+\chapter{Software Design Document (SDD)}\label{app:sdd}
+\pdfbookmark[0]{SDD}{sec:sdd}
+\includepdf[pages=-]{figs/sdd.pdf}
 \hspace{\fill}
 
 
