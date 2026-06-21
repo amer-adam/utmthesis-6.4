@@ -720,6 +720,12 @@ The subtitle generation process is a multi-step AI orchestration:
 \end{enumerate}
 Note that the translation engine used in the final implementation is LibreTranslate rather than the SeamlessM4T v2 model originally proposed in Chapters 2 and 4. This change was made because a self-hosted LibreTranslate instance is significantly lighter to run continuously (it does not require the large multilingual model weights or sustained GPU memory that SeamlessM4T v2 demands), making it a more practical fit for the project's current hosting budget while still meeting the required translation quality for Mandarin-to-English subtitle generation.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{./figs/fig_media_pipeline.pdf}
+    \caption{Media Processing and Subtitle Generation Pipeline}\label{fig:media_pipeline}
+\end{figure}
+
 \section{Module 3: Interactive Learning Environment}
 This module serves as the primary user workspace, bridging the media content with active language acquisition tools in the frontend.
 
@@ -752,7 +758,13 @@ The FSRS algorithm calculates three primary memory states for each vocabulary it
     \item \textbf{3 (Good):} User recalled standardly. The stability coefficient increases, pushing the due date further out.
     \item \textbf{4 (Easy):} User recalled effortlessly. The interval is maximally expanded.
 \end{itemize}
-Whenever a grade is submitted, the backend recomputes the FSRS memory variables, persists them to the relational database, and schedules the exact timestamp for the next review.
+Whenever a grade is submitted, the backend recomputes the FSRS memory variables, persists them to the relational database, and schedules the exact timestamp for the next review. Figure~\ref{fig:fsrs_growth} illustrates how the scheduled interval until the next review grows for a single vocabulary item across consecutive "Good" reviews: early reviews are scheduled only a day or two apart, while well-retained items are pushed weeks or months into the future, concentrating review effort on the items a learner is closest to forgetting.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./figs/fig_fsrs_growth.pdf}
+    \caption{Example FSRS Scheduled-Interval Growth for One Vocabulary Item}\label{fig:fsrs_growth}
+\end{figure}
 
 \subsection{Generate Quizzes (UC14)}
 Automated quiz generation is handled by the FastAPI AI engine, which dynamically synthesises assessment materials from the user's saved vocabulary lists. The system explicitly supports four question types: multiple choice, fill-in-the-blank, short answer, and true/false.
@@ -773,7 +785,13 @@ Automated quiz generation is handled by the FastAPI AI engine, which dynamically
 For multiple-choice and true/false questions, the system must generate plausible but incorrect answers, known as distractors. High-quality distractors are crucial to prevent the user from guessing the answer by basic elimination. The distractor algorithm fetches vocabulary from the same HSK tier or lexical category as the target word. To guarantee the distractors are not accidentally valid synonyms, the system evaluates them against the target word using the same \texttt{paraphrase-multilingual-MiniLM-L12-v2} Sentence-Transformers embedding model described above. If the similarity score is too high (e.g., $>$ 0.70), the distractor is rejected and a new, more distinct word is selected.
 
 \section{Module 5: DevOps and Deployment Pipeline}
-The production environment of LexiFlow is split across four distinct hosting environments, each chosen to match the resource profile of the component it serves: a static-asset CDN for the frontend, a low-cost always-on cloud VM for the relational backend, a managed cloud database for unstructured/legacy data, and a GPU-capable host for the AI media engine.
+The production environment of LexiFlow is split across four distinct hosting environments, each chosen to match the resource profile of the component it serves: a static-asset CDN for the frontend, a low-cost always-on cloud VM for the relational backend, a managed cloud database for unstructured/legacy data, and a GPU-capable host for the AI media engine. Figure~\ref{fig:deployment_topology} shows how these environments are connected, including the automated CI/CD path and the GPU failover path described in the following subsections.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{./figs/fig_deployment_topology.pdf}
+    \caption{LexiFlow Deployment Topology}\label{fig:deployment_topology}
+\end{figure}
 
 \subsection{Frontend Deployment}
 The React/TypeScript frontend application is hosted on \textbf{Vercel}. Vercel acts as an Edge CDN (Content Delivery Network), ensuring that static assets and compiled JavaScript chunks are served to users with minimal latency globally. The CI/CD pipeline is integrated directly into the repository: upon every push or pull request to the main branch, Vercel automatically triggers a build instance (\texttt{npm run build}), executes frontend linters, and immediately deploys the updated preview or production build.
@@ -842,7 +860,13 @@ To maintain content quality, users can flag a specific subtitle segment as incor
 \subsection{AI-Assisted Segment Correction}
 Rather than requiring an administrator to manually re-transcribe or re-translate every flagged segment, LexiFlow now resolves a report immediately by delegating the correction to a Large Language Model (LLM). The integration is built behind a small provider-agnostic interface so the underlying LLM vendor can be swapped through configuration alone; the active implementation calls \textbf{Meta's Llama 3.3 70B} model through \textbf{Groq}, an LLM inference cloud chosen specifically for its very low response latency, via Groq's OpenAI-compatible Chat Completions API.
 
-When a report is filed, the system sends the model the reported segment together with the three segments immediately before and after it (for disambiguating context only), along with an instruction specific to the reported error category (translation, pinyin, transcription, or other). The model is constrained to return a single, strict JSON object containing the corrected Chinese text, English translation, and per-character pinyin/HSK metadata, with its response format enforced through Groq's JSON-mode decoding. The original timestamps are never trusted to the model's output; they are always re-applied server-side from the original segment, so a hallucinated value can never desynchronise the subtitle track from the underlying audio.
+When a report is filed, the system sends the model the reported segment together with the three segments immediately before and after it (for disambiguating context only), along with an instruction specific to the reported error category (translation, pinyin, transcription, or other). The model is constrained to return a single, strict JSON object containing the corrected Chinese text, English translation, and per-character pinyin/HSK metadata, with its response format enforced through Groq's JSON-mode decoding. The original timestamps are never trusted to the model's output; they are always re-applied server-side from the original segment, so a hallucinated value can never desynchronise the subtitle track from the underlying audio. Figure~\ref{fig:ai_correction_flow} summarises the full correction flow from the initial viewer report to the corrected subtitle being served back to all viewers.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./figs/fig_ai_correction_flow.pdf}
+    \caption{AI-Assisted Segment Correction Flow}\label{fig:ai_correction_flow}
+\end{figure}
 
 Crucially, the correction is never written back into the original transcription record in MongoDB. Instead, it is stored as a separate, addressable patch in a dedicated relational table (linked to the specific video and segment index), which is transparently merged over the original segment data whenever that video's subtitles are subsequently read. This design keeps the original AI-generated transcription fully intact and auditable while still letting corrected content reach every viewer immediately, and makes a correction trivially reversible if it later proves to be wrong. Each correction is also logged with the before/after segment pair and the identity of the model that produced it, and the reporting user is asked to rate the quality of the correction; this creates a growing labelled dataset that could be used in future work to evaluate or fine-tune correction quality across models.
 
