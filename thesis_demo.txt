@@ -1,0 +1,2066 @@
+                                     CHAPTER 1
+
+
+
+
+                                  INTRODUCTION
+
+
+
+
+1.1    Introduction
+
+
+       Mandarin is not only a language but a key to future opportunities, as it is
+spoken by more than one billion people and is gaining significant importance in
+business, technology, and culture around the world. The growing importance of
+China as an economic power, a leader in manufacturing and artificial intelligence,
+and its increasing influence in the cultural arena opens doors to career opportunities for
+Mandarin speakers. However, many learners perceive the language as too complicated
+, both in its tonal pronunciation and its complex character system , making it seem
+impossible to master.
+
+
+       The studies in language acquisition have indicated that exposure to authentic
+content is the most effective way to learn a language [1, 2]. Here authentic means that
+the material is genuine (real) and originally written for native speakers (books, movies,
+news articles, podcasts, conversations, etc.), not simplified or made-up for language
+learners. If students are interested in the materials, they will be more motivated and
+will retain more. This natural learning approach mirrors how children acquire their
+first language: through immersion, not memorization [3, 4].
+
+
+       Many students encounter difficulties when learning through traditional methods.
+Textbooks and classrooms tend to focus more on grammar rules than on exposure to
+natural language. While some translation applications now exist, they struggle with
+the specific demands of Mandarin. The character system poses a significant challenge
+because written characters bear no resemblance to their spoken sounds. Pinyin is
+available as a pronunciation guide but is seldom encountered outside the classroom.
+
+
+
+
+                                            1
+        LexiFlow addresses these challenges through a web platform that integrates
+sentence segmentation and machine translation models. The system receives audio,
+segments it into sentences, and processes each one separately. This will help to increase
+accuracy and reduce the computing resources required. The system then maintains a
+repository of previously processed material to avoid reprocessing and to surface content
+tailored to students’ interests and abilities.
+
+
+
+
+1.2     Problem Background
+
+
+        The lecturer of language at UTM has noticed a problem with the development
+of language among the students at UTM. Many students can master grammar rules and
+vocabulary for written exams but have trouble in real Mandarin conversations. This
+disparity between students’ academic performance and their communication skills is
+a hindrance to learning. Authentic content exposes students to vocabulary, natural
+speech patterns, and cultural context that textbooks cannot provide, especially when
+the content aligns with students’ own interests, making the language more engaging.
+
+
+        The current method of producing Mandarin learning content is still time-
+consuming.     Lecturers start by gathering authentic audio or video sources, often
+spending considerable time finding appropriate content.        After selecting content,
+teachers manually transcribe the spoken Mandarin and add pinyin annotations and
+translations. This process can take as long as 8-10 hours for just a few minutes of
+content and can put a significant strain on teachers.
+
+
+        These challenges are not met by existing solutions. Popular platforms such
+as LanguageReactor rely heavily on the availability of YouTube subtitles, which are
+far harder to find for Mandarin content than for English. As for general transcription
+services, for example the ones at Transcribe.com, they transcribe material without the
+time-stamped subtitle format that students find useful in mapping spoken sounds to
+written text, and they do not support pinyin, which is essential for Mandarin learners
+to learn how to pronounce the text.
+
+
+
+
+                                                 2
+       Students need a system that effectively processes authentic Mandarin content
+and presents both its spoken form and written representation. The solution should
+include accurate transcriptions and timings, pinyin pronunciation guides, and quality
+translations that link naturally spoken Mandarin with its written form.
+
+
+
+
+1.3    Project Aim
+
+
+       The aim of this project is to create a web platform called LexiFlow for the
+processing, transcription, and translation of authentic Mandarin content using advanced
+sentence-level segmentation and translation models, in order to help students understand
+authentic Mandarin dialogues in real-world contexts.
+
+
+
+
+1.4    Project Objectives
+
+
+       The objectives of the project are:
+
+
+(a)    To identify and gather requirements from primary stakeholders, including
+       language learners and educators.
+
+(b)    To design a web-based platform with a user interface and a database that provides
+       synchronized, time-stamped bilingual subtitles.
+
+(c)    To develop a web platform based on stakeholder requirements, adding
+       features such as audio/video processing, transcription, translation, and pinyin
+       generation.
+
+(d)    To test and validate the platform using testing methodologies and domain
+       expert’s feedback to ensure accuracy in transcription, translation, and subtitle
+       synchronization.
+
+
+
+
+                                            3
+1.5    Project Scopes
+
+
+       The scopes of the project are:
+
+
+(a)    The proposed platform will accept long-form audio or video input (up to 120
+       minutes) from user-uploaded files or YouTube URLs.
+
+(b)    The proposed platform will perform voice activity detection (VAD) and end-
+       of-sentence detection to segment audio into linguistically meaningful sentence-
+       level chunks.
+
+(c)    The proposed platform will generate transcriptions using automatic speech
+       recognition (ASR) and translations via a Neural Machine Translation (NMT)
+       model.
+
+(d)    The proposed platform will produce synchronized, timestamped bilingual
+       subtitles with original language text, target-language translation and pinyin
+       annotations by utilizing the transformer model.
+
+(e)    The proposed platform will store processed subtitles in a searchable database
+       indexed by content identifiers (e.g., URLs) to enable instant reuse without
+       reprocessing.
+
+(f)    The proposed platform will provide a web interface for uploading content and
+       customizing subtitle outputs.
+
+
+
+
+1.6    Project Importance
+
+
+       The LexiFlow project is significant as it seeks to improve the language learner’s
+experience. LexiFlow will be able to address the issue of scarce resources from online
+platforms and lecturers. With integration of machine translation models for translation
+and transcription, LexiFlow will enable students to learn from content they are interested
+in learning from.
+
+
+
+
+                                            4
+1.7    Report Organization
+
+
+       The thesis consists of five well-rounded chapters. Chapter 1 presents the project
+and provides background, purpose, objectives, scope, importance and structure of the
+report. Chapter 2 presents an extensive literature review on the current systems and
+technologies pertaining to speech recognition, translation models, and user interfaces,
+and finally a comparison with the available market solutions.
+
+
+       The system development methodology is described in chapter 3 which highlights
+the selected software development life cycle, the reasons for the choice of method and
+the major systems development stages. Chapter 4 provides an in-depth exploration
+of requirements analysis and system design, covering functional requirements, non-
+functional requirements, database design, and user interface requirements, all aimed at
+guaranteeing usability and functionality.
+
+
+       In the last chapter (Chapter 5), the findings from the paper are summarized,
+the project outcomes discussed and recommendations made for improvements to
+further develop and extend the LexiFlow system. This structure ensures a logical
+progression from conceptualization through implementation and evaluation, with
+detailed discussion of all project aspects.
+
+
+
+
+                                              5
+                                      CHAPTER 2
+
+
+
+
+                               LITERATURE REVIEW
+
+
+
+
+2.1     Introduction
+
+
+        A review of the relevant literature and technologies has been conducted to
+examine existing work pertaining to the development of the LexiFlow system. It begins
+with a review of theories and models of second language acquisition that are relevant
+to the design of any L2 learning material. It then underscores the problems associated
+with symbolic language and discusses the existing methods and systems in the area of
+language acquisition. The purpose of this literature review is to give a foundation of
+theory and to highlight gaps that LexiFlow is looking to fill.
+
+
+
+
+2.2     Theories of Second Language Acquisition
+
+
+2.2.1   Krashen’s Input Hypothesis
+
+
+        LexiFlow is based on one of the main theories behind language learning, the
+Input Hypothesis [1]. The hypothesis is that language learning takes place when
+learners are exposed to comprehensible input. In this context, the term comprehensible
+input is defined as input material that is at just one step above the learner’s current level
+(i+1). According to this theory, acquisition of grammatical structures occurs naturally
+when learners are exposed to them, without formal teaching. This is based on the way
+children learn their first language, hearing and engaging with language in context.
+
+
+        Consider, for example, an HSK 2 student who can handle simple, everyday
+conversations. Based on the ”i+1” principle by Krashen, such a learner acquires
+language most effectively when exposed to content at approximately HSK 3 level ,
+
+
+
+                                             6
+introducing new vocabulary and grammatical patterns in manageable quantities while
+still containing familiar elements.
+
+
+       Table 2.1 summarizes the vocabulary requirements for each HSK (Hanyu
+Shuiping Kaoshi) level, which is the standardized Chinese proficiency test. As shown,
+each level builds cumulatively on the previous one. For example, a student at HSK 2
+has mastered 300 words in total, while HSK 3 requires knowledge of 600 words.
+
+
+                  Table 2.1   HSK 2.0 Vocabulary Requirements [5]
+             Current Level (i)    Vocabulary Size    Cumulative Words
+             HSK 1                150 words          150 words
+             HSK 2                150 words          300 words
+             HSK 3                300 words          600 words
+             HSK 4                600 words          1,200 words
+             HSK 5                1,300 words        2,500 words
+             HSK 6                2,500 words        5,000 words
+
+
+
+       Numerous studies have validated this theory. For example, Rodrigo et al. [6]
+demonstrated that extensive exposure to comprehensible input through reading resulted
+in significantly greater vocabulary acquisition compared to traditional instructional
+methods. Similarly, [7] found that students exposed to extensive comprehensible input
+outperformed those following traditional grammar-translation methods, even when
+tested on grammatical knowledge.
+
+
+       However, for Mandarin, the challenge lies in finding authentic content that is
+both engaging and comprehensible. Figure 2.1 is a perfect example of the Mandarin
+learning dilemma that LexiFlow aims to solve. Here we see a YouTube video which
+can be labeled as comprehensible input, with Chinese characters displayed as subtitles
+at the bottom of the screen. Crucially, these subtitles lack any Pinyin pronunciation
+guide, rendering them inaccessible to beginner and intermediate learners who haven’t
+yet mastered thousands of characters. In addition, the video is not tailored to any
+specific proficiency level, and the subtitles option is disabled, making the use of any
+current translation tools impossible.
+
+
+
+                                          7
+        Figure 2.2 shows an example of proper subtitles, which are hand-made by
+a YouTube channel. However, this process is extremely time-consuming and labor-
+intensive, making such content very rare and resulting in a very limited library of
+available resources.
+
+
+
+
+                Figure 2.1   Example of Mandarin Learning Dilemma
+
+
+
+
+                Figure 2.2   Example of Proper Subtitles with Pinyin
+
+
+
+
+2.2.2   Multimedia Learning Theory
+
+
+        Mayer’s Multimedia Learning Theory [2] provides another crucial theoretical
+pillar for LexiFlow’s approach. This theory proposes that people learn more deeply
+
+
+                                         8
+from words and pictures together than from words alone, particularly when the verbal
+and visual elements are presented simultaneously rather than successively.
+
+
+        Jones and Plass [8] showed that students’ vocabulary retention improved by
+42% when using both visual cues and written text, as opposed to learning from the
+written text alone. In character-based languages, Shen [9] concluded that a multimedia
+presentation linking spoken words, written characters, and visual representations was
+35% more effective for character recognition than traditional methods.
+
+
+        In addition, [10] demonstrated that Mandarin learners achieved higher scores
+on listening comprehension tests when they were provided with subtitles for practice.
+This finding supports LexiFlow’s approach of providing synchronized multimodal input
+through transcription and translation.
+
+
+
+
+2.3     Challenges for Mandarin as Symbolic Language
+
+
+2.3.1   Character Recognition and Sound Awareness
+
+
+        Many learners are thrown a curve by the logographic system of writing used in
+Mandarin, as opposed to alphabetic writing systems, in which written symbols directly
+represent sounds. According to Everson [11], a Western learner typically needs to
+encounter a Chinese character approximately 17 times before reliably recognizing it,
+compared to only 8 exposures for words in alphabetic scripts. This added ”mental load”
+is due to the visual complexity of the characters.
+
+
+        Since there is a gap between written and spoken Mandarin, linguists have termed
+it the ‘orthographic barrier’ [12]. This barrier hinders learning effectiveness: students
+may understand spoken vocabulary yet remain unable to connect it to its written form.
+As a stepping stone to this change, pinyin has become an important tool, but Ye
+[13] noted that 76% of intermediate learners still experienced problems in accessing
+character-only materials without the aid of pinyin.
+
+
+
+                                           9
+        LexiFlow overcomes this difficulty by keeping the important link between
+the sounds, pinyin and characters for authentic content, enabling learners to slowly
+develop their ability to recognize characters while also working with phonological
+representations to access meaningful content.
+
+
+
+
+2.3.2   Tonal Perception and Production
+
+
+        Another major difficulty in the literature noted is Mandarin’s tonal quality.
+Wang [14] has shown that adult learners from non-tonal language backgrounds require
+explicit training to accurately perceive and produce Mandarin’s four tones. They found
+that beginners’ accuracy in recognizing tones was still under 40 percent after 200 hours
+of classroom learning, without explicit training.
+
+
+        Tone is typically handled in textbooks by isolated examples or in perfectly
+prepared dialogues. These methods are unnatural ways to speak the language. LexiFlow
+provides authentic content with pinyin annotations that include tone markers, offering
+students meaningful opportunities to develop tonal awareness.
+
+
+
+
+2.4     Current System Analysis
+
+
+        The model in which students learn from authentic content is facing great
+difficulties both for students and teachers. The current process, observed through
+interviews with Mandarin language teachers at UTM, requires considerable manual
+effort and yields a limited content library.
+
+
+
+
+2.4.1   Problem with Current System
+
+
+        Current practice in embedding authentic Mandarin content into learning is very
+labour intensive, resource intensive and has limited quantity and quality of authentic
+materials available. The process as it is today (AS-IS) starts with either the instructors
+
+                                               10
+or motivated students looking for potentially suitable authentic content (as illustrated
+in the AS-IS swimlane diagram Figure 2.3). The search process is time-consuming
+and may return content that is not sufficiently levelled to meet the language proficiency
+requirements.
+
+
+
+
+                        Figure 2.3     AS-IS Swimlane Diagram
+
+
+
+        After content is identified, the real challenges start. The Mandarin audio must
+be manually transcribed, and instructors must add pinyin annotations and translations,
+which may take 8-10 hours for a 5-minute video. The volume of transcription work
+required makes it very difficult to provide a lot of content to students. If students are
+trying to go through this process alone, there are more obstacles to their understanding
+because there is no instant feedback.
+
+
+        The resulting materials often lack synchronized timelines that would enable
+learners to link the spoken and written words together. In addition, the material is
+often pitched at a level accessible only to more advanced students, leaving intermediate
+learners without suitable resources.
+
+
+
+
+2.4.2   Proposed Solution
+
+
+        LexiFlow solves these inefficiencies by using technology to automate the most
+time-intensive parts of content processing, all without compromising quality. The
+
+
+                                           11
+proposed system is designed to simplify the workflow, allowing both instructors and
+students to make full use of it (Figure 2.4).
+
+
+
+
+                        Figure 2.4   TO-BE Swimlane Diagram
+
+
+
+        The process starts from the users submitting their actual Mandarin audio or
+video material to the platform. LexiFlow then automatically segments the audio
+into sentence-level units using voice activity detection algorithms. Each segment
+is individually transcribed by ASR, annotated with pinyin, and translated into English
+by NMT.
+
+
+        All processed material is stored in an indexed database which means that the
+same processed material doesn’t need to be processed again if many users are accessing
+the same content. This allows for a growing ecosystem of content that becomes self-
+serving and expands according to user interests and needs.
+
+
+
+
+2.4.3   Comparison of Similar Video-Based Learning Platforms
+
+
+        There have been a number of attempts to employ video in the learning of a
+foreign language, each with varying degrees of success. As shown by Xu and Hu [15]
+who analyzed FluentU, the video libraries selected with interactive transcripts proved
+to be more effective in boosting listening fluency than audio exercises. Yet, the study
+also revealed a lack of content as a barrier, and advanced learners voiced complaints
+of lack of variety of content. The FluentU video browser, as seen in Figure 2.5, shows
+
+
+                                            12
+the platform’s library of videos curated by FluentU. The video is shown in Figure 2.6
+with interactive transcripts and words of interest.
+
+
+
+
+                  Figure 2.5     FluentU Platform Video Browse Page
+
+
+
+
+                    Figure 2.6    FluentU Platform Video Example
+
+
+
+
+                                           13
+         LanguageReactor (formerly Language Learning with Netflix), as examined
+by Dizon and Gayed [16], is a free browser extension that allows users to overlay
+bilingual subtitles on Netflix and YouTube videos. It provides basic tools for vocabulary
+lookup and sentence by sentence playback. Unfortunately, it heavily relies on the
+availability of pre-existing subtitles and does not generate its own. This results in
+inconsistent subtitle quality. Figure 2.7 shows the LanguageReactor settings page,
+which allows users to customize subtitle options. Figure 2.8 shows an example of a video
+on the LanguageReactor platform, which includes bilingual subtitles and vocabulary
+tools.
+
+
+
+
+              Figure 2.7   LanguageReactor Settings Page From Netflix
+
+
+
+
+                                           14
+                 Figure 2.8   LanguageReactor Example From Netflix
+
+
+
+
+       Yabla is a subscription-based service that offers a curated video content library
+with interactive features. Research by Pujadas and Muñoz [17] demonstrated that
+Yabla’s approach leads to better vocabulary retention compared to traditional video
+viewing methods. Although it provides a polished interface and well produced content,
+it is limited to a petite library of content that is lacking in scope and variety. However,
+the platform provides custom-created subtitles rather than relying entirely on third-
+party sources, which results in higher accuracy than LanguageReactor. Figure 2.9
+shows the Yabla platform’s video browse page, which highlights its curated library of
+videos. Figure 2.10 shows an example of a video on the Yabla platform, which includes
+interactive playback controls and vocabulary tools. the playback controls allow users
+to slow down or repeat specific segments, enhancing comprehension and retention.
+
+
+
+
+                                            15
+                        Figure 2.9   Yabla Platform Example
+
+
+
+
+                    Figure 2.10    Yabla Platform Video Example
+
+
+
+
+       The three systems already in place all make use of video content to learn a
+language, but they demonstrate distinct strategies to deal with the same core issue: the
+provision of engaging authentic video content supported by accurate language. The
+
+
+
+                                          16
+three platforms all rely on existing or manually created subtitlesas shown in table 2.2.
+This leads to a content bottleneck that may have a negative impact on Mandarin
+learners because there is not enough content with subtitles, especially when compared
+to European languages such as French and German.
+
+
+             Table 2.2   Language Learning Platform Feature Comparison
+ Feature         Lang.Reactor    FluentU         Yabla              LexiFlow*
+ Content Source YT/Netflix subs Closed library Curated videos       Any Mandarin audio
+ Pinyin Support Word-level        Full          Full                Full
+ Processing      Existing subs    Manual        Manual              Auto segmentation
+ Growth          Subtitle-limited Slow manual Slow manual           Exponential User-driven
+ Efficiency      High             Low           Low                 Medium
+ Cost            Freemium         Sub only      Sub only            Freemium
+ Personalization Basic vocab      Adaptive quiz Playback controls   Interest-based
+
+* Proposed solution
+
+
+
+        The automatic subtitle generation feature of LexiFlow enhances the existing
+platforms by removing the need for having pre-existing subtitles for any Mandarin
+audio/video content. Unlike other platforms that manage to upload and process content
+manually, this enables the content library to expand rapidly as more users upload
+and process their own content. LexiFlow operates under a freemium pricing model,
+providing people with free access to the basic features, and premium features such as
+flashcards and personalized quizzes for premium users. It also tailors learning to the
+user’s interests, tracks vocabulary that users have saved, and then suggests matching
+material and customizes study material – which makes learning more interesting and
+effective.
+
+
+
+
+2.5     Technologies for Video-Based Learning Platform
+
+
+2.5.1   Voice Activity Detection and Sentence Segmentation
+
+
+        VAD systems play crucial roles in several modern voice recognition frameworks,
+which detect speech and non-speech segments frame-by-frame and initiate subsequent
+actions such as speech recognition or endpointing. [18, 19, 20, 21]
+
+
+                                           17
+        For Mandarin, Pan et al. [22] have shown that their system that splits the speech
+data into smaller segments based on the Silero-VAD model [23] has better performance
+in boundary detection than a typical system. They discovered that they could get more
+accurate results by doing sentence-level segmentation rather than processing longer
+units. This figures into the segment-by-segment approach of LexiFlow.
+
+
+
+
+2.5.2   Automatic Speech Recognition for Mandarin
+
+
+        Automatic Speech Recognition (ASR) was developed from basic systems that
+responded to a select few sounds to the modern systems that engage and interact with
+spoken languages. There has been a growing interest in ASR technology due to the
+desire to automate simple tasks that involve human-machine interaction [24].
+
+
+        OpenAI’s Whisper [25] is an automatic speech recognition (ASR) system
+trained on 680,000 hours of multilingual and multitask supervised data collected from
+the web. The Whisper architecture is a simple end-to-end approach, implemented as
+an encoder-decoder Transformer. This architecture is used to transcribe and identify
+languages with high accuracy, even in noisy or demanding audio environments.
+
+
+        For educational applications, Sutomo [26] discovered that even with character
+error rates of 6–10%, learners stated that ASR-generated transcripts were sufficient for
+understanding. This finding indicates that current ASR technology has reached the
+point of being usable in language learning applications such as LexiFlow.
+
+
+
+
+2.5.3   Neural Machine Translation
+
+
+        Neural Machine Translation (NMT) has significantly improved the quality
+and dependability of automated translation services.       According to Hassan et al.
+[27], contemporary NMT systems have achieved human parity in Chinese-English
+translation for news domain content, marking a significant milestone for cross-linguistic
+applications.
+
+                                           18
+        Barrault et al. [28] introduced SeamlessM4T v2, Meta’s massively multilingual
+and multimodal machine translation model, designed to provide high-quality, real-time
+translation across speech and text in nearly 100 languages. The v2 release features
+the UnitY2 architecture, which includes hierarchical character-to-unit upsampling and
+non-autoregressive decoding.
+
+
+        Importantly for LexiFlow, Murtisari et al. [29] showed that even when
+translations had small faults, showing learners both the source text and machine
+translations increased comprehension compared to source-only presentation. This
+result demonstrates that LexiFlow’s strategy of offering translations in addition to the
+original Mandarin content works well.
+
+
+
+
+2.5.4   NoSQL Database Implementation
+
+
+        NoSQL databases offer numerous benefits over traditional relational databases
+in the context of modern video-based learning platforms, such as flexibility, scalability,
+and performance. NoSQL systems do not require a fixed schema, which is ideal for
+storing content with varying types, like video metadata, user interactions, and dynamic
+learning analytics.
+
+
+        For unstructured and semi-structured data, NoSQL databases like document
+stores such as MongoDB are suitable to efficiently store and retrieve multimedia content,
+user profiles and session logs. This distributed architecture provides for high availability
+and horizontal scaling, essential for platforms with large numbers of users and a
+growing amount of content. Further, a key-value NoSQL database is good for read/write
+performance in real-time analytics, and a graph database can represent relations between
+concepts, users, and learning materials.
+
+
+
+
+                                            19
+2.6    Summary
+
+
+       This literature review has established several key findings that inform
+LexiFlow’s development. First, it was established that Krashen’s Input Hypothesis and
+Multimedia Learning Theory provide strong theoretical foundations for LexiFlow’s
+approach. After that, Mandarin’s symbolic writing system and its unique challenges
+were discussed. Furthermore, the current language learning applications and their
+limitations were carefully examined. Finally, this literature review concluded with
+a discussion of recent advancements in Voice Activity Detection, Automatic Speech
+Recognition, and Neural Machine Translation and the models which are planned to
+be used in the system. This review establishes both the need for and the feasibility
+of LexiFlow’s approach to Mandarin language learning through efficient processing
+of authentic content. The next chapter will detail the methodological approach to
+implementing these insights in the LexiFlow system.
+
+
+
+
+                                         20
+                                     CHAPTER 3
+
+
+
+
+                 SYSTEM DEVELOPMENT METHODOLOGY
+
+
+
+
+3.1    Introduction
+
+
+       This chapter outlines the methodology used in the development of LexiFlow to
+ensure the successful implementation of the system. The chapter begins by explaining
+why the hybrid Agile model was selected and why combining elements of Agile and
+traditional project management is appropriate for achieving a balance between flexibility
+and structured milestones. Therefore, each phase of the adopted methodology will be
+elaborately discussed, which in effect will give an overall comprehensive framework
+that guides the development of the project from initial requirements gathering to the
+final stage of testing and deployment of the system.
+
+
+       The methodology section further explains how the chosen technologies fit
+within the Agile processes and align with the overall LexiFlow system. With this,
+the technology stack would support the functionality of the application.
+
+
+
+
+3.2    Methodology Choice and Justification
+
+
+       LexiFlow’s development follows the hybrid Agile model, as it allowed for
+flexibility to adapt to evolving requirements, while also providing structured milestones.
+This approach allows for iterative development, allowing for ongoing feedback and
+refinement throughout the project lifecycle. Agile is well suited to software projects
+where the needs of the users can change, because it focuses on collaboration, customer
+involvement and adaptation to change.
+
+
+       As reported by Singhto and Phakdee [30] implementing Scrum might help
+to enhance software product quality, communication and cooperation. Waterfall’s
+
+                                           21
+benefits are that the phases are arranged in order to help new developers get a complete
+understanding of the ‘big picture‘ of software project management, throughout the
+Software Development Life Cycle. This also fosters a much deeper understanding of
+the requirements, code logic and software testing.
+
+
+        Throughout the development process, the following principles of Agile will be
+used: regular sprints, user stories, and continuous integration. The project will also be
+managed using traditional project management practices, including detailed planning
+and documentation, to ensure that all aspects of the system are well covered, as shown
+in figure 3.1.
+
+
+
+
+                 Figure 3.1   Hybrid-Scrum Methodology Overview [31]
+
+
+
+
+3.3     Methodology Phases
+
+
+        LexiFlow will be developed using a hybrid approach:
+
+
+(a)     Planning (Waterfall): This phase prepares the overall project. It involves
+        a preliminary project scoping, time estimation, stakeholder identification and
+        resource assignment. The planning process follows a Waterfall method, with
+        all the planning steps of the roadmap being planned in advance to give a clear
+        direction of the project at the start.
+
+
+
+                                             22
+(b)    Analysis (Waterfall): This is the part of the project where all the project
+       requirements will be studied thoroughly and recorded in a waterfall method
+       of development. The process involves all stakeholders, language learners and
+       lecturers, in a detailed interview/survey to try to define all functional and non-
+       functional requirements as thoroughly as possible.
+
+(c)    Initial Design (Waterfall): After requirements are established, project will go
+       directly into design phase using the Waterfall method. This step creates a high
+       level design of the system as a whole, and this sets out how each component
+       interfaces with the other components of the system. This can be extremely
+       appropriate for the user requirements, so that each part of the system is well
+       defined and ready to go into development.
+
+(d)    Actual Sprints (Agile): The development will take place in six sprints (Agile):
+
+       (i)    Sprint 1 Prototype Sprint: Sprint 1 involves creating an initial prototype
+              with basic functions to test the assumptions of the early design, to collect
+              feedback and to verify the performance of the selected models.
+
+      (ii)    Sprint 2 User Module: This sprint is dedicated to implementing user
+              registration, login and profile management. It enables both students and
+              lecturers to create and manage their accounts and learning preferences.
+
+      (iii)   Sprint 3        Content Processing Module:       During this sprint, the
+              functionality to upload local media and submit the link to the YouTube
+              website is implemented. The content will be processed by the system
+              and produce synchronized subtitles in Mandarin, pinyin, and English
+              translation.
+
+      (iv)    Sprint 4       Interactive Learning Module: This sprint will deliver the
+              interactive learing module, implementing features such as word search,
+              bookmarking segenents, and reporting incorrect translations.
+
+       (v)    Sprint 5 Assessment Module: This sprint will contain the fucntional
+              testing and user acceptance testing. This will involve testing with users
+              and stakeholders.
+
+      (vi)    Sprint 6    Deployment Sprint: This sprint will involve deploying the
+              system to live servers and tesing the live deployment.
+
+
+
+                                           23
+(e)    Burn Down Chart (Agile): A burn down chart is also provided for the Agile
+       method to show what tasks remain to be completed over time during each sprint.
+       This visual tool can be used by the team to track progress on a day-to-day basis,
+       to identify any bottlenecks quickly, and to make sure the sprint is progressing to
+       the desired direction and toward the desired outcome. It is also a good reference
+       point for the Sprint Review.
+
+(f)    Sprint Review (Agile): During Sprint Review, features added to the application
+       are shown to the stakeholders at the end of each sprint. The input from their
+       feedback is captured and incorporated into the next set of sprint goals, thus
+       keeping them in line with what users expect.
+
+(g)    Sprint Retrospective (Agile): After every Sprint Review, the team has Sprint
+       Retrospective, which is an agile process that helps the team evaluate what they
+       did well, what they did not do well, and what they can do better in the next
+       Sprint. This helps to foster ongoing improvements and teamwork.
+
+(h)    Maintenance (Agile):         After deployment, the system will go into the
+       maintenance phase, which is also called ”Agile”. The addition of bugs fixes,
+       user feedback and new features will be provided in incremental releases using
+       Agile practices, and will keep the product strong and user-focused over time.
+
+
+       Gannt chart in Figure 3.2 shows the timeline of the FYP 1 and the prototype
+sprint while Figure 3.3 shows the timeline of FYP 2. The Gannt chart is created using
+Jira, which is a project management tool that helps to track the progress of the project
+and manage the tasks effectively.
+
+
+
+
+                                          24
+Figure 3.2   Gantt Chart FYP1
+
+
+
+
+Figure 3.3   Gantt Chart FYP2
+
+
+
+              25
+       The first sprint is the prototype sprint, which is already completed. The burn
+down chart is shown in Figure 3.4. The burn down chart shows the progress of
+the project and the remaining tasks to be completed. Also, the sprint review with the
+stakeholders is completed. The feedback from the stakeholder is shown in Appendix ??.
+
+
+
+
+               Figure 3.4   Burn Down Chart for Sprint 1 (Prototype)
+
+
+
+
+3.4    Technology Stack
+
+
+       This section describes the technologies used in the development of the LexiFlow
+system. The following technologies were identified for their capacity to meet the
+project’s requirements:
+
+
+(a)    React 18: A JavaScript library for creating user interfaces. React 18 was chosen
+       for its component-based architecture and concurrent rendering capabilities. It
+       will be used to create the frontend of the web application.
+
+(b)    Node.js: a JavaScript runtime based on Chrome’s V8 engine, chosen for its
+       non-blocking, event-driven architecture, which makes it suitable for developing
+       scalable network applications. It will be used for server-side logic and user
+       request management. Furthermore, it will act as the control center of our
+       backend services, handling requests from the frontend and coordinating with
+       the database and python microservices.
+
+
+
+
+                                          26
+(c)    MongoDB: MongoDB is a document database designed to help developers
+       build modern applications faster.         It stores data in flexible, JSON-like
+       documents, making it easy to model data the same way your application code
+       uses it. The flexible schema lets you evolve your data model without downtime,
+       iterate quickly, and easily handle non-uniform data.
+
+(d)    FastApi: A modern, high-performance web framework that aims to simplify the
+       development of APIs with Python, using standard Python type hints. FastAPI
+       was chosen because of its ease of use and automatic documentation creation. It
+       will be used by the backend services to convert the python scripts into RESTful
+       APIs, allowing our Node.js server to communicate with the services that handle
+       audio processing, transcription, and translation.
+
+(e)    SileroVAD: Silero VAD works effectively with audios from a variety of domains
+       with a range of background noise and quality levels. It was trained on a massive
+       dataset that included over 6000 languages. It was chosen for its high accuracy
+       and ease of use. It will be used to detect speech segments and segment them
+       into sentence-level chunks.
+
+(f)    Whisper: a powerful automated speech recognition system that was trained on
+       a diverse dataset of multilingual speech data. It was chosen for its high accuracy
+       and ability to handle various languages and accents. It will be used to transcribe
+       the audio content into text, providing the foundation for further processing.
+
+(g)    SeamlessM4Tv2: The SeamlessM4T-v2 model was proposed in [32] by the
+       Seamless Communication team from Meta AI. SeamlessM4T-v2 is a collection
+       of models designed to provide high quality translation, allowing people from
+       different linguistic communities to communicate effortlessly through speech
+       and text. It is an improvement on the previous version.
+
+(h)    PyPinyin: pypinyin is a Chinese Pinyin conversion tool that supports multiple
+       lexicons, multiple output formats, and custom word group Pinyin libraries or
+       single-character Pinyin libraries.
+
+
+       LexiFlow’s development process employs automated workflows, ensuring
+smooth updates. First, developers commit changes to the code to version control
+in Git, as is illustrated in Figure 3.5. The code is then automatically built and tested on
+
+
+                                            27
+GitHub Actions. Lastly, the working application is packaged in Docker for deployment
+via Nginx. This automatic pipeline enables the identification of mistakes at an early
+stage and stable releases.
+
+
+        It is obvious from the figure how these steps link with our planning and
+monitoring which ensure development is efficient and reliable. This helps us to follow
+our hybrid Agile approach, allowing for regular updates without compromising the
+stability of the system.
+
+
+
+
+                       Figure 3.5   CI/CD Pipeline for LexiFlow
+
+
+
+
+3.5     System Requirement Analysis
+
+
+        This section gives details of system requirements that includes all hardware,
+software and other requirements. They will be helpful for fulfilling the functional and
+performance requirements, and can ensure successful development and operation of
+the above system.
+
+
+
+
+3.5.1   Hardware Requirements
+
+
+        These are the hardware requirements for the optimal deployment and user
+experience of the LexiFlow system:
+
+
+
+
+                                          28
+(a)     Server: A dedicated server equipped with at least 16 GB of RAM, 8 CPU cores,
+        and 500 GB of SSD storage for the back-end processing, database management
+        and API requests. In addition, for effectively processing audio material, at least
+        8GB of graphics memory is necessary, particularly when dealing with tasks
+        such as automatic speech recognition and machine translation.
+
+(b)     Development Machines:          To run development environments, testing
+        frameworks, and local databases, development machines should have a
+        minimum of 8 GB of RAM, enough storage (at least 256 GB SSD), and a
+        modern multi-core processor.
+
+(c)     Client Devices: Users should be able to use devices that have at least 4 GB
+        of RAM, and a modern browser (Chrome, Firefox, Safari) to interact with the
+        LexiFlow web application.
+
+
+
+
+3.5.2   Software Requirements
+
+
+        The LexiFlow system will require the following software components:
+
+
+(a)     Operating System: An operating system that is Linux-based (e.g., Ubuntu
+        22.04 or later) for the server environment to ensure stability and performance.
+
+(b)     Web Server: Nginx as the web server to handle HTTP requests and serve the
+        LexiFlow web application.
+
+(c)     Database:    MongoDB for storing user data, audio/video metadata, and
+        processed subtitles.
+
+(d)     Version Control: Git to manage code changes and track version history.
+
+(e)     Network Protocols: SSH to securely access the server remotly.
+
+(f)     IDE: Visual Studio Code, providing features like code completion, debugging,
+        and version control integration.
+
+(g)     Visual Design Tools: Enterprise Architect to design the system architecture
+        and UML diagrams. Figma to create user interface mockups.
+
+
+
+
+                                           29
+3.6    Chapter Summary
+
+
+       This chapter guides through the approach that was taken by LexiFlow
+with special emphasis on the hybrid Agile framework that combines both iterative
+development with structured phases. That way, the project could remain flexible enough
+to adapt to changing needs while still maintaining structured milestone checks. The
+technology stack has also been discussed in detail with the rationale of each decision.
+Lastly, the hardware and software requirements are also outlined, which sets the stage
+of a successful implementation in the subsequent phases.
+
+
+
+
+                                          30
+                                     CHAPTER 4
+
+
+
+
+                   REQUIREMENT ANALYSIS AND DESIGN
+
+
+
+
+4.1    Introduction
+
+
+       This chapter provides an overview of the requirement analysis and design phases
+for the LexiFlow project, which guides the development of a systematically organised
+language learning system designed for the UTM community. The chapter adheres
+to a systematic way of identification and analysis of specific requirements of various
+stakeholders through structured interactions like surveys and interviews.
+
+
+       After the detailed requirement analysis is conducted, the chapter then proceeds
+to design the system. This involves designing a system architecture that supports
+seamless interaction between LexiFlow’s various components. This involves designing
+the modular structure of the system and how those different modules communicate with
+each other, ensuring that the architecture achieves the project’s stated goals.
+
+
+
+
+4.2    Requirements Gathering and Analysis
+
+
+       The requirements for the LexiFlow project were analysed meticulously through
+an interview session with the stakeholders from UTM Language Academy. This was
+an essential process in detailing the limitations of the existing system and what specific
+needs the stakeholders have for the proposed LexiFlow platform. Their feedback
+highlighted the critical need for an automated solution that effectively processes
+authentic Mandarin content, providing learners with synchronized audio, pinyin, and
+English translations.
+
+
+       A greater emphasis was placed during the analysis on the following key
+functionalities identified as necessary for improving the overall effectiveness of the
+
+                                           31
+system: features for user evaluation, such as flashcards, quizzes and others as well as
+themed playlist features to ensure learning is more organized and structured. These
+kinds of features are expected to improve the learning process. Figure 4.1 below details
+the use case diagram of LexiFlow implementing the features stated previously.
+
+
+
+
+                     Figure 4.1   Use Case Diagram of LexiFlow
+
+
+
+       The requirement analysis phase ended with a proper understanding of the
+system specifications and functionalities. Such requirements are aimed at guiding
+the subsequent phases in the design and development of a system. Although the
+project is deliberately designed to align with the needs and expectations of the UTM
+community, LexiFlow also aims to overcome the deficiencies of the current system
+through innovative features that enhance user experience and safety. Such an approach
+
+
+                                          32
+is likely to result in the development of a final product well tailored to satisfy specific
+demands of the UTM community.
+
+
+
+
+4.2.1   Functional Requirements
+
+
+        The functional requirements of LexiFlow are derived from the use case diagram
+(Figure 4.1) and are shown in Table 4.1.
+
+              Table 4.1    Functional Requirements of LexiFlow System
+
+        ID          Name            Description
+
+                                    Allows new users to register and create an
+     UC01      Create Account
+                                    account in the system.
+                                    Enables registered users to authenticate and
+     UC02            Login
+                                    access the system.
+                                    Allows users to view and update their personal
+     UC03       Manage Profile
+                                    information and preferences.
+               Process YouTube      Handles the processing of YouTube video URLs
+     UC04
+                     URL            for content extraction.
+                Upload Local        Enables users to upload media files from their
+     UC05
+                    Media           local device for processing.
+                   Generate         Automatically creates subtitles for processed
+     UC06
+                   Subtitles        video content.
+               Find Translated      Provides functionality to locate translated
+     UC07
+                   Content          versions of content.
+                 Search Word        Allows users to search for definitions of words
+     UC08
+                  Definition        within the learning module.
+                                    Enables users to save new vocabulary words for
+     UC09      Save Vocabulary
+                                    later review.
+                                    Allows users to bookmark specific video
+     UC10      Bookmark Video
+                                    segments for future reference.
+
+                                                              (Continued on next page)
+
+
+
+                                            33
+    (Continued from previous page)
+
+      ID            Name             Description
+
+                Crowd-Report         Provides a mechanism for users to collabora-
+     UC11
+               Translation Error     tively report translation errors.
+                Review Saved         Enables users to review and practice vocabulary
+     UC12
+                  Vocabulary         they have previously saved.
+                    Export           Allows users to export their vocabulary lists for
+     UC13
+                Vocabulary list      use outside the system.
+                                     Automatically creates quizes from saved vocab-
+     UC14      Generate Quizes
+                                     ulary for study purposes.
+
+
+
+
+       As an example, the use case for processing YouTube URLs (UC04), shown in
+Table 4.2, involves key actors such as the user and the YouTube Data API. The system
+extracts video content by validating the URL, retrieving metadata, and checking the
+duration of the video.
+
+
+       All use cases, including detailed descriptions of the normal flow, alternative
+flows (such as handling invalid duration or restricted content), and exception flows, are
+fully documented in the Software Requirements Specification (SRS). The complete use
+case specifications can be found in Appendix ??.
+
+        Table 4.2   Use Case Description for UC04 <Process YouTube URL>
+
+ Use Case ID                 UC04
+ Use Case Name               Process YouTube URL
+ Description                 This use case allows an authenticated user to submit
+                             a YouTube video URL for automated transcription,
+                             translation, and synchronized subtitle generation within
+                             LexiFlow.
+ Actor(s)                    User, YouTube Data API
+ Pre-conditions              1.    The user is successfully logged into their LexiFlow
+                             account.
+
+
+
+                                             34
+                        2.     The LexiFlow system has internet access to reach
+                        YouTube.
+                        3. System has active connection to YouTube Data API
+Normal Flow (NF)        1. User navigates to ”Upload/Process Content” section
+                        2. User selects option to process YouTube URL
+                        3. User inputs valid YouTube video URL
+                        4. User submits URL for processing
+                        5. System validates URL and fetches video stream
+                        6. System initiates content processing pipeline
+                        7. System notifies user that processing has started
+Alternative Flow (AF)   AF1: Invalid YouTube URL
+                             1. If URL is invalid or video not found:
+                               1.1 System displays ”Invalid YouTube URL” error
+                               1.2 Prompts user to enter correct URL
+                        AF2: Restricted/Private Video
+                             1. If video is regionally restricted or private:
+                               1.1 System displays access restriction error
+                               1.2 Use case terminates unsuccessfully
+Exception Flow (EF)     EF1: Processing Pipeline Failure
+                             1. If content processing encounters critical error:
+                               1.1 System logs detailed error
+                               1.2 Displays generic failure message
+                               1.3 Use case terminates unsuccessfully
+                        EF2: Network Error During Fetch
+                             1. If network issue prevents video fetching:
+                               1.1 System displays network error message
+                               1.2 Prompts user to check connection
+                               1.3 Use case terminates unsuccessfully
+Post-conditions         1. YouTube video content is successfully extracted
+                        2. Content processing pipeline is initiated
+                        3. User receives processing status notification
+Special Requirements    1. System has internet access to reach YouTube
+                        2. YouTube video processing capabilities
+
+
+
+                                         35
+4.2.2    Non-Functional Requirements
+
+
+         Non-functional requirements specify quality attributes, system performance and
+constraints that LexiFlow must satisfy. These requirements are crucial for ensuring the
+system’s reliability, usability, and maintainability. A list of non-functional requirements
+is presented in Table 4.3.
+
+                       Table 4.3   Non-Functional Requirements
+
+         ID          Type           Description
+                                    The system shall process and validate YouTube
+        NFR-
+                 Performance        URLs within 3 seconds to ensure responsive user
+        001
+                                    experience.
+        NFR-                        The system shall support display text in at least
+                 Localization
+        002                         two languages: English and Mandarin.
+        NFR-                        System data shall be backed up automatically
+                    Backup
+        003                         every 24 hours and stored securely
+
+
+
+
+4.3      Architectural Design
+
+
+         The Pipe and Filter architectural pattern is a method of structuring data
+processing as a series of discrete components, called filters, linked together by pipes.
+Every filter takes the data, applies a particular transformation or processing and outputs
+the transformed data to the next filter through a pipe. Scalability, maintainability, and
+reusability are improved due to the modular approach, with filters being developed,
+tested, and replaced separately. The clear separation of concerns also makes system
+extensions and debugging easier in the future.
+
+
+         In the audio processing pipeline of LexiFlow, each filter can perform a unique
+function like voice activity detection, speech recognition, translation, and pinyin
+generation, making the Pipe and Filter pattern suitable.          The versatility of this
+modularity makes it simple to add new processing steps or to substitute out old steps
+without changing the system architecture.
+
+
+                                            36
+        The architecture of the LexiFlow system is composed of various components
+as depicted in Figure 4.2:
+
+
+(a)     User Interface (UI): The user interface (UI) is created using React 18, providing
+        an interactive application for users to upload media, view subtitles, and manage
+        vocabulary. It serves as the data source in the Pipe and Filter architecture.
+
+(b)     Backend Services: The back end services are the implementation on top of
+        Node.js and FastAPI, which process audio and video content, and are regarded
+        as pipes in the Pipe and Filter architecture.
+
+(c)     Audio Processing Pipeline: These are a sequence of filters that process
+        the voice signals to detect any voice activity (SileroVAD), automatic speech
+        recognition (Whisper), translation (SeamlessM4Tv2), and generation of pinyin
+        (pinyin).
+
+(d)     Database: User profiles, processed content metadata, subtitles and vocabulary
+        lists are stored in MongoDB. In the Pipe and Filter design, it is viewed as the
+        place to ”sink” data.
+
+
+
+
+                       Figure 4.2    LexiFlow System Architecture
+
+* The figure illustrates the Pipe and Filter architecture of LexiFlow, showing the modular
+processing components and their interactions.
+
+
+
+
+                                              37
+4.4    Chapter Summary
+
+
+       Chapter 4 discusses the requirements analysis and system design of the LexiFlow
+system, which presents an in-depth exploration of the development of a language
+learning platform. In its initial phase, the chapter systematically identifies the needs
+of the stakeholders, laying the groundwork for the detailed documentation of these
+requirements in the Software Requirements Specification (SRS, Appendix ??) and
+Software Design Document (SDD, Appendix ??).             It also explains the pipeline
+architecture approach which is used to build an efficient and scalable system and
+the user interface design, which is essential for further improving the usability and the
+system functionality. This systematic approach not only meets the goals of the project,
+but also provides a solid structural foundation for the successful implementation and
+deployment of LexiFlow. An automated end-to-end test and User Acceptance Testing
+was then performed to validate the system, and this validation was documented in a
+Software Test Document as opposed to a separate, standalone Software Test Document,
+as described in Chapter 5 and Appendices ?? and ??.
+
+
+
+
+                                           38
+                                                        CHAPTER 5
+
+
+
+
+                                             SYSTEM IMPLEMENTATION
+
+
+
+
+5.1        Introduction
+
+
+           This chapter delves into the actual development of LexiFlow. It first revisits the
+Pipe and Filter design pattern introduced in Chapter 4 and demonstrates how it was
+realized in the actual codebase. It then examines the core learning features: subtitle
+generation, flashcards, quizzes, and crowdsourced error reporting.
+
+
+
+
+5.2        Architecture in Practice: Pipe and Filter
+
+
+           Chapter 4 put forward a Pipe and Filter architectural style for the media-
+processing subsystem. Each stage of subtitle generation is its own filter: it takes
+the previous stage’s output, applies its transformation, and hands its own output
+downstream, with no stage aware of anything past its immediate neighbour. Figure 5.1
+shows how this played out. A source video gets downloaded and normalised by FFmpeg,
+transcribed by a cloud Whisper API, translated by an LLM, then finally annotated with
+pinyin and HSK levels before it’s saved as a subtitle document.
+
+
+
+
+              Source             FFmpeg          Whisper Large v3           LLM Translator      PyPinyin +   Subtitle document
+        (YouTube URL via       16 kHz mono         Turbo (ASR)           (DeepSeek-V4-Flash,   HSK tagging   (stored, served to
+      yt-dlp / local upload)     PCM/MP3            transcribe              time-chunked)                         frontend)
+
+
+
+
+          Figure 5.1           Pipe and Filter realisation of the media-processing pipeline
+
+
+
+
+                                                                    39
+       Figure 5.2 shows the orchestrator that wires these filters together. Every step
+independently reports its own progress and elapsed time, and if one step fails, none of
+the other filters need to know why they simply receive no input.
+
+
+async def run_pipeline(job_id, url, is_local=False):
+      # 1. Download (yt-dlp) or accept local upload
+      file_path = await asyncio.to_thread(download_video, url, job_id)
+
+
+      # 2. Transcribe (Whisper Large v3 Turbo, FFmpeg-normalised audio)
+      transcription = await asyncio.to_thread(api_transcribe, file_path)
+
+
+      # 3. Translate (LLM, time-chunked) + pinyin/HSK annotation
+      translation = await asyncio.to_thread(api_translate, transcription)
+
+
+      # 4. Post-process into the final subtitle document shape
+      end_result = await asyncio.to_thread(api_postprocess, translation)
+      Figure 5.2 Simplified pipeline orchestrator (backend-fastapi/api.py)
+
+
+
+
+       Each filter can be independently replaced. The transcription filter, for example,
+was moved from a locally-hosted Whisper model over to a cloud Whisper API midway
+through development, and nothing before or after it had to change, since the contract
+between stages, a list of timestamped text segments, stayed the same throughout.
+
+
+
+
+5.3    Core Feature: Generate Subtitles (UC06)
+
+
+       Subtitle generation is the entry point to every other feature in LexiFlow. When
+a video gets submitted, the Whisper Large v3 Turbo automatic speech recognition
+model transcribes it, a chat-completion language model translates it sentence-by-
+sentence into English, and then PyPinyin adds tone-marked pinyin along with per-
+character HSK difficulty levels. Figure 5.3 shows the translation filter. Segments get
+batched into five-minute time windows, which gives the model cross-sentence context
+
+                                          40
+without risking a truncated response, and the model has to return one JSON translation
+per input sentence, in order.
+
+
+SYSTEM_PROMPT = (
+     "...Respond with a JSON object of the exact form "
+     ’{{"translations": ["...", ...]}} containing exactly ’
+     "{count} strings, in the same order as the input...")
+
+
+for chunk in _chunk_by_time(segments, chunk_seconds=300):
+     translations = _request_translations(chunk_texts, ...)
+     for segment, translated_text in zip(chunk, translations):
+        segment["translated_text"] = translated_text
+Figure       5.3 Simplified       LLM         translation                            filter
+(backend-fastapi/src/llm/translator.py)
+
+
+
+
+       The subtitle that comes out gets rendered on the watch page as a bilingual,
+pinyin-annotated transcript synced to the video. Every Chinese token is individually
+tappable: tapping a character or word triggers an instant CC-CEDICT dictionary lookup
+(Figure 5.4) without playback stopping, which directly fulfils Search Word Definition
+(UC08) and feeds Save Vocabulary (UC09).
+
+
+
+
+    Figure 5.4    Bilingual subtitle playback with tap-to-look-up dictionary panel
+
+
+
+
+                                          41
+5.4       Core Feature: Generate and Review Flashcards (UC13)
+
+
+          Saved vocabulary gets reinforced through a spaced-repetition flashcard system
+built on the FSRS (Free Spaced Repetition Scheduler) algorithm, the same model
+behind the modern Anki ecosystem. Figure 5.5 shows how the scheduled gap for a
+single item stretches out across successful reviews. Early ones sit a day or two apart.
+Items you’ve got down get pushed weeks into the future, so review effort lands where
+it actually matters.
+
+
+                                                                  Example FSRS Scheduled-Interval Growth for One Vocabulary 90d
+                                                                                                                             Item
+               Scheduled interval until next review (days)
+
+
+
+
+                                                             80
+
+                                                             60                                                          50d
+
+                                                             40
+                                                                                                               28d
+
+                                                             20                                       15d
+                                                                                             8d
+                                                                    1d      2d      4d
+                                                             0
+                                                                     1       2      3         4         5       6        7       8
+                                                                                   Consecutive "Good" review number
+
+      Figure 5.5                                             Example FSRS scheduled-interval growth for one vocabulary item
+
+
+
+
+          Figure                                              5.6        shows   the     core     scheduling         function.       Each   grade
+(Again/Hard/Good/Easy) recomputes the item’s Stability and Difficulty, then works
+out the next review date straight from the published FSRS weight parameters. We built
+this in-house rather than leaning on a third-party scheduling service.
+
+
+
+
+                                                                                                42
+function calculateFsrs(card, rating) {
+     let { stability, difficulty, state } = card;
+     if (card.state === 0 || stability === 0) {
+             difficulty = clamp(FSRS_W[4] - FSRS_W[5] * (rating - 3), 1, 10);
+             stability    = rating === 1
+                 ? FSRS_W[0]
+                 : FSRS_W[1] + FSRS_W[2] * (rating - 2)
+                      + FSRS_W[3] * Math.pow(rating - 1, 0.5);
+     } else {
+             const r = Math.pow(1 + 0.1 * (card.elapsedDays / stability), -1);
+             difficulty = clamp(difficulty - FSRS_W[6] * (rating - 3), 1, 10);
+             stability = /* FSRS stability-growth formula, rating-dependent */ ...;
+     }
+     const scheduledDays = clamp(Math.round(stability), 1, 365);
+     return { stability, difficulty, scheduledDays, nextReviewDate: ... };
+}
+Figure 5.6    Simplified FSRS scheduler (backend-node/.../flashcards.service.js)
+
+
+
+
+         The frontend shows this as a flip-style card. The front displays only the Chinese
+word, and flipping it reveals pinyin and meaning next to the four grading buttons, each
+labelled with its resulting interval (Figure 5.7) so the learner sees the consequence of
+their self-assessment right away.
+
+
+
+
+                                            43
+         Figure 5.7   Flashcard review: back face with recall grading buttons
+
+
+
+
+5.5    Core Feature: Generate Quizzes (UC14)
+
+
+       LexiFlow can generate a quiz on demand from any vocabulary list, incorporating
+four question types: multiple choice, fill-in-the-blank, true/false, and short answer
+(Figure 5.8). For fill-in-the-blank, it just masks the target word inside a saved example
+sentence. Multiple-choice and true/false need something extra, though, plausible wrong
+answers, the distractors.
+
+
+
+
+                 Figure 5.8   A generated short-answer quiz question
+
+
+
+
+                                           44
+       Short-answer responses are trickier. You can’t grade them by exact string
+matching, since one correct answer might be worded a dozen different ways. Figure 5.9
+shows the grading filter: an exact match short-circuits right away, and if not, the
+reference answer and the learner’s response both go to an LLM, which has to hand back
+a structured verdict.
+
+
+def evaluate_short_answer(self, correct_reference, user_response):
+      if ref_clean == resp_clean:
+             return {"score": 1.0, "feedback": "Exact", "is_correct": True}
+
+
+      content = self.provider.chat_complete(
+             system=SYSTEM_PROMPT, user=json.dumps({...}), json_mode=True)
+      result = json.loads(content)
+      return {"score": result["score"], "feedback": result["feedback"],
+                 "is_correct": result["is_correct"]}
+Figure 5.9    Simplified short-answer judge (backend-fastapi/services/quiz/judge.py)
+
+
+
+
+       Distractor selection for multiple-choice questions combines that same LLM-
+based plausibility check with two lightweight local heuristics: a pinyin Levenshtein-
+distance score (catching words that sound alike) and a radical/Unicode similarity score
+(catching ones that look alike). The three scores get summed, then the top candidates
+from the same HSK tier win out, so a distractor stays believable without ever sneaking
+in as an accidental synonym of the right answer.
+
+
+
+
+5.6    Core Feature: Crowd-Reporting of Translation Errors (UC11)
+
+
+       Anyone watching can flag a subtitle line as incorrect, selecting a category:
+translation, pinyin, transcription, or other (Figure 5.10). However, a line is only
+escalated for correction after it clears a deliberately conservative dual threshold
+(Figure 5.11): at least three different reporters, and at least 25% of everyone who
+actually saw that line. So one annoyed viewer can’t flag stuff on their own.
+
+                                          45
+        Figure 5.10    Reporting a subtitle line and choosing an error category
+
+
+
+
+const FLAG_MIN_REPORTS = 3;
+const FLAG_THRESHOLD_PERCENT = 0.25;
+...
+flagged: c.count >= FLAG_MIN_REPORTS
+        && (c.count / viewerCount) >= FLAG_THRESHOLD_PERCENT
+Figure 5.11 Simplified flag threshold (backend-node/.../reports.service.js)
+
+
+
+
+       Once it’s flagged, the line gets fixed right away instead of sitting in a queue for
+a human moderator. The reported segment, three segments of surrounding context,
+and an instruction tied to the specific error category all get sent to Meta’s Llama 3.3
+70B model, which is locked to JSON-mode output. Critically, the original timestamps
+are always re-applied server-side rather than trusted to the model, so a hallucinated
+value can’t ever knock the subtitle out of sync with the audio, and the fix is saved as a
+separate, reversible patch instead of overwriting the original transcription.
+
+
+
+
+                                           46
+5.7    Core Feature: Browser Extension
+
+
+       For users who wish to access LexiFlow’s bilingual subtitles on content they are
+already watching, a companion browser extension overlays graded Chinese subtitles,
+word lookup, and text-to-speech directly onto the YouTube player, eliminating the need
+to copy video URLs into the main platform.
+
+
+
+
+           Figure 5.12    LexiFlow browser extension overlay on YouTube
+
+
+
+
+5.8    DevOps and Deployment
+
+
+       Figure 5.13 lays out where each piece of the system actually lives. The frontend
+is a static build served from Vercel’s edge CDN. The Node.js backend, the FastAPI
+worker, and PostgreSQL all sit together on one Tencent Cloud Lighthouse VM through
+Docker Compose, with a SaladPool instance kept around as a rarely-touched failover
+worker. On every push to main, GitHub Actions builds and pushes a container image
+to GHCR, then redeploys the VM on its own, so there’s no manual deployment step. All
+AI inference: transcription, translation, quiz grading, segment correction, is delegated
+to externally hosted language models (Whisper Large v3 Turbo, DeepSeek-V4-Flash,
+and Llama 3.3 70B), which means the deployment needs no GPU.
+
+
+
+                                          47
+                                                     User Browser
+
+
+
+                                                    Vercel Edge CDN
+                                               (React/TypeScript frontend)                     Hosted language models
+                                                                                               (Whisper, DeepSeek-V4,
+                                                                                  API calls        Llama 3.3 70B)
+
+
+                                 failover
+              SaladPool           (rare)       Tencent Cloud Lighthouse VM
+           FastAPI worker                   Docker Compose: Node.js backend +   queue + docs        MongoDB Atlas
+           (failover only)                     FastAPI worker + PostgreSQL                        (job queue + raw
+                                                                                                 subtitle documents)
+
+
+
+                                                               deploys
+
+
+
+
+                                                 GitHub Actions -> GHCR
+                                                 (CI/CD on push to main)
+
+
+
+
+                             Figure 5.13    LexiFlow deployment topology
+
+
+
+
+5.9    Verification and Validation
+
+
+       The system was validated using two distinct methods.                                          The first was an
+automated end-to-end Playwright suite which was executed directly against the live
+test deployment from UC01-04 to UC13-14. Of 30 test cases, 25 passed, 4 failed,
+and 1 was intentionally skipped. These failures were not due to problems with the test
+scripts but rather stemmed from two real, reproducible defects: one was the onboarding
+tour which could not be dismissed and the other was a missing single-page-application
+fallback route. Further details of the methodology, per test-case results and root cause
+analysis are provided in Appendix ??. Then came User Acceptance Testing, conducted
+with four users, representing four user groups identified in Chapter 4: a Mandarin
+learner who has been having trouble with the language, a self-directed language learner
+who requires some domain-specific vocabulary, a native speaker reviewer to ensure
+the correctness of the transcription and translation, and the instructor stakeholder.
+They returned feedback on the merit of the Tap-to-Look-Up, Vocabulary-Saving, and
+Quiz-Generation flows. It also brought two honest problems to the fore for later:
+the lack of accuracy when compared to commercial-grade captioning and the lack of
+classroom-management features, both of which were not functional requirements in
+
+
+
+                                                          48
+Chapter 4. Full participant profiles, scenarios and acceptance-criteria analysis is found
+in Appendix ??.
+
+
+
+
+5.10   Chapter Summary
+
+
+       This chapter has shown how the Pipe and Filter architecture described in Chapter
+4 transitioned into a pipeline where each stage can be independently replaced, and
+explored the four primary learning features , subtitle generation, flashcards, quizzes,
+and crowdsourced corrections. Each one combines a deterministic local algorithm
+(FSRS, threshold checks, pinyin/visual similarity) with an LLM only when open-ended
+judgement is required. Deployment was intentionally kept lightweight; all AI inference
+was delegated to external APIs. Through automated end-to-end testing and User
+Acceptance Testing, the system’s overall functionality was confirmed, and all identified
+defects traced back to specific, repeatable root causes rather than to architectural flaws.
+
+
+
+
+                                            49
+                                    CHAPTER 6
+
+
+
+
+                                   CONCLUSION
+
+
+
+
+6.1    Introduction
+
+
+       This chapter reviews LexiFlow’s development, its outcomes, and the extent to
+which the project met its initial objectives. The system has been fully built, tested
+through automated end-to-end testing and User Acceptance Testing, and deployed on
+live infrastructure. The focus here is on the results, the key successes, and areas
+identified for future improvement. Through continuous development and refinement,
+LexiFlow has the potential to become a reliable and widely adopted language learning
+platform for universities and beyond.
+
+
+
+
+6.2    Achievement of Project Objectives
+
+
+       The LexiFlow project had four main goals, which were specified in Section 1.4
+of this paper. They were all designed to make language learning easier.
+
+
+(a)    Elicit full Requirements from Stakeholders: The first goal was to gather a
+       complete set of requirements from stakeholders. This was accomplished by
+       interviewing stakeholders in a round-robin fashion. Through these discussions,
+       a clear picture emerged of the language-learning challenges faced by users
+       and the extent of language barriers within the UTM community.              These
+       requirements became functional and non-functional specifications for the
+       project, all documented in the Software Requirements Specification (SRS) in
+       Appendix ??. This objective was successfully completed.
+
+(b)    Design a Web-Based Platform: The second objective was to design a web-
+       based platform with an appropriate architecture. LexiFlow was designed around
+       a Pipe and Filter architecture. React 18 for the front end enabled the creation of
+
+                                          50
+       a user-friendly and responsive interface, while Python and Node.js were used
+       on the back end. The entire detailed design and documentation for the system
+       is contained in the Software Design Document (SDD) (see Appendix ??). This
+       objective was also successfully achieved.
+
+(c)    Develop the Full Platform: The third objective was to build the full language
+       learning platform. This was achieved by implementing the complete audio
+       processing pipeline — voice activity detection, automatic speech recognition,
+       translation, and pinyin generation, alongside the interactive learning features:
+       bilingual subtitle playback, flashcards, quizzes, and crowdsourced error
+       correction. All features were derived directly from the stakeholder requirements
+       and design specifications documented in Chapters 3 and 4.
+
+(d)    Evaluate and Test the Functionality: The final objective was to validate
+       how well LexiFlow performs and enhances the language learning experience.
+       This was carried out through an automated end-to-end Playwright test suite
+       covering use cases UC01 through UC14, yielding 25 passes out of 30 test cases
+       with two identified defects, and through User Acceptance Testing with four
+       representative users from the UTM community. The results are documented in
+       the Test Execution Report (Appendix ??) and UAT Report (Appendix ??). This
+       objective is considered complete.
+
+
+
+
+6.3    Service Enhancement and Practical Value
+
+
+       LexiFlow does more than meet the goals it set out to achieve. It delivers on two of
+the three dimensions commonly used to evaluate whether a system is genuinely useful:
+service improvement and quality-of-life improvement for its users. Commercial value
+has not yet been assessed, as no pricing model or market testing has been conducted.
+In terms of service quality, the stakeholder interview (Appendix ??) revealed that each
+3-minute clip of authentic Mandarin content required 10 to 30 minutes of manual
+work to transcribe, translate, and annotate with pinyin. This has been replaced by a
+pipeline that learners and teachers can trigger at will, and a crowd-correction feature
+allows for ongoing improvement without requiring that work to be repeated. This
+represents a significant change from the situation described by stakeholders, where
+
+
+                                           51
+very little authentic content was used due to the high cost of preparation. Quality-
+of-life improvements were independently confirmed during UAT (Appendix ??). One
+struggling student reported that this platform would have helped them achieve a better
+result on their actual exam. A native Mandarin speaker described using the platform
+daily to reduce real-world miscommunication in workplace settings , problems they had
+never encountered in classroom activities or through generic applications and textbooks.
+These are not assumed benefits but outcomes that users explicitly reported, reflecting
+genuine improvements in their learning and spoken communication confidence.
+
+
+
+
+6.4    Suggestions for Future Improvement
+
+
+       Building on findings from automated testing and UAT, the following
+improvements are recommended for future versions of LexiFlow. First are the two
+known defects identified during test execution. The onboarding tour that cannot be
+dismissed (LF-BUG-01) and a missing SPA fallback route, which results in a raw 404
+error when navigating directly to a URL (LF-BUG-02). Both need to be addressed
+before any production rollout: one prevents core navigation for first-time visitors, while
+the other affects returning users who navigate directly via URL. Secondly, there is the
+accuracy gap that the native-speaker UAT participant pointed out between the faster-
+whisper in LexiFlow’s self-hosted pipeline and commercial-grade auto-captioning on
+YouTube. This accuracy gap should be narrowed in future development. The crowd-
+reporting and AI-assisted correction feature described in Chapter 5 is well-suited for
+addressing this gap over time; measuring its long-term effectiveness in a subsequent
+evaluation round would be worthwhile. Third, and most significantly, is the need for
+a classroom-management module , a module that allows lecturers to assign videos or
+quizzes to a class and monitor each student’s progress through a dedicated dashboard.
+It was a significant unmet need expressed by instructor stakeholders during UAT and
+was not part of the initial functional requirements, making it a clear priority for the
+next development phase. Beyond the aforementioned evidence-based priorities is
+the decision to replace the large multilingual model with a lighter Mandarin-specific
+local model, reducing processing time and server VRAM and thus reducing operating
+costs. Further reductions in runtime and resource consumption could be achieved by
+
+
+                                           52
+adopting leaner inference runtimes such as ONNX or TensorRT. All these changes
+combined would make LexiFlow more precise, more convenient for institutions and
+more economical to operate.
+
+
+
+
+                                      53
+                               REFERENCES
+
+
+
+
+1.   Stephen D. Krashen. The input hypothesis : issues and implications. Longman,
+     1985. URL https://cir.nii.ac.jp/crid/1130282270300036096.
+
+2.   Richard E. Mayer. Multimedia Learning. Cambridge University Press, 2
+     edition, 2009.
+
+3.   Margaret Cychosz, Anele Villanueva, and Adriana Weisleder.         Efficient
+     estimation of children’s language exposure in two bilingual communities.
+     Journal of Speech, Language, and Hearing Research, 64(10):3843–3866,
+     2021. doi: 10.1044/2021\ JSLHR-20-00755. URL https://pubs.asha.
+     org/doi/abs/10.1044/2021_JSLHR-20-00755.
+
+4.   Anna Elizabeth Gowenlock, Courtenay Norbury, and Jennifer M. Rodd.
+     Exposure to language in video and its impact on linguistic development in
+     children aged 3–11: A scoping review. Journal of Cognition, Jul 2024. doi:
+     10.5334/joc.385.
+
+5.   Chinese Testing International. Hsk test syllabus, 2025. URL https://www.
+     chinesetest.cn/HSK. Official HSK Chinese Proficiency Standards.
+
+6.   Victoria Rodrigo, Stephen Krashen, and Barry Gribbons. The effectiveness
+     of two comprehensible-input approaches to foreign language instruction at
+     the intermediate level.   System, 32(1):53–60, 2004.     ISSN 0346-251X.
+     doi:   https://doi.org/10.1016/j.system.2003.08.003.   URL https://www.
+     sciencedirect.com/science/article/pii/S0346251X03000964.
+
+7.   Stephen Krashen and Beniko Mason. Sustained silent reading in foreign
+     language education: An update. Turkish Online Journal of English Language
+     Teaching, 2:70–73, 01 2017.
+
+8.   Linda Jones and Jan Plass. Supporting listening comprehension and vocabulary
+     acquisition in french with multimedia annotations. The Modern Language
+     Journal, 86:546 – 561, 12 2002. doi: 10.1111/1540-4781.00160.
+
+
+
+
+                                      54
+ 9.   Helen Shen. Imagery and verbal coding approaches in chinese vocabulary
+      instruction. Language Teaching Research, 14:485–499, 10 2010. doi: 10.
+      1177/1362168810375370.
+
+10.   Mingyue Li and Mairin Hennebry-Leung. Effects of monolingual and bilingual
+      subtitles on l2 vocabulary acquisition.    International Review of Applied
+      Linguistics in Language Teaching, 62, 12 2022. doi: 10.1515/iral-2022-0034.
+
+11.   Michael Everson. Best practices in teaching logographic and non-roman
+      writing systems to l2 learners. Annual Review of Applied Linguistics, 31,
+      03 2011. doi: 10.1017/S0267190511000171.
+
+12.   HELEN H. SHEN and CHUANREN KE.                  Radical awareness and word
+      acquisition among nonnative learners of chinese. The Modern Language
+      Journal, 91(1):97–111, 2007. doi: https://doi.org/10.1111/j.1540-4781.2007.
+      00511.x. URL https://onlinelibrary.wiley.com/doi/abs/10.1111/
+      j.1540-4781.2007.00511.x.
+
+13.   Lijuan Ye. Shall we delay teaching characters in teaching chinese as a foreign
+      language? Foreign Language Annals, 46, 12 2013. doi: 10.1111/flan.12049.
+
+14.   Yue Wang, Michelle Spence, Allard Jongman, and Joan Sereno. Training
+      american listeners to perceive mandarin tone. The Journal of the Acoustical
+      Society of America, 106:3649–58, 12 1999. doi: 10.1121/1.428217.
+
+15.   Hu Xu and Wei Hu. Review of Enhancements and limitations to ICT-based
+      informal language learning: Emerging research and opportunities, volume 24.
+      IGI Global, 06 2020. ISBN 9781799821168. doi: 10125/44724. URL http:
+      //hdl.handle.net/10125/4472.
+
+16.   Gilbert Dizon and John M. Gayed. An exploratory study on the use of
+      interactive video via netflix to improve second language aural vocabulary
+      learning. AsiaCALL Online Journal, 12(5):100–113, Oct. 2021. URL https:
+      //asiacall.info/acoj/index.php/journal/article/view/79.
+
+17.   Geòrgia Pujadas and Carmen Muñoz. When to switch captions off? exploring
+      the effects of l2 proficiency and vocabulary knowledge on comprehension of
+      captioned and uncaptioned tv. Studies in Second Language Learning and
+      Teaching, 06 2024. doi: 10.14746/ssllt.38036.
+
+
+
+                                       55
+18.   Sai Srujana Buddi, Utkarsh Oggy Sarawgi, Tashweena Heeramun, Karan
+      Sawnhey, Ed Yanosik, Saravana Rathinam, and Saurabh Adya. Efficient
+      multimodal neural networks for trigger-less voice assistants, 2023. URL
+      https://arxiv.org/abs/2305.12063.
+
+19.   IEEE International Conference on Acoustics, Speech and Signal Processing,
+      ICASSP 2019, Brighton, United Kingdom, May 12-17, 2019, 2019. IEEE.
+      ISBN 978-1-4799-8131-1.        URL http://ieeexplore.ieee.org/xpl/
+      mostRecentIssue.jsp?punumber=8671773.
+
+20.   Yefei Chen, Shuai Wang, Yanmin Qian, and Kai Yu. End-to-end speaker-
+      dependent voice activity detection, 2020. URL https://arxiv.org/abs/
+      2009.09906.
+
+21.   Satyam Kumar, Sai Srujana Buddi, Utkarsh Oggy Sarawgi, Vineet Garg,
+      Shivesh Ranjan, Ognjen (Oggi) Rudovic, Ahmed Hussen Abdelaziz, and
+      Saurabh Adya. Comparative analysis of personalized voice activity detection
+      systems: Assessing real-world effectiveness. In Interspeech, 2024. URL
+      https://arxiv.org/abs/2406.09443.
+
+22.   Linrong Pan, Chenglong Jiang, Gaoze Hou, and Ying Gao. Teochew-wild: The
+      first in-the-wild teochew dataset with orthographic annotations. In Proceedings
+      of the 2025 Conference of the North American Chapter of the Association for
+      Computational Linguistics: Human Language Technologies, 05 2025. doi:
+      10.48550/arXiv.2505.05056.
+
+23.   Silero Team. Silero vad: pre-trained enterprise-grade voice activity detector
+      (vad), number detector and language classifier.      https://github.com/
+      snakers4/silero-vad, 2024.
+
+24.   Biing-Hwang Juang and Lawrence R Rabiner. Automatic speech recognition–a
+      brief history of the technology development. Georgia Institute of Technology.
+      Atlanta Rutgers University and the University of California. Santa Barbara, 1
+      (67):1, 2005.
+
+25.   Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey,
+      and Ilya Sutskever. Robust speech recognition via large-scale weak supervision.
+      In International conference on machine learning, pages 28492–28518. PMLR,
+      2023.
+
+                                        56
+26.   Ngadiso Sutomo. The implementation of automated speech recognition (asr)
+      in elt classroom: A systematic literature review from 2012-2023. VELES
+      (Voices of English Language Education Society), 7:816–828, 01 2024. doi:
+      10.29408/veles.v7i3.23978.
+
+27.   Hany Hassan, Anthony Aue, Chang Chen, Vishal Chowdhary, Jonathan Clark,
+      Christian Federmann, Xuedong Huang, Marcin Junczys-Dowmunt, William
+      Lewis, Mu Li, et al. Achieving human parity on automatic chinese to english
+      news translation. arXiv preprint arXiv:1803.05567, 2018.
+
+28.   Loı̈c Barrault, Yu-An Chung, Mariano Coria Meglioli, David Dale, Ning Dong,
+      Mark Duppenthaler, Paul-Ambroise Duquenne, Brian Ellis, Hady Elsahar,
+      Justin Haaheim, et al. Seamless: Multilingual expressive and streaming speech
+      translation. arXiv preprint arXiv:2312.05187, 2023.
+
+29.   Elisabet Titik Murtisari, Andreas Kukuh Kristianto, and Gary Bonar. Self-
+      directed use of machine translation among language learners: Does it lead to
+      disruptive l2 avoidance? Foreign Language Annals, 57(4):1094–1114, 2024.
+      doi: https://doi.org/10.1111/flan.12768. URL https://onlinelibrary.
+      wiley.com/doi/abs/10.1111/flan.12768.
+
+30.   Wantana Singhto and Nuttaporn Phakdee. Adopting a combination of scrum
+      and waterfall methodologies in developing tailor-made saas products for thai
+      service and manufacturing smes. In 2016 International Computer Science
+      and Engineering Conference (ICSEC), pages 1–6, 2016. doi: 10.1109/ICSEC.
+      2016.7859882.
+
+31.   Nikson Muay, Eko Sediyono, and Johan Tambotoh. Integration waterfall and
+      scrum methodology in the development of simarga web application. Jurnal
+      RESTI (Rekayasa Sistem dan Teknologi Informasi), 8:223–233, 04 2024. doi:
+      10.29207/resti.v8i2.5652.
+
+32.   Seamless Communication, Loı̈c Barrault, Yu-An Chung, Mariano Coria
+      Meglioli, David Dale, Ning Dong, Mark Duppenthaler, Paul-Ambroise
+      Duquenne, Brian Ellis, Hady Elsahar, Justin Haaheim, John Hoffman, Min-
+      Jae Hwang, Hirofumi Inaguma, Christopher Klaiber, Ilia Kulikov, Pengwei
+      Li, Daniel Licht, Jean Maillard, Ruslan Mavlyutov, Alice Rakotoarison,
+      Kaushik Ram Sadagopan, Abinesh Ramakrishnan, Tuan Tran, Guillaume
+
+
+                                       57
+Wenzek, Yilin Yang, Ethan Ye, Ivan Evtimov, Pierre Fernandez, Cynthia Gao,
+Prangthip Hansanti, Elahe Kalbassi, Amanda Kallet, Artyom Kozhevnikov,
+Gabriel Mejia Gonzalez, Robin San Roman, Christophe Touret, Corinne
+Wong, Carleigh Wood, Bokai Yu, Pierre Andrews, Can Balioglu, Peng-
+Jen Chen, Marta R. Costa-jussà, Maha Elbayad, Hongyu Gong, Francisco
+Guzmán, Kevin Heffernan, Somya Jain, Justine Kao, Ann Lee, Xutai Ma,
+Alex Mourachko, Benjamin Peloquin, Juan Pino, Sravya Popuri, Christophe
+Ropers, Safiyyah Saleem, Holger Schwenk, Anna Sun, Paden Tomasello,
+Changhan Wang, Jeff Wang, Skyler Wang, and Mary Williamson. Seamless:
+Multilingual expressive and streaming speech translation, 2023. URL https:
+//arxiv.org/abs/2312.05187.
+
+
+
+
+                               58
+

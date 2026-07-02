@@ -1,0 +1,850 @@
+                                                                SECJ 4134 FINAL YEAR PROJECT 2
+
+                                                              RUBRIC : PROGRESS 1 (SUPERVISOR 5%)
+
+Criteria             Weight (%)   Excellent (4)                Good (3)                     Fair (2)                     Poor (1)              Score   Comments
+Milestone                         => 40% project               < 40% project completed      < 30% project completed      No/minimal
+                          30
+achieved                          completed                                                                              achievement
+Project execution                 No/minimal progress          Progress behind schedule     Progress on schedule         Progress ahead of
+                          20
+follows planning                                                                                                         schedule
+                                  Minimal new skills           Some improvement in skills   Some improvement in          Significant
+                                  developed, unable to         and knowledge, unable to     skills and knowledge,        improvement in
+                                  express new skills to        express new skills to        able to express new skills   skills and knowledge,
+Knowledge and
+                          20      supervisor                   supervisor                   to supervisor                able to
+skill improvement
+                                                                                                                         clearly express new
+                                                                                                                         skills to
+                                                                                                                         supervisor
+                                  Positive attitude, good      Good attitude, good          Good attitude, poor          Passive attitude,
+Work ethic                15      communication and            communication and            communication with           unable to communicate
+                                  relations with supervisor    relations with supervisor    supervisor                   with supervisor
+Self-reliance /                   Able to work and solve       Somewhat dependent on        Dependent on supervisor      Highly dependent on
+Independence                      problems independently       supervisor and able to                                    supervisor
+                          15
+                                                               solve problems with
+                                                               support
+                                                                                                                            Total marks (100.0)
+                                                                                                                    Progress 1 total marks (5%)
+
+
+
+*Presentation slide submission = COMPULSORY
+                                                                       SECJ 4134 FINAL YEAR PROJECT 2
+
+                                                                 RUBRIC : PROGRESS 2 (SUPERVISOR 5%)
+
+Criteria                 Weight (%)        Excellent (4)                Good (3)                    Fair (2)                    Poor (1)                 Score   Comments
+                                           => 70% project               < 70% project completed     < 60% project completed     No/minimal
+Milestone                                  completed                                                                            achievement
+achieved
+                                      30
+                                           No/minimal progress          Progress behind             Progress on schedule        Progress ahead of
+Project execution                                                       schedule                                                schedule
+follows planning
+                                      20
+                                           Significant improvement      Some improvement in        Some improvement in skills   Minimal new skills
+                                           in skills and knowledge,     skills and knowledge,      and knowledge, unable to     developed, unable to
+Knowledge and
+                                           able to clearly express      able to express new skills express new skills to        express new skills to
+skill improvement
+                                           new skills to supervisor     to supervisor              supervisor                   supervisor
+                                      20
+
+                                           Positive attitude, good      Good attitude, good         Good attitude, poor         Passive attitude,
+Work ethic                                 communication and            communication and           communication with          unable to communicate
+                                           relations with supervisor    relations with supervisor   supervisor                  with supervisor
+                                      15
+Self-reliance /                            Able to work and solve       Somewhat dependent on Dependent on supervisor           Highly dependent on
+Independence                               problems independently       supervisor and able to                                  supervisor
+                                                                        solve problems with
+                                      15                                support
+                                                                                                                                   Total marks (100.0)
+                                                                                                                           Progress 2 total marks (5%)
+
+
+
+*Presentation slide submission = COMPULSORY
+                                                                   SECJ 4134 FINAL YEAR PROJECT 2
+                                                                RUBRIC : FINAL REPORT (SUPERVISOR 20%)
+
+                                                                                    FINAL REPORT
+
+                                            Excellent (4)                Good (3)                    Fair (2)                         Poor (1)
+             Criteria          Weight (%)                                                                                                                         Score   Comments
+Abstract                                    The abstract is clear,     The abstract covers all     The abstract mentions the       The abstract is
+                                            concise, and effectively   key elements, though one key elements but lacks depth incomplete or unclear,
+                                            covers all key elements: a or two may lack detail or or clarity in one or more         missing key elements
+                                            well-defined problem,      clarity. Overall connection areas, with weak                or providing little
+                                   5
+                                            appropriate methodology, is good.                      connections.                    meaningful detail.
+                                            clear proposed solution,
+                                            and strong significance of
+                                            results.
+                                                                                                   Contents are somewhat           Contents incomplete
+                                            Contents are complete      Contents are complete
+                                                                                                   complete but not clearly        and poorly written
+                                            and clearly written        but not clearly written
+                                                                                                   written
+Introduction                      10
+                                                                                                                                   Mismatched
+                                            Contents reflect project   Contents fairly reflect
+                                                                                                   Contents fairly reflect project understanding of
+                                            understanding              project understanding
+                                                                                                   understanding                   project
+                                                                       Complete investigation of
+                                            Complete investigation of                                                              Limited investigation of
+                                                                       existing system /           Incomplete investigation of
+                                            existing system /                                                                      existing system /
+                                                                       techniques / hardware /     existing system / techniques
+                                            techniques / hardware /                                                                techniques / hardware /
+                                                                       software                    / hardware / software
+Literature review                 15        software                                                                               software
+                                                                         Satisfactory supporting     Insufficient supporting
+                                            Adequate and relevant                                                                     Limited supporting
+                                                                         literature but can be       literature
+                                            supporting literature                                                                     literature
+                                                                         improved
+                                            Appropriate selection of     Appropriate selection of                                     Incorrect selection of
+                                                                                                     Incorrect selection of
+                                            methodology                  methodology                                                  methodology
+                                                                                                     methodology
+Methodology                       15
+                                            Phases clearly stated and Phases not clearly stated                                       Phases not clearly
+                                                                                                  Phases not clearly stated
+                                            sufficient to support     and insufficient to support                                     stated and does not
+                                                                                                  and incomplete
+                                            project                   project                                                         reflect project progress
+Analysis: Software                          All requirements are      All requirements are        Requirements are partly             Requirements are
+Requirements Specification                  clearly specified,        mostly specified,           specified, with required            insufficiently specified,
+                                            complete with required    complete with required      models that are partly              with/without required
+                                            models that are correct   models that are mostly      correct                             models that are mostly
+                                  10                                  correct                                                         incorrect
+
+
+
+
+Design:                                     All design artefacts are     All design artefacts are    All design artefacts are partly Design artefacts are
+Software Design Descriptions                well described, complete     described, complete with    described, with required        insufficiently described,
+                                            with required models that    required models that are    models that are partly          with/without required
+                                            are correct and relevant     mostly correct and          correct and relevant to the     models that are mostly
+                                  10        to the problem               relevant to the problem     problem                         incorrect and relevant
+                                                                                                                                     to the problem
+
+
+
+
+                                            All required test cases  The designed test cases
+                                            are designed and correct are mostly correct                                          The designed test
+                                                                                                                                 cases are absent or
+                                                                                                     The designed test cases are
+                                            Implementation is well       Implementation is                                       mostly incorrect
+                                                                                                     partly correct
+                                            described                    described
+                                                                                                                                      Implementation is
+                                                                                                  Implementation is described
+Implementation and Testing        15        100% coverage of test        80%-99% coverage of                                          described,
+                                            cases executed, and          test cases executed, and
+                                                                                                  50%-79% coverage of test
+                                            completed debugging          completed debugging                                          Less than 50%
+                                                                                                  cases executed, and
+                                                                                                                                      coverage of test cases
+                                                                                                  completed debugging
+                                            UAT is performed and         UAT is performed but no                                      executed, and
+                                            improvement is made          improvement is made                                          completed debugging
+                                            based on the feedback        based on the feedback
+                                            Provides a
+                                            comprehensive and clear
+                                                                         Summarizes the system
+                                            summary of the system                                                                     Provides an incomplete
+                                                                         development process         Offers a basic summary of
+                                            development process,                                                                      or unclear summary of
+                                                                         clearly, but may miss       the system development
+                                            including key features,                                                                   the system
+                                                                         some details or specific    process, but lacks details or
+                                            design decisions, and                                                                     development process,
+                                                                         aspects of the              connections between
+                                            implementation details.                                                                   missing key aspects or
+                                                                         implementation.             different stages.
+Conclusion                        10                                                                                                  details.
+                                            Provides thoughtful and
+                                                                         Offers reasonable           Suggests future work but
+                                            detailed                                                                                  Does not address
+                                                                         recommendations for         does so in a vague or non-
+                                            recommendations for                                                                       future work or provides
+                                                                         future work, but they may   specific manner, lacking
+                                            future work, including                                                                    vague, unhelpful, or
+                                                                         be somewhat general or      clear direction or detail.
+                                            specific improvements,                                                                    irrelevant suggestions.
+                                                                         lack specific details.
+                                            potential extensions, and
+                                            further research areas.
+Relevance of Evidence                       All references are highly    Most references are        Some references are               Few or no relevant
+(References and Citations)                  relevant, credible, and      relevant and cited         relevant, but several are         references are used,
+                                   5        well-cited, effectively      correctly, though a few    outdated, poorly cited, or        citations are missing,
+                                            supporting the project’s     may lack depth or          lack clear relevance.             or sources lack
+                                            key points.                  connection to the project.                                   credibility.
+Appendix 1: List of Prompts                 Prompts are highly           Prompts are generally      Some prompts are relevant         Most prompts are
+Used                                        relevant and clearly         relevant and help achieve but others may lack clear          irrelevant or unrelated
+                                            aligned with the research    most research objectives, alignment with the research        to the research
+                                   5        objectives, helping to       though some prompts        goals or fail to effectively      objectives, providing
+                                            significantly advance the    may be loosely             advance the work.                 little or no contribution
+                                            design, analysis, or         connected to the goals.                                      to the final outcome.
+                                            brainstorming process.                                                                                                                   Relevancy of prompts used
+                                                                                                                                         Total marks (100.0)
+                                                                                                                              Final Report total marks (10%)
+
+
+                                                                        SOFTWARE DOCUMENTS : 10%
+             Criteria          Weight (%)   Excellent (4)                Good (3)                    Fair (2)                         Poor (1)                    Score   Comments
+User Acceptance Test                   50% Comprehensive test        Most key functionalities Incomplete, several key                 Few or no test cases,
+Report                                     cases, covering all       covered, some            functionalities missing,                scenarios unrealistic
+                                           critical functionalities, scenarios lack detail.   poorly described                        or missing.
+                                           realistic scenarios.                               scenarios.
+                                                                     Most results                                                     Poor or missing
+                                           All results documented, documented, failures       Results incomplete, weak                documentation, no
+                                           detailed analysis of      analyzed but not fully   analysis of failures,                   analysis of outcomes.
+                                           outcomes, clear           explained.               unclear outcomes.
+                                           explanations of failures.                                                                  No feedback
+                                                                     User feedback            Minimal user feedback,                  collected, unclear if
+                                           User feedback             collected, acceptance partial address of                         acceptance criteria
+                                           thoroughly collected,     criteria addressed but acceptance criteria, weak                 were met.
+                                           clear acceptance          justifications may be    justifications.
+                                           criteria met with         unclear.
+                                           detailed justification.
+Test Execution Report                  50% All test cases executed Most test cases            Test execution is partial,              Test execution is
+                                           thoroughly with           executed, with some      with incomplete logs or                 poorly documented
+                                           complete records of       records and logs, but a missing execution details                or incomplete, with
+                                           results, logs, and        few gaps in execution for key test cases.                        minimal records or
+                                           issues.                   details.                                                         missing logs.
+                                                                                              Results are documented
+                                           Results are               Results are well         but incomplete, with                    Results are poorly
+                                           meticulously              documented but may       missing pass/fail status or             documented, with
+                                           documented, with clear lack some detail in         unclear explanations.                   missing or incorrect
+                                           pass/fail status,         notes or explanations                                            pass/fail status, and
+                                           detailed notes, and       of test outcomes.                                                no clear explanations
+                                           explanation of test                                                                        of outcomes.
+                                           outcomes.
+                                                                                                                             Total marks (100.0)
+                                                                                                           SOFTWARE DOCUMENTS total marks (10%)
+                                                                       SECJ 4134 FINAL YEAR PROJECT 2
+                                                                   RUBRIC : FINAL REPORT (EVALUATORS 20%)
+
+                                                                                         FINAL REPORT
+
+             Criteria              Weight (%)   Excellent (4)                 Good (3)                        Fair (2)                         Poor (1)                    Score   Comments
+Abstract                                        The abstract is clear,     The abstract covers all     The abstract mentions the The abstract is
+                                                concise, and effectively   key elements, though one key elements but lacks depth incomplete or unclear,
+                                                covers all key elements: a or two may lack detail or or clarity in one or more   missing key elements
+                                                well-defined problem,      clarity. Overall connection areas, with weak          or providing little
+                                        5       appropriate methodology, is good.                      connections.              meaningful detail.
+                                                clear proposed solution,
+                                                and strong significance of
+                                                results.
+
+                                                                                                              Contents are somewhat            Contents incomplete
+                                                Contents are complete         Contents are complete
+                                                                                                              complete but not clearly         and poorly written
+                                                and clearly written           but not clearly written
+                                                                                                              written
+Introduction                           10
+                                                                                                                                              Mismatched
+                                                Contents reflect project      Contents fairly reflect
+                                                                                                              Contents fairly reflect project understanding of
+                                                understanding                 project understanding
+                                                                                                              understanding                   project
+                                                                          Complete investigation of
+                                                Complete investigation of                                                        Limited investigation of
+                                                                          existing system /         Incomplete investigation of
+                                                existing system /                                                                existing system /
+                                                                          techniques / hardware /   existing system / techniques
+                                                techniques / hardware /                                                          techniques / hardware /
+                                                                          software                  / hardware / software
+Literature review                      15       software                                                                         software
+                                                                              Satisfactory supporting         Insufficient supporting
+                                                Adequate and relevant                                                                          Limited supporting
+                                                                              literature but can be           literature
+                                                supporting literature                                                                          literature
+                                                                              improved
+                                                Appropriate selection of      Appropriate selection of                                         Incorrect selection of
+                                                                                                              Incorrect selection of
+                                                methodology                   methodology                                                      methodology
+                                                                                                              methodology
+Methodology                            15
+                                                Phases clearly stated and Phases not clearly stated                                           Phases not clearly
+                                                                                                      Phases not clearly stated
+                                                sufficient to support     and insufficient to support                                         stated and does not
+                                                                                                      and incomplete
+                                                project                   project                                                             reflect project progress
+Analysis: Software                              All requirements are      All requirements are                Requirements are partly         Requirements are
+Requirements Specification                      clearly specified,        mostly specified,                   specified, with required        insufficiently specified,
+                                       10       complete with required    complete with required              models that are partly          with/without required
+                                                models that are correct   models that are mostly              correct                         models that are mostly
+                                                                          correct                                                             incorrect
+Design:                                         All design artefacts are  All design artefacts are            All design artefacts are partly Design artefacts are
+Software Design Descriptions                    well described, complete described, complete with             described, with required        insufficiently described,
+                                                with required models that required models that are            models that are partly          with/without required
+                                       10
+                                                are correct and relevant mostly correct and                   correct and relevant to the     models that are mostly
+                                                to the problem            relevant to the problem             problem                         incorrect and relevant
+                                                                                                                                              to the problem
+                                                All required test cases  The designed test cases
+                                                are designed and correct are mostly correct                                               The designed test
+                                                                                                                                          cases are absent or
+                                                                                                              The designed test cases are
+                                                Implementation is well        Implementation is                                           mostly incorrect
+                                                                                                              partly correct
+                                                described                     described
+                                                                                                                                               Implementation is
+                                                                                                       Implementation is described
+Implementation and Testing             15       100% coverage of test         80%-99% coverage of                                              described,
+                                                cases executed, and           test cases executed, and
+                                                                                                       50%-79% coverage of test
+                                                completed debugging           completed debugging                                              Less than 50%
+                                                                                                       cases executed, and
+                                                                                                                                               coverage of test cases
+                                                                                                       completed debugging
+                                                UAT is performed and          UAT is performed but no                                          executed, and
+                                                improvement is made           improvement is made                                              completed debugging
+                                                based on the feedback         based on the feedback
+                                                Provides a
+                                                comprehensive and clear
+                                                                              Summarizes the system
+                                                summary of the system                                                                          Provides an incomplete
+                                                                              development process             Offers a basic summary of
+                                                development process,                                                                           or unclear summary of
+                                                                              clearly, but may miss           the system development
+                                                including key features,                                                                        the system
+                                                                              some details or specific        process, but lacks details or
+                                                design decisions, and                                                                          development process,
+                                                                              aspects of the                  connections between
+                                                implementation details.                                                                        missing key aspects or
+                                                                              implementation.                 different stages.
+Conclusion                             10                                                                                                      details.
+                                                Provides thoughtful and
+                                                                              Offers reasonable         Suggests future work but
+                                                detailed                                                                                       Does not address
+                                                                              recommendations for       does so in a vague or non-
+                                                recommendations for                                                                            future work or provides
+                                                                              future work, but they may specific manner, lacking
+                                                future work, including                                                                         vague, unhelpful, or
+                                                                              be somewhat general or clear direction or detail.
+                                                specific improvements,                                                                         irrelevant suggestions.
+                                                                              lack specific details.
+                                                potential extensions, and
+                                                further research areas.
+Relevance of Evidence                           All references are highly     Most references are        Some references are                   Few or no relevant
+(References and Citations)                      relevant, credible, and       relevant and cited         relevant, but several are             references are used,
+                                        5       well-cited, effectively       correctly, though a few    outdated, poorly cited, or            citations are missing,
+                                                supporting the project’s      may lack depth or          lack clear relevance.                 or sources lack
+                                                key points.                   connection to the project.                                       credibility.                                   Relevancy of prompts used
+Appendix 1: List of Prompts                     Prompts are highly            Prompts are generally      Some prompts are relevant             Most prompts are
+Used                                            relevant and clearly          relevant and help achieve but others may lack clear              irrelevant or unrelated
+                                                aligned with the research     most research objectives, alignment with the research            to the research
+                                        5       objectives, helping to        though some prompts        goals or fail to effectively          objectives, providing
+                                                significantly advance the     may be loosely             advance the work.                     little or no contribution
+                                                design, analysis, or          connected to the goals.                                          to the final outcome.
+                                                brainstorming process.
+                                                                                                                                                  Total marks (100.0)
+                                                                                                                                       Final Report total marks (10%)
+
+
+
+                                                                             SOFTWARE DOCUMENTS : 10%
+          Criteria                 Weight (%)   Excellent (4)                Good (3)                  Fair (2)                                Poor (1)                    Score   Comments
+User Acceptance Test Report                     Comprehensive test           Most key functionalities  Incomplete, several key                 Few or no test cases,
+                                                cases, covering all critical covered, some scenarios functionalities missing,                  scenarios unrealistic or
+                                                functionalities, realistic   lack detail.              poorly described scenarios.             missing.
+                                                scenarios.
+                                                                             Most results documented, Results incomplete, weak                 Poor or missing
+                                                All results documented,      failures analyzed but not analysis of failures, unclear           documentation, no
+                                                detailed analysis of         fully explained.          outcomes.                               analysis of outcomes.
+                                       50
+                                                outcomes, clear
+                                                explanations of failures.    User feedback collected, Minimal user feedback,                   No feedback collected,
+                                                                             acceptance criteria       partial address of                      unclear if acceptance
+                                                User feedback thoroughly addressed but                 acceptance criteria, weak               criteria were met.
+                                                collected, clear             justifications may be     justifications.
+                                                acceptance criteria met      unclear.
+                                                with detailed justification.
+Test Execution Report                           All test cases executed      Most test cases           Test execution is partial, with         Test execution is
+                                                thoroughly with complete executed, with some           incomplete logs or missing              poorly documented or
+                                                records of results, logs,    records and logs, but a   execution details for key test          incomplete, with
+                                                and issues.                  few gaps in execution     cases.                                  minimal records or
+                                                                             details.                                                          missing logs.
+                                                Results are meticulously                               Results are documented but
+                                       50
+                                                documented, with clear       Results are well          incomplete, with missing     Results are poorly
+                                                pass/fail status, detailed documented but may lack pass/fail status or unclear      documented, with
+                                                notes, and explanation of some detail in notes or      explanations.                missing or incorrect
+                                                test outcomes.               explanations of test                                   pass/fail status, and no
+                                                                             outcomes.                                              clear explanations of
+                                                                                                                                    outcomes.
+                                                                                                                                       Total marks (100.0)
+                                                                                                                     SOFTWARE DOCUMENTS total marks (10%)
+
+
+
+                                                                   RUBRIC : PRESENTATION (EVALUATORS 15%)
+
+                                                                                       PRESENTATION
+             Criteria              Weight (%) Excellent (4)                   Good (3)                        Fair (2)                        Poor (1)                     Score   Comments
+Clarity of Presentation                     20 Presentation is extremely      Presentation is clear and       Presentation is somewhat clear, Presentation is unclear,
+                                               clear and understandable,      understandable, but with        but with significant issues in  difficult to follow, and
+                                               with all key points well-      minor issues in articulation    articulation                    lacks articulation
+                                               articulated
+Project understanding /                     15 Clearly define the topic,      Define the topic, problem Define the topic, problem              Does not clearly define
+Content                                        problem, varied solution       and its possible solution and its possible solution              the topic, problem, and
+                                               and clearly justified                                                                           its possible solution.
+                                                                         Mostly understand the     Somehow understand the
+                                                Clearly understand the   key analysis and the      key analysis and the                        Little understanding of
+                                                key analysis and         expected findings but the expected findings but with                  the key analysis and
+                                                expected result with     explanation is not clear  little evidence                             the expected findings
+                                                relevant and accurate                                                                          with or without
+                                                evidence and appropriate Provide evidence with                                                 evidence
+                                                details                  multiple sources
+
+                                               Provide evidence with
+                                               multiple and varied
+                                               sources
+Organization and Structure                  15 Presentation is excellently    Presentation is well-           Presentation is somewhat         Presentation is not
+                                               organized with a logical       organized with a logical        organized but lacks a clear      organized
+                                               flow and clear structure       flow, but with minor issues     structure or flow
+Delivery and Presentation Skills            15 Presenter delivers             Presenter delivers              Presenter is somewhat            Presenter is lacking in
+                                               confidently and engagingly,    confidently, with good eye      confident but lacks engagement   confidence, engagement,
+                                               with excellent eye contact     contact and body language       or effective body language       and body language
+                                               and body language
+Visual Aids and Materials                   10 Visual aids are highly         Visual aids are effective and   Visual aids are somewhat        Visual aids are
+                                               effective, well-designed,      support the presentation,       effective but could be improved ineffective, poorly
+                                               and enhance the                with minor improvements         in design or relevance          designed, or do not
+                                               presentation                   needed                                                          support the presentation
+Response to Questions                       15 Responds to all questions      Responds to most                Responds to questions with      Fails to respond
+                                               confidently and accurately,    questions accurately with       some uncertainty or incomplete adequately to questions or
+                                               demonstrating a thorough       minor gaps in                   answers                         demonstrates lack of
+                                               understanding                  understanding                                                   understanding
+Appearance and                              10 Professionally dressed         Dressed appropriately           Dressed casually, some          Does not follow UTM
+attitude                                       and fully complies with        with minor deviations           violations of UTM Smart Day Smart Day dress code.
+                                               UTM Smart Day dress            from the UTM Smart Day          dress code.
+                                               code.                          dress code.                                                     Impolite to examiners.
+                                                                                                              Shows limited politeness or
+                                                Shows a positive and       Polite and respectful to           respect toward examiners.
+                                                respectful attitude toward examiners.
+                                                examiners.
+                                                                                                                                                  Total marks (100.0)
+                                                                                                                                       Presentation total marks (15%)
+                                                                       SECJ 4134 FINAL YEAR PROJECT 2
+
+                                                                RUBRIC : SUPERVISION (SUPERVISOR 10%)
+
+             Criteria          Weight (%) Excellent (4)              Good (3)                     Fair (2)                       Poor (1)                            Score   Comments
+Quality of Engagement                      Each meeting is well-     Meetings are generally       Some meetings lack             Meetings are
+                                           prepared, productive, and productive with some         preparation or focus, leading unproductive, lack
+                                           results in clear action   preparation, though not      to limited progress or unclear preparation, and result
+                                           items or progress; active all result in clear progress outcomes.                      in little to no progress
+                                   30      participation is evident. or action items.                                            or actionable
+                                                                                                                                 outcomes.
+
+
+
+
+Consistency in Reporting                   Provides comprehensive       Provides updates on            Provides inconsistent or         Provides little to no
+Progress                                   updates on progress          progress in most               incomplete updates on            updates on progress,
+                                           during each meeting,         meetings, though some          progress, with gaps in           with poor
+                                           ensuring clear               details or challenges may      communication about key          communication and
+                                           communication of             be overlooked.                 issues.                          unclear reporting of
+                                           achievements and                                                                             challenges.
+                                   30      challenges.
+
+
+
+
+Work ethic                                 Positive attitude, good      Good attitude, good            Good attitude, poor              Passive attitude,
+                                   10      communication and            communication and              communication with               unable to communicate
+                                           relations with supervisor    relations with supervisor      supervisor                       with supervisor
+Self-reliance / Independence               Able to work and solve       Somewhat dependent on          Dependent on supervisor          Highly dependent on
+                                           problems independently       supervisor and able to                                          supervisor
+                                   10                                   solve problems with
+                                                                        support
+Timeliness                                 Consistently meets all       Meets most deadlines, with     Frequently misses deadlines or   Rarely meets deadlines,
+                                           deadlines for                only minor delays that do      requires extensions, impacting   causing significant delays
+                                   20      deliverables, showing        not impact overall progress.   progress.                        in progress and
+                                           excellent time                                                                               supervision activities.
+                                           management.
+                                                                                                                                        Total marks (100.0)
+                                                                                                                              Supervision total marks (10%)
+                                                                           SECJ 4134 FINAL YEAR PROJECT 2
+
+                                                                      RUBRIC : OUTPUT (SUPERVISOR 40%)
+
+             Criteria           Weight (%)   Excellent (4)                  Good (3)                   Fair (2)                         Poor (1)                    Score   Comments
+Fulfilled aim, objectives and                Clearly and                    Fulfills the aim of the    Addresses the aim of the         Does not adequately
+scope                                        comprehensively fulfills       project with clarity,      project but does so in a         fulfill the aim of the
+                                             the stated aim of the          though some aspects        basic manner, with some          project, missing
+                                             project, demonstrating a       may be less thoroughly     important aspects potentially    significant aspects or
+                                             deep understanding and         addressed or explored.     overlooked.                      failing to address the
+                                             achievement of the                                                                         primary goal
+                                             project’s primary goal.        Achieves most of the         Meets some of the              effectively.
+                                                                            objectives, though some objectives, but several are
+                                             Successfully achieves all      objectives may not be        inadequately addressed or      Fails to achieve the
+                                             stated objectives,             fully realized or integrated partially completed            majority of the
+                                             demonstrating thorough         effectively.                                                objectives, with
+                                   20        completion and effective                                    Shows some adherence to        significant gaps or
+                                             integration of each            Generally adheres to the the scope, but includes            incomplete work
+                                             objective into the project.    scope, but may have          notable deviations or lacks    related to the project’s
+                                                                            minor deviations or          coverage of important areas.   goals.
+                                             Fully adheres to the           omissions that do not
+                                             defined scope of the           significantly impact the                                  Fails to adhere to the
+                                             project, including all         overall project.                                          defined scope, with
+                                             relevant aspects and                                                                     significant deviations or
+                                             boundaries, and stays                                                                    omissions impacting
+                                             within the project’s                                                                     the project's
+                                             limitations.                                                                             completeness and
+                                                                                                                                      relevance.
+Code programming                             Code is completely          Code is mostly correct      Code has several errors or       Code is largely
+                                             correct and functional,     and functional, with minor bugs, with some features not incorrect or non-
+                                             with all features working errors or issues that do      working as intended,             functional, with major
+                                             as intended without any     not significantly impact    affecting overall functionality. errors and significant
+                                             errors or bugs.             overall performance.                                         issues impacting
+                                                                                                     Code partially follows coding functionality.
+                                   15        Code fully adheres to       Code adheres to coding standards, with several
+                                             established coding          standards with minor        deviations that impact           Code does not adhere
+                                             standards and best          deviations, but overall     readability and                  to coding standards,
+                                             practices, including        maintains good structure maintainability.                    with poor structure,
+                                             proper naming               and readability.                                             inconsistent naming,
+                                             conventions, indentation,                                                                and formatting issues
+                                             and structure.                                                                           that affect readability.
+Completeness                                 The system covers all       The system covers most The system addresses some The system does not
+                                             specified requirements      of the specified            of the specified                 meet the majority of the
+                                             comprehensively,            requirements, with only     requirements, but several        specified requirements,
+                                             including any additional    minor requirements          key requirements are             with significant gaps
+                                             requirements that were      unmet or incomplete.        missing or partially             and unmet needs.
+                                             identified during                                       completed.
+                                             development.                Most features are                                            Many features are non-
+                                                                         functional, with only minor Several features are not         functional or missing,
+                                             All features of the system issues or features not       functional or only partially     severely impacting the
+                                             are fully functional and    fully operational.          operational, affecting overall system’s overall
+                                             operate as intended,                                    system completeness.             functionality and
+                                             providing complete          The system is generally                                      usability.
+                                             functionality as described. integrated and coherent, The system has noticeable
+                                                                         but there are minor         integration issues or lacks      The system exhibits
+                                   15
+                                             The system is well-         issues with the integration coherence in some areas,         significant integration
+                                             integrated and coherent, of components or logical affecting the overall user             problems and lacks
+                                             with all components         flow.                       experience.                      coherence, leading to a
+                                             working together                                                                         disjointed and
+                                             seamlessly and logically. The user interface is         The user interface has           ineffective user
+                                                                         generally user-friendly,    several usability issues,        experience.
+                                             The user interface is       with some usability issues making the system less
+                                             intuitive, user-friendly,   that do not significantly   user-friendly and requiring a The user interface is
+                                             and fully functional,       hinder the user             noticeable learning curve.       poorly designed and
+                                             providing an excellent      experience.                                                  difficult to use, resulting
+                                             user experience with                                                                     in a frustrating user
+                                             minimal learning curve.                                                                  experience and
+                                                                                                                                      significant usability
+                                                                                                                                      problems.
+Embedment of latest                          The system incorporates The system uses recent The system incorporates                   The system uses
+development practice                         cutting-edge technologies technologies and tools        some recent technologies,        outdated technologies
+                                             that are current and        effectively, but may not    but relies on older or less      or tools with minimal
+                                             relevant, demonstrating     fully utilize the most      advanced tools, showing          integration of recent
+                                             advanced knowledge and advanced options or all          limited integration of modern advancements,
+                                             innovative application of emerging trends.              practices.                       reflecting a lack of
+                                             tools and techniques.                                                                    current industry
+                                                                         The project shows a good The project shows basic             practices.
+                                             The project demonstrates application of                 application of professional
+                                   10
+                                             strong application of       professional development development practices, with The project lacks
+                                             professional development practices with minor           several deviations from          application of
+                                             practices, including        deviations from industry industry standards and              professional
+                                             adherence to industry       standards or best           limited focus on best            development practices,
+                                             standards, best practices practices.                    practices.                       with significant
+                                             in coding versioning and                                                                 deviations from
+                                             documentation                                                                            industry standards and
+                                                                                                                                      poor adherence to best
+                                                                                                                                      practices.
+Deployment to real                           The system is deployed      The system is deployed      The system is deployed with The system is not
+environment (eg web hosting                  to a real environment (eg to a real environment (eg noticeable issues or delays, deployed to a real
+or real device)                              web hosting or real         web hosting or real         with several components not environment
+                                             device) seamlessly with     device) successfully with fully integrated or functioning
+                                   20        minimal disruptions, and minor disruptions or           as intended.
+                                             the system integrates       deviations from the
+                                             perfectly into the real     planned schedule, and
+                                             environment.                most system components
+                                                                         are effectively integrated.
+Enhanced service and/or                      Has commercial value        2 of these:                 1 of these:                      No commercial value
+commercialization                                                        Has commercial value        Has commercial value
+                                             Enhances quality of                                                                      No effect on quality of
+                                   10        service                     Enhances quality of         Enhances quality of service service or of life
+                                                                         service
+                                             Increases quality of life                               Increases quality of life
+                                                                         Increases quality of life
+3 Minutes System Showcase                    The video clearly and                                   The video provides basic         The video is unclear or
+                                                                         The video demonstrates
+Video                                        effectively demonstrates                                information about the system disorganized, failing to
+                                                                         the system's features and
+                                             the system's features,                                  but lacks clarity in explaining effectively demonstrate
+                                                                         functionalities with good
+                                             functionalities, and                                    features and functionalities, the system's features
+                                                                         clarity, though some parts
+                                             benefits. The content is                                making some parts difficult      and functionalities,
+                                                                         may be less detailed or
+                                             well-organized and easy                                 to understand.                   leading to confusion.
+                                                                         slightly confusing.
+                                             to follow.
+                                   10                                                                  The presentation is basic  The presentation is
+                                                                         The presentation is
+                                             The presentation is highly                                and may lack engagement or unengaging,
+                                                                         generally engaging and
+                                             engaging, professional,                                   professionalism. The       unprofessional, or
+                                                                         professional with minor
+                                             and visually appealing.                                   speaker is somewhat clear  poorly executed. The
+                                                                         issues in visuals or
+                                             The speaker is confident,                                 but may have issues with   speaker is unclear or
+                                                                         delivery. The speaker is
+                                             articulate, and uses                                      delivery or visuals.       lacks confidence, and
+                                                                         clear but may lack some
+                                             effective visuals or props.                                                          visuals or props are
+                                                                         confidence or polish.
+                                                                                                                                  ineffective.
+                                                                                                                                      Total marks (100.0)
+                                                                                                                                  OUTPUT total marks (40%)
+                                                                              SECJ 4134 FINAL YEAR PROJECT 2
+
+                                                                        RUBRIC : OUTPUT (SUPERVISOR 40%)
+
+             Criteria           Weight (%)   Excellent (4)                     Good (3)                  Fair (2)                         Poor (1)                      Score   Comments
+Fulfilled aim, objectives and                Clearly and                       Fulfills the aim of the   Addresses the aim of the         Does not adequately
+scope                                        comprehensively fulfills          project with clarity,     project but does so in a         fulfill the aim of the
+                                             the stated aim of the             though some aspects       basic manner, with some          project, missing
+                                             project, demonstrating a          may be less thoroughly    important aspects potentially    significant aspects or
+                                   20        deep understanding and            addressed or explored.    overlooked.                      failing to address the
+                                             achievement of the                                                                           primary goal
+                                             project’s primary goal.     Achieves most of the           Meets some of the                 effectively.
+                                                                         objectives, though some objectives, but several are
+                                             Successfully achieves all   objectives may not be          inadequately addressed or         Fails to achieve the
+                                             stated objectives,          fully realized or integrated partially completed                 majority of the
+Code programming                             Code   is completely
+                                             demonstrating      thorough Code    is mostly correct
+                                                                         effectively.                   Code has several errors or        Code    is largely
+                                                                                                                                          objectives,    with
+                                             correct  and and
+                                             completion     functional,  and functional, with minor bugs,
+                                                                 effective                              Showswith   some
+                                                                                                                 some       featurestonot incorrect
+                                                                                                                        adherence         significantorgaps
+                                                                                                                                                         non-or
+                                             with all features
+                                             integration   of eachworkingerrors
+                                                                         Generallyor issues  thattodo
+                                                                                       adheres      the working
+                                                                                                        the scope,as but
+                                                                                                                     intended,
+                                                                                                                         includes         functional,
+                                                                                                                                          incompletewith workmajor
+                                             as intended
+                                             objective   intowithout    any
+                                                                         not
+                                                               the project.   significantly
+                                                                         scope,             impact
+                                                                                   but may have         affecting  overall functionality.
+                                                                                                        notable deviations    or lacks    errors
+                                                                                                                                          relatedand    significant
+                                                                                                                                                    to the  project’s
+                                             errors or bugs.             overall   performance.
+                                                                         minor deviations     or        coverage of important areas. issues
+                                                                                                                                          goals. impacting
+                                             Fully adheres to the        omissions that do not          Code partially follows coding functionality.
+                                   15        Code
+                                             definedfully  adheres
+                                                       scope    of theto Code    adheres
+                                                                         significantly     to coding
+                                                                                         impact   the   standards, with several           Fails to adhere to the
+                                             established    coding
+                                             project, including     all  standards     with minor
+                                                                         overall project.               deviations that impact            Code
+                                                                                                                                          defined does   not adhere
+                                                                                                                                                     scope,   with
+                                             standards     and best
+                                             relevant aspects      and   deviations, but overall        readability and                   to coding standards,
+                                                                                                                                          significant   deviations or
+                                             practices,
+                                             boundaries,  including
+                                                             and stays   maintains good structure maintainability.                        with  poor structure,
+                                                                                                                                          omissions     impacting
+                                             proper   naming
+                                             within the   project’s      and readability.                                                 inconsistent
+                                                                                                                                          the project's naming,
+                                             conventions,
+                                             limitations.     indentation,                                                                and   formatting
+                                                                                                                                          completeness and   issues
+                                             and structure.                                                                               that  affect readability.
+                                                                                                                                          relevance.
+Completeness                                 The system covers all       The system covers most The system addresses some The system does not
+                                             specified requirements      of the specified               of the specified                  meet the majority of the
+                                             comprehensively,            requirements, with only        requirements, but several         specified requirements,
+                                             including any additional    minor requirements             key requirements are              with significant gaps
+                                             requirements that were      unmet or incomplete.           missing or partially              and unmet needs.
+                                             identified during                                          completed.
+                                             development.                Most features are                                                Many features are non-
+                                                                         functional, with only minor Several features are not             functional or missing,
+                                             All features of the system issues or features not          functional or only partially      severely impacting the
+                                             are fully functional and    fully operational.             operational, affecting overall system’s overall
+                                             operate as intended,                                       system completeness.              functionality and
+                                             providing complete          The system is generally                                          usability.
+                                             functionality as described. integrated and coherent, The system has noticeable
+                                                                         but there are minor            integration issues or lacks       The system exhibits
+                                   15
+                                             The system is well-         issues with the integration coherence in some areas,             significant integration
+                                             integrated and coherent, of components or logical affecting the overall user                 problems and lacks
+                                             with all components         flow.                          experience.                       coherence, leading to a
+                                             working together                                                                             disjointed and
+                                             seamlessly and logically. The user interface is            The user interface has            ineffective user
+                                                                         generally user-friendly,       several usability issues,         experience.
+                                             The user interface is       with some usability issues making the system less
+                                             intuitive, user-friendly,   that do not significantly      user-friendly and requiring a The user interface is
+                                             and fully functional,       hinder the user                noticeable learning curve.        poorly designed and
+                                             providing an excellent      experience.                                                      difficult to use, resulting
+                                             user experience with                                                                         in a frustrating user
+                                             minimal learning curve.                                                                      experience and
+                                                                                                                                          significant usability
+                                                                                                                                          problems.
+Embedment of latest                          The system incorporates The system uses recent The system incorporates                       The system uses
+development practice                         cutting-edge technologies technologies and tools           some recent technologies,         outdated technologies
+                                             that are current and        effectively, but may not       but relies on older or less       or tools with minimal
+                                             relevant, demonstrating     fully utilize the most         advanced tools, showing           integration of recent
+                                             advanced knowledge and advanced options or all             limited integration of modern advancements,
+                                             innovative application of emerging trends.                 practices.                        reflecting a lack of
+                                             tools and techniques.                                                                        current industry
+                                                                         The project shows a good The project shows basic                 practices.
+                                             The project demonstrates application of                    application of professional
+                                   10
+                                             strong application of       professional development development practices, with The project lacks
+                                             professional development practices with minor              several deviations from           application of
+                                             practices, including        deviations from industry industry standards and                  professional
+                                             adherence to industry       standards or best              limited focus on best             development practices,
+                                             standards, best practices practices.                       practices.                        with significant
+                                             in coding versioning and                                                                     deviations from
+                                             documentation                                                                                industry standards and
+                                                                                                                                          poor adherence to best
+                                                                                                                                          practices.
+Deployment to real                           The system is deployed      The system is deployed         The system is deployed with The system is not
+environment (eg web hosting                  to a real environment (eg to a real environment (eg noticeable issues or delays, deployed to a real
+or real device)                              web hosting or real         web hosting or real            with several components not environment
+                                             device) seamlessly with     device) successfully with fully integrated or functioning
+                                   20        minimal disruptions, and minor disruptions or              as intended.
+                                             the system integrates       deviations from the
+                                             perfectly into the real     planned schedule, and
+                                             environment.                most system components
+                                                                         are effectively integrated.
+Enhanced service and/or                      Has commercial value        2 of these:                    1 of these:                       No commercial value
+commercialization                                                        Has commercial value           Has commercial value
+                                             Enhances quality of                                                                          No effect on quality of
+                                   10        service                     Enhances quality of            Enhances quality of service service or of life
+                                                                         service
+                                             Increases quality of life                                  Increases quality of life
+                                                                         Increases quality of life
+3 Minutes System Showcase                    The video clearly and                                                                        The video is unclear or
+                                                                         The video demonstrates
+Video                                        effectively demonstrates                                   The video provides basic          disorganized, failing to
+                                                                         the system's features and
+                                             the system's features,                                     information about the system effectively demonstrate
+                                                                         functionalities with good
+                                             functionalities, and                                       but lacks clarity in explaining the system's features
+                                                                         clarity, though some parts
+                                             benefits. The content is                                   features and functionalities, and functionalities,
+                                                                         may be less detailed or
+                                             well-organized and easy                                    making some parts difficult       leading to confusion.
+                                                                         slightly confusing.
+                                             to follow.                                                 to understand.
+                                   10                                                                                                     The presentation is
+                                                                         The presentation is
+                                             The presentation is highly                                 The presentation is basic         unengaging,
+                                                                         generally engaging and
+                                             engaging, professional,                                    and may lack engagement or unprofessional, or
+                                                                         professional with minor
+                                             and visually appealing.                                    professionalism. The              poorly executed. The
+                                                                         issues in visuals or
+                                             The speaker is confident,                                  speaker is somewhat clear         speaker is unclear or
+                                                                         delivery. The speaker is
+                                             articulate, and uses                                       but may have issues with          lacks confidence, and
+                                                                         clear but may lack some
+                                             effective visuals or props.                                delivery or visuals.              visuals or props are
+                                                                         confidence or polish.
+                                                                                                                                          ineffective.
+                                                                                                                                               Total marks (100.0)
+                                                                                                                                     OUTPUT total marks (40%)
+                                                                       SECJ 4134 FINAL YEAR PROJECT 2
+
+                                                               RUBRIC : SHORT PAPER(EVALUATORS 5%)
+
+           Criteria         Weight (%)   Excellent (4)                  Good (3)                       Fair (2)                      Poor (1)                   Score   Comments
+Technical Content                        The paper provides             The paper shows good           The paper includes basic      The paper provides
+                                         exceptional technical          technical content,             technical content with        minimal technical
+                                         content, including             covering essential             fundamental concepts and      content, with limited
+                                         advanced concepts,             concepts and tools. It         tools. Understanding of the   coverage of concepts
+                               50
+                                         tools, and techniques. It      provides a solid               system is adequate but        and tools. The
+                                         demonstrates a thorough        understanding of the           lacking in detail.            understanding of the
+                                         understanding of the           system with some                                             system is superficial or
+                                         system and technologies.       advanced details.                                            unclear.
+Clarity of Implementation                The paper provides a           The paper describes the        The paper provides a basic The paper provides an
+                                         clear and detailed             implementation clearly         description of the            unclear or disorganized
+                                         description of the             but may lack some detail       implementation with limited description of the
+                                         software implementation        or organization. Basic         clarity. Information and      implementation, lacking
+                                         with well-organized            information and diagrams       diagrams may be               detail and coherence,
+                                         information, diagrams,         are provided but could be      disorganized, making the      making it hard to
+                               30        and explanations. The          more comprehensive.            process somewhat difficult to understand the
+                                         process is easy to                                            follow.                       process.
+                                         understand.
+
+
+
+Adherence to Guidelines                  The paper adheres to all       The paper mostly               The paper partially adheres
+                                                                                                                                 The paper does not
+                                         guidelines, including          adheres to guidelines          to guidelines with severaladhere to guidelines,
+                                         formatting, length, and        with minor deviations in       deviations in formatting, with significant
+                                         citation style. It meets or    formatting, length, or         length, or citation style.deviations in
+                               20
+                                         exceeds all requirements       citation style. It generally   Some requirements are not formatting, length, or
+                                         with careful attention to      meets requirements with        fully met.                citation style. Many
+                                         detail.                        few errors.                                              requirements are not
+                                                                                                                                 met.
+                                                                                                                                     Total marks (100.0)
+                                                                                                                          SHORT PAPER total marks (5%)
+           Criteria         Weight (%)   Excellent (4)                 Good (3)                       Fair (2)                      Poor (1)                   Score   Comments
+Technical Content                        The paper provides            The paper shows good           The paper includes basic      The paper provides
+                                         exceptional technical         technical content,             technical content with        minimal technical
+                                         content, including            covering essential             fundamental concepts and      content, with limited
+                                         advanced concepts,            concepts and tools. It         tools. Understanding of the   coverage of concepts
+                               50        tools, and techniques. It     provides a solid               system is adequate but        and tools. The
+                                         demonstrates a thorough       understanding of the           lacking in detail.            understanding of the
+                                         understanding of the          system with some                                             system is superficial or
+                                         system and technologies.      advanced details.                                            unclear.
+
+
+Clarity of Implementation                The paper provides a          The paper describes the        The paper provides a basic The paper provides an
+                                         clear and detailed            implementation clearly         description of the            unclear or disorganized
+                                         description of the            but may lack some detail       implementation with limited description of the
+                                         software implementation       or organization. Basic         clarity. Information and      implementation, lacking
+                                         with well-organized           information and diagrams       diagrams may be               detail and coherence,
+                                         information, diagrams,        are provided but could be      disorganized, making the      making it hard to
+                               30        and explanations. The         more comprehensive.            process somewhat difficult to understand the
+                                         process is easy to                                           follow.                       process.
+                                         understand.
+
+
+
+Adherence to Guidelines                  The paper adheres to all      The paper mostly               The paper partially adheres
+                                                                                                                                The paper does not
+                                         guidelines, including         adheres to guidelines          to guidelines with severaladhere to guidelines,
+                                         formatting, length, and       with minor deviations in       deviations in formatting, with significant
+                                         citation style. It meets or   formatting, length, or         length, or citation style.deviations in
+                               20
+                                         exceeds all requirements      citation style. It generally   Some requirements are not formatting, length, or
+                                         with careful attention to     meets requirements with        fully met.                citation style. Many
+                                         detail.                       few errors.                                              requirements are not
+                                                                                                                                met.
+                                                                                                                                    Total marks (100.0)
+                                                                                                                         SHORT PAPER total marks (5%)
+

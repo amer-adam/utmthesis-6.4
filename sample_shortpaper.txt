@@ -1,0 +1,388 @@
+                                                   UTM Computing Proceedings
+                                       Innovations in Computing Technology and Applications
+                                               Volume: 4 | Year: 2026 | ISBN No. :
+
+  StuOrganize: An AI-Powered Web Application for Student Academic Success and
+                               Collaboration
+                 Mohaned Mohamed Saleh Altater                                      Dr. Rohayanti Binti Hassan
+                       Faculty of Computing                                           Faculty of Computing
+                   Universiti Teknologi Malaysia                                   Universiti Teknologi Malaysia
+                       Johor Bahru, Malaysia                                          Johor Bahru, Malaysia
+                 saleh.mohaned@graduate.utm.my                                          rohayanti@utm.my
+
+
+
+
+Abstract—This paper presents StuOrganize, an AI-powered web
+                                                                   Problem Background
+application designed to support Computer Science students in
+learning Data Structures and Algorithms (DSA). The system             Students at the tertiary level often experience difficulty
+addresses common academic challenges such as limited
+                                                                   when transitioning from guided school-based learning to
+                                                                   independent university learning. This issue becomes more
+personalized guidance, unclear awareness of skill gaps, and
+                                                                   significant in technical courses such as DSA, where students
+unstructured peer collaboration. StuOrganize integrates secure     must understand abstract concepts and apply them to problem-
+user management, an AI chatbot for DSA assistance, a multiple-     solving tasks.
+choice skill-gap assessment tool, a study group planner, and an       The first problem is the lack of immediate and focused
+administrative monitoring dashboard. The system was developed      academic guidance. Students often search across many online
+using React and TypeScript for the frontend, Node.js and Express   resources to understand DSA concepts, but the explanations
+with TypeScript for the backend, PostgreSQL for structured data    may not match their level of understanding or the exact topic
+storage, and Gemini API for AI-supported responses. The final      they are studying.
+system was evaluated through black-box testing and user               The second problem is the lack of structured skill-gap
+acceptance testing to confirm that the main functions worked       awareness. Many students do not clearly know which DSA
+according to the defined requirements.                             topics they are weak in until they perform poorly in
+Keyword: Academic support, Artificial Intelligence, Data           assessments or interviews. Without a simple assessment
+                                                                   mechanism, students may continue studying without clear
+Structures and Algorithms, Skill Gap Assessment, Study Group
+                                                                   direction.
+Planner, MVC
+                                                                      The third problem is unstructured collaboration. Students
+Introduction                                                       may use general messaging applications to create study
+                                                                   groups, but these tools do not organize groups based on DSA
+    University students are increasingly expected to manage
+                                                                   topics, availability, or academic purpose. As a result, peer
+independent learning, technical skill development, and peer
+                                                                   learning becomes less effective.
+collaboration. For Computer Science students, Data Structures
+and Algorithms (DSA) is one of the most important academic         Current Related Systems
+areas because it supports problem solving, technical
+                                                                   A. Telegram and WhatsApp
+interviews, and advanced computing subjects.
+    However, many students face difficulty in topics such as          Telegram and WhatsApp are widely used for student
+recursion, searching, sorting, linked lists, and algorithmic       communication and informal study groups. They allow fast
+thinking. These difficulties are often made worse by limited       messaging and group discussion, but they do not provide
+personalized guidance and unstructured communication               academic structure, topic-based matching, skill assessment, or
+among peers. Although many digital tools are available, most       administrative monitoring.
+of them focus on either communication, general productivity,       B. LeetCode
+or independent coding practice rather than providing an               LeetCode provides coding challenges for interview
+integrated learning workflow.                                      preparation and algorithmic practice. However, it is mainly
+    StuOrganize was developed to address this gap by               designed for individual coding exercises and does not provide
+combining academic guidance, self-assessment, and                  university-focused learning support, topic-based study groups,
+structured collaboration features in a single platform. The        or beginner-friendly MCQ assessment for skill-gap
+system helps students ask DSA-related questions, identify          identification.
+weak areas through MCQ assessments, and organize study             C. Khan Academy
+groups based on topics and availability. It also supports
+administrative monitoring, allowing admins to manage users,           Khan Academy offers educational videos and learning
+assessment content, and group sessions.                            content, but most content is static and requires students to
+explore topics manually. It does not provide direct                                                  Phase                             Activities
+
+personalized feedback, DSA-specific chatbot support, or                               Requirement Gathering               Identify DSA learning, assessment,
+structured peer collaboration for the StuOrganize target                                                                  and collaboration problems.
+context.                                                                              Sprint 1                            Develop user registration, login,
+                                                                                                                          profile, and role-based access.
+D. Discussion                                                                         Sprint 2                            Develop DSA assessment topics,
+                                                                                                                          questions, scoring, and results.
+   The existing systems provide useful but separated                                  Sprint 3                            Develop chatbot support and Gemini
+functions. Communication tools support discussion, coding                                                                 API integration.
+platforms support practice, and educational websites provide                          Sprint 4                            Develop study group creation,
+learning content. However, none of them combines AI-based                                                                 joining, and admin management.
+                                                                                      Testing                             Apply black-box testing and user
+DSA guidance, MCQ-based skill assessment, and structured                                                                  acceptance testing.
+study group planning in one academic system.                                                         Table 3. Detailed methodology phases.
+         Feature           Telegram    LeetCode       Khan        StuOrganize
+                                                                                 System Requirements and Design
+     Communication        Yes         Limited        No          Yes
+     DSA chatbot          No          No             No          Yes                The main stakeholders of the system are students and
+     Skill-gap quiz       No          Limited        No          Yes             administrators. Students require a system that supports
+     Study groups         Informal    No             No          Topic-based
+     Admin                No          No             No          Yes
+                                                                                 learning, self-assessment, and group collaboration.
+     monitoring                                                                  Administrators require a system that supports monitoring and
+    Table 1. Comparison between existing systems and StuOrganize.                management of users, assessments, and study group sessions.
+Tools and Technology Used                                                        A. Use Case Diagram
+   This project uses technologies that support modular web                          Use cases and actors are the main elements in the use case
+application development. The selected stack provides a clear                     diagram. The diagram is used to show the core functionalities
+separation between frontend interfaces, backend APIs,                            and the users who can perform them. StuOrganize consists of
+database storage, and AI integration.                                            two primary actors, Student and Admin, and an external AI
+              Tool/Technology                          Description               system used to support chatbot response generation.
+
+     React + TypeScript                     Used to develop responsive and
+                                            reusable frontend views.
+     Node.js + Express                      Used to build REST APIs and
+                                            backend request handling.
+     PostgreSQL                             Used to store users, assessments,
+                                            chat history, and groups.
+     JWT                                    Used for secure authentication and
+                                            role-based access control.
+     Gemini API                             Used to generate DSA-related
+                                            chatbot responses.
+     Visual Studio Code                     Used as the main development
+                                            environment.
+      Table 2. Tools and technology used in developing the system.
+
+Methodology
+   The development of StuOrganize followed a hybrid
+Waterfall-Agile methodology. Waterfall was used during
+early requirement and design phases because these phases
+required stable documentation, diagrams, and approval before
+implementation. Agile was then used during implementation
+and testing, where the system was developed through feature-
+based iterations.
+
+
+
+
+                                                                                                                                                               Fig.
+                                                                                                         2. StuOrganize use case diagram.
+                                                                                                   Use Case                           Description
+
+                                                                                      Register / Login                    Users can create an account and
+      Fig. 1. Hybrid Waterfall-Agile methodology for StuOrganize.                                                         access the system securely.
+                                                                                      Ask DSA Question                    Students can ask DSA-related
+A. Phases details for the SDLC                                                                                            questions using the chatbot.
+                  Use Case                         Description
+
+     Solve Assessment                   Students can complete MCQ
+                                        assessments based on DSA topics.
+     View Score                         Students can view results and
+                                        weakness points after assessment.
+     Create / Join Group                Students can create or join study
+                                        groups based on topic.
+     Manage Users                       Admins can view and manage
+                                        registered users.
+     Manage Assessments                 Admins can create and update
+                                        assessment content.
+     Manage Groups                      Admins can monitor and manage
+                                        group sessions.
+                    Table 4. Use case description summary.
+B. Architecture Design and Implementation
+    Software projects require architectural design to organize
+system components and clarify how the system communicates
+internally. StuOrganize uses a modular MVC-based
+architecture with a service layer. The frontend contains the
+view components, while the backend contains routes,
+                                                                                Fig. 4. Entity relationship diagram of the implemented database.
+controllers, services, and models. The models communicate
+with PostgreSQL tables, and the AI-related service                                                Entity                           Description
+
+communicates with the Gemini API.
+                                                                                 users                                   Stores account information for
+                                                                                                                         students and admins.
+                                                                                 assessment_topics                       Stores DSA assessment topics
+                                                                                                                         created in the system.
+                                                                                 assessment_questions                    Stores MCQ questions for each
+                                                                                                                         assessment topic.
+                                                                                 quiz_attempts                           Stores student quiz attempt
+                                                                                                                         records and scores.
+                                                                                 quiz_attempt_answers                    Stores submitted answers for
+                                                                                                                         each quiz attempt.
+                                                                                 chat_history                            Stores chatbot messages sent by
+                                                                                                                         users.
+                                                                                 groups                                  Stores study group session
+                                                                                                                         information.
+                                                                                 group_members                           Stores the users who joined each
+                                                                                                                         study group.
+                                                                                                Table 5. Data description of StuOrganize.
+
+            Fig. 3. Modular MVC architecture of StuOrganize.                Implementation
+    The architecture is divided into four main subsystems:                  A. Front End
+User Management, Chatbot, DSA Skill Gap Assessment, and                         React and TypeScript were used for developing the user
+Study Group Planner. This modular organization improves                     interface. The frontend is organized into modules that
+maintainability because each subsystem can be developed and                 represent the main system functions. Each module contains
+tested independently while still communicating through                      the related views and interface components, such as login,
+defined API routes.                                                         dashboard, chatbot, assessment, score result, and group
+C. Database Design                                                          management pages.
+   The database design was updated based on the                                 The interface was designed to be simple and role-based.
+implemented PostgreSQL schema. The main tables include                      Students are provided with a learning overview, assessment
+users,      assessment_topics,      assessment_questions,                   access, group features, and chatbot support. Admin users are
+quiz_attempts, quiz_attempt_answers, chat_history, groups,                  provided with dashboard and management pages for users,
+and group_members. These tables support authentication,                     assessments, and groups.
+assessment records, chatbot storage, and study group
+membership.
+                                                                                      Fig. 8. AI chatbot interface.
+
+                                                                     The chatbot interface allows students to submit DSA
+                                                                 questions and view AI-generated explanations. The response
+               Fig. 5. Login and user access interface.          is displayed in a conversational format so that students can
+                                                                 use it as a quick academic assistance tool.
+
+   The login interface provides the entry point to the system
+and is connected to the backend authentication service. After
+successful authentication, the role attribute determines
+whether the user is redirected to a student or admin
+dashboard.
+
+
+
+
+                                                                                  Fig. 9. Assessment library interface.
+
+                                                                    The assessment library presents available DSA topics,
+                                                                 number of questions, estimated time, and level of difficulty.
+                                                                 This allows students to select appropriate assessments based
+                                                                 on their current learning needs.
+                Fig. 6. Student dashboard interface.
+
+   The student dashboard summarizes assessment attempts,
+average score, active study groups, and AI activity. This page
+gives students a quick overview of their learning status and
+supports navigation to the main learning features.
+
+
+
+
+                 Fig. 7. Admin dashboard interface.
+
+                                                                               Fig. 10. Assessment score result interface.
+   The admin dashboard provides an operational summary of
+                                                                    The score result interface summarizes correct answers,
+users, assessments, study groups, and submissions. This
+                                                                 incorrect answers, total questions, and time taken. These
+helps the administrator monitor system usage and identify
+                                                                 results help students reflect on their performance and decide
+items that require review.
+                                                                 which topics require further practice.
+                                                                  Testing
+                                                                     Testing was conducted to ensure that the system functions
+                                                                  met the specified requirements. Black-box testing focused on
+                                                                  the visible behavior of the system without examining internal
+                                                                  code. The tested functions included login, registration, profile
+                                                                  management, chatbot interaction, assessment submission,
+                                                                  score display, weakness point generation, study group
+                                                                  creation, group joining, and admin management.
+                                                                     User acceptance testing was also conducted to evaluate
+                                                                  whether the system was suitable for its intended users.
+                                                                  Students were able to register, log in, ask DSA questions,
+              Fig. 11. Study group management interface.          complete assessments, view results, create groups, and join
+                                                                  groups. Admin users were able to manage users, assessment
+    The study group management interface shows group              topics, questions, and group sessions.
+records, session details, member capacity, and management                            Test Area                      Expected Result
+actions. This supports structured peer learning and contributes
+to the collaboration objective of the project.                         Authentication                     Users can register, login, and access
+                                                                                                          role-based dashboards.
+B. Back End                                                            Chatbot                            Students can submit DSA questions
+                                                                                                          and view AI responses.
+   The backend was implemented using Node.js, Express.js,              Assessment                         Students can answer MCQs and
+and TypeScript. It follows the same modular separation as the                                             view scores.
+frontend, but each backend module contains routes,                     Study Group                        Students can create and join
+                                                                                                          available groups.
+controllers, services, and models. Routes define endpoint
+                                                                       Admin Management                   Admins can manage users,
+paths, controllers receive and validate requests, services                                                assessments, and groups.
+handle business logic, and models interact with PostgreSQL.                          Table 6. Summary of main testing areas.
+   JSON Web Token authentication was used to secure login
+                                                                  Results and Discussion
+and role-based access. This allows the system to distinguish
+student functions from admin functions and protect                   The completed prototype demonstrates that a focused
+management features from unauthorized access.                     academic support system can combine learning assistance,
+C. Database                                                       assessment, and collaboration within one workflow. The
+                                                                  chatbot provides immediate conceptual explanations, the
+   PostgreSQL was used as the relational database because         assessment module gives a simple measurement of student
+the system stores structured data with clear relationships. For   understanding, and the group planner supports peer learning
+example, users can attempt many quizzes, assessment topics        based on topic interests.
+can contain many questions, quiz attempts can contain many
+                                                                     The student-facing dashboard is useful because it
+answers, and users can join many groups through the
+                                                                  summarizes learning activity in one place. Instead of
+group_members table.
+                                                                  navigating several unrelated tools, the student can view
+   The chatbot interaction is stored in the chat_history table,   assessment progress, recent groups, and AI support activity
+which records user messages, AI responses, session                from the same system. This supports the objective of
+identifiers, and metadata. This structure can support future      improving academic organization and reducing fragmented
+learning analytics or personalized recommendation                 learning behavior.
+improvements.
+                                                                     The admin-facing dashboard supports operational
+D. Practical Implementation Considerations                        monitoring. Admins can view users, groups, assessment
+   During implementation, the system was structured to            activity, and submissions. This is important because academic
+ensure that frontend and backend modules follow similar           support systems should not only provide student functions, but
+naming and responsibility boundaries. This makes the              also allow authorized users to manage system content and
+codebase easier to understand and supports future                 monitor usage.
+maintenance. For example, the assessment module contains                             Module                       Observed Outcome
+
+the assessment views in the frontend, while the backend
+                                                                       User Management                    Login and role-based navigation
+contains the related routes, controllers, services, and models.                                           operated as expected.
+   The use of PostgreSQL also supports data consistency                Chatbot                            Students could submit DSA
+                                                                                                          questions and receive explanations.
+because each table stores a specific part of the system. The           Assessment                         Scores and attempt records were
+users table is linked to quiz attempts, chat history, and group                                           generated after submission.
+membership, while assessment topics are linked to questions            Study Group                        Groups could be created, viewed,
+                                                                                                          joined, and managed.
+and quiz records. This relational structure is suitable for            Admin Dashboard                    Admin users could monitor platform
+monitoring student activity and maintaining assessment                                                    information.
+history.                                                                         Table 7. Summary of observed system outcomes.
+                                                                     The results also show that modular development was
+                                                                  suitable for this project. Each subsystem was developed as an
+independent area but connected through the same                                   Conclusion
+authentication, database, and API communication pattern.
+                                                                                     StuOrganize addresses the need for an integrated academic
+This reduced complexity during implementation and made the
+                                                                                  support platform for students learning Data Structures and
+system easier to test.
+                                                                                  Algorithms. The system combines AI chatbot assistance, skill-
+Limitations and Future Improvements                                               gap assessment, study group planning, and administrative
+                                                                                  monitoring in one web-based solution. By focusing on DSA,
+    Although StuOrganize achieved the required functional
+                                                                                  the system provides more targeted academic support than
+scope, several limitations remain. The assessment feature is
+                                                                                  general productivity or communication tools.
+currently based on multiple-choice questions, which is
+suitable for measuring conceptual understanding but cannot                           The system was implemented using React, TypeScript,
+fully evaluate coding ability. Future versions could include                      Node.js, Express, PostgreSQL, JWT, and Gemini API. The
+programming exercises and automated code evaluation.                              modular architecture supports maintainability and future
+                                                                                  expansion. Testing showed that the main functions operated
+    The study group planner supports structured group creation
+                                                                                  according to requirements and were suitable for
+and joining, but it does not yet include real-time messaging
+                                                                                  demonstration.
+between group members. Future development can add group
+chat, reminders, attendance tracking, and meeting                                    Future enhancements may include adaptive quiz difficulty,
+notifications to improve collaboration.                                           real-time chat between study group members, notification
+                                                                                  support, richer dashboard analytics, code-based assessments,
+    The chatbot depends on the quality of the student question
+                                                                                  and more advanced personalized learning recommendations.
+and the AI model response. To improve response reliability,
+                                                                                  These enhancements can be added without changing the main
+future work can add stronger prompt control, DSA topic
+                                                                                  architecture because the system is already organized into clear
+filtering, response rating, and personalized recommendation
+                                                                                  frontend and backend modules.
+based on previous quiz attempts.
+                  Limitation                    Future Improvement                Acknowledgment
+      MCQ-only assessment               Add code-based exercises and                 The author would like to express appreciation to Dr.
+                                        adaptive difficulty.                      Rohayanti Binti Hassan for her guidance, feedback, and
+      No group chat                     Add real-time messaging and session
+                                        reminders.
+                                                                                  supervision throughout the development of the StuOrganize
+      Basic analytics                   Add richer dashboard charts and           project.
+                                        progress tracking.
+      General AI response quality       Improve prompt control and                References
+                                        feedback-based refinement.
+                                                                                  [1] B. K. Britton and A. Tesser, “Effects of time-management practices on
+                 Table 8. Limitations and future improvements.                    college grades,” Journal of Educational Psychology, vol. 83, no. 3, pp. 405-
+                                                                                  410, 1991.
+Security and Ethical Considerations                                               [2] J. A. Kulik and J. D. Fletcher, “Effectiveness of intelligent tutoring
+   Since StuOrganize stores student accounts, assessment                          systems: A meta-analytic review,” Review of Educational Research, vol. 86,
+                                                                                  no. 1, pp. 42-78, 2016.
+scores, chatbot messages, and group participation records,
+                                                                                  [3] D. J. Nicol and D. Macfarlane-Dick, “Formative assessment and self-
+basic security and privacy considerations were included in the                    regulated learning,” Studies in Higher Education, vol. 31, no. 2, pp. 199-218,
+system design. User authentication is protected using JWT,                        2006.
+and role-based access control prevents normal students from                       [4] K. J. Topping, “Trends in peer learning,” Educational Psychology, vol. 25,
+accessing administrative functions.                                               no. 6, pp. 631-645, 2005.
+                                                                                  [5] K. VanLehn, “The relative effectiveness of human tutoring, intelligent
+   The system also separates student and admin workflows to                       tutoring systems, and other tutoring systems,” Educational Psychologist, vol.
+reduce unauthorized actions. For example, students can access                     46, no. 4, pp. 197-221, 2011.
+learning and group functions, while admins can manage users,                      [6] M. M. S. Altater, “StuOrganize: AI powered application for student
+assessments, and group sessions. This separation supports                         academic success and collaboration,” Final Year Project Report, Faculty of
+                                                                                  Computing, Universiti Teknologi Malaysia, 2025.
+accountability and improves the safety of the system
+operation.
+   From an ethical perspective, AI-generated chatbot
+responses should be treated as academic assistance rather than
+a replacement for formal teaching. The chatbot is scoped to
+DSA topics so that students receive relevant learning support
+while still being encouraged to review concepts, attend
+classes, and practice problem solving independently.
+      Consideration                       System Handling
+
+      Authentication                      JWT is used to protect user sessions.
+      Authorization                       Role-based access limits admin
+                                          features.
+      Data privacy                        System records are stored in
+                                          structured database tables.
+      AI usage                            Chatbot is scoped to academic DSA
+                                          assistance.
+Table 9. Security and ethical considerations.
+
