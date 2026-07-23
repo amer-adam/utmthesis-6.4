@@ -117,7 +117,7 @@ Language acquisition research shows that people learn most effectively through m
 
 Traditional methods present challenges for many students. Textbooks and classrooms tend to emphasize grammar rules instead of natural language exposure. Current apps offer translation help but struggle with Mandarin's unique difficulties. The character system creates confusion for learners since written symbols share little connection with their pronunciations. Pinyin provides pronunciation guidance but rarely appears outside educational settings.
 
-LexiFlow solves these problems with a web platform that combines sentence segmentation with machine translation models. The system processes audio by detecting sentence boundaries and handling each segment independently. By using this approach we improve accuracy and reduce the computing resource needed. The system then maintains a database of previously processed content to eliminate duplicate processing and provide students with materials matching their interests and skill levels.
+LexiFlow\footnote{The live application is accessible at \url{https://lexiflow.amerai.top}, and the source code is available on GitHub at \url{https://github.com/amer-adam/lexiflow}.} solves these problems with a web platform that combines sentence segmentation with machine translation models. The system processes audio by detecting sentence boundaries and handling each segment independently. By using this approach we improve accuracy and reduce the computing resource needed. The system then maintains a database of previously processed content to eliminate duplicate processing and provide students with materials matching their interests and skill levels.
 \section{Problem Background}
 UTM language lecturers have observed a challenge in their students' language development. Although many students can pass written exams by studying vocabulary and grammar rules, they tend to struggle when faced with real-world Mandarin conversations. This gap between academic performance and communication skills presents a barrier to students' learning experience. Authentic content will expose students to useful vocabulary, natural speech patterns, and cultural context that textbooks simply cannot provide, especially when aligned with students' personal interests to enhance engagement.
 
@@ -149,11 +149,11 @@ The scopes of the project are:
 \section{Project Importance}
 The LexiFlow project is important because it aims to enhance the language learner’s experience. LexiFlow will overcome the problem of limited resources from online platforms and lecturers. By integrating machine translation models for translation and transcription, LexiFlow will allow students to study from content they are interested in learning from.
 \section{Report Organization}
-This thesis is divided into five comprehensive chapters. Chapter 1 introduces the project and outlines the background, purpose, objectives, scope, importance and structure of the report. Chapter 2 provides an in-depth literature review that examines existing systems and technologies related to speech recognition, translation models, and user interface considerations, including a comparative analysis with current market solutions.
+This thesis is divided into six comprehensive chapters. Chapter 1 introduces the project and outlines the background, purpose, objectives, scope, importance and structure of the report. Chapter 2 provides an in-depth literature review that examines existing systems and technologies related to speech recognition, translation models, and user interface considerations, including a comparative analysis with current market solutions.
 
 Chapter 3 describes the system development methodology, detailing the chosen software development life cycle, the rationale for method selection, and the key stages of development. Chapter 4 focuses on requirements analysis and system design, discussing functional and non-functional requirements, database architecture, and user interface design to ensure usability and functionality.
 
-The last chapter, Chapter 5, concludes the paper, summarizes the results, discusses the achievement of the project goals, and makes recommendations for future enhancements to extend and improve the LexiFlow system. This organizational structure ensures a clear and logical progression, facilitating detailed discussions on all aspects of the project from conceptualization to implementation and evaluation.
+Chapter 5, Implementation and Testing, details how the proposed architecture was realised in practice, the core features that were built, the DevOps and deployment process, and the verification and validation activities used to test the system. The last chapter, Chapter 6, concludes the paper, summarizes the results, discusses the achievement of the project goals, and makes recommendations for future enhancements to extend and improve the LexiFlow system. This organizational structure ensures a clear and logical progression, facilitating detailed discussions on all aspects of the project from conceptualization to implementation and evaluation.
 \chapter{LITERATURE REVIEW}
 \section{Introduction}
 This chapter reviews existing literature and technologies relevant to the development of the lexiflow system. It starts with an overview of second language acquisition theories that influence the design of any language learning tool. Then it highlights the challenges specific to Mandarin as a symbolic language, and examines current approaches and existing systems in the field of language learning. This literature review will provide the theoretical foundation and showcase the gaps that LexiFlow aims to address.
@@ -637,7 +637,7 @@ Non-functional requirements define the quality attributes, system performance, a
     \endfoot
     \hline
     \endlastfoot
-    NFR-001     & Performance     & The system shall process and validate YouTube URLs within 3 seconds to ensure responsive user experience.                       \\
+    NFR-001     & Performance     & The system shall process submitted audio/video content (voice activity detection, transcription, translation, and pinyin annotation) within 10 minutes of processing time per hour of source-content duration. Verified in Chapter 5, Section~\ref{sec:nfr_verification}.                       \\
     \hline
 
     NFR-002     & Localization     & The system shall support display text in at least two languages: English and Mandarin.                                                     \\
@@ -677,7 +677,7 @@ As shown in Figure~\ref{fig:pipe_and_filter}, the LexiFlow system architecture c
 Chapter 4 of the thesis delves into the requirement analysis and system design for LexiFlow, outlining a comprehensive approach to developing a language learning platform. The chapter begins with a systematic exploration of stakeholders' needs through interactive sessions, setting the foundation for detailed documentation in the Software Requirements Specification (SRS, Appendix~\ref{app:srs}) and Software Design Document (SDD, Appendix~\ref{app:sdd}). It further details the pipe-and-filter architectural approach, ensuring scalability and efficiency, and discusses the user interface design, which is integral for enhancing user interaction and system functionality. This methodical approach not only aligns with the project's objectives but also ensures a robust framework for the successful implementation and operation of LexiFlow. The system was subsequently validated through automated end-to-end testing and User Acceptance Testing, documented in Chapter 5 and Appendices~\ref{app:test-execution-report} and~\ref{app:uat-report}, rather than a separate, standalone Software Test Document.
 
 
-\chapter{System Implementation}\label{chap:implementation}
+\chapter{Implementation and Testing}\label{chap:implementation}
 
 \section{Introduction}
 This chapter discusses the technical implementation of LexiFlow. It first revisits the Pipe and Filter architecture from Chapter 4 and shows how it materialised in code, then walks through the core learning features --- subtitle generation, flashcards, quizzes, crowd-sourced error reporting, and a companion browser extension --- followed by a brief account of the DevOps and deployment setup and the verification work carried out on the finished system.
@@ -842,7 +842,7 @@ To bring LexiFlow's bilingual subtitle experience to content the user is already
 \end{figure}
 
 \section{DevOps and Deployment}
-Figure~\ref{fig:deployment_topology} summarises where each part of the system runs. The frontend is a static build served from \textbf{Vercel}'s edge CDN. The Node.js backend, the FastAPI worker, and PostgreSQL all run together on a single \textbf{Tencent Cloud Lighthouse} VM via Docker Compose, with a \textbf{SaladPool} instance retained as a rarely-used failover worker. \textbf{GitHub Actions} builds and pushes a container image to GHCR on every push to \texttt{main} and redeploys the VM automatically, so no manual deployment step is required. All AI inference --- transcription, translation, quiz grading, and segment correction --- is delegated to externally hosted language models (Whisper Large v3 Turbo, DeepSeek-V4-Flash, and Llama 3.3 70B), so the deployment itself requires no GPU.
+Figure~\ref{fig:deployment_topology} summarises where each part of the system runs. The frontend is a static build served from \textbf{Vercel}'s edge CDN. The Node.js backend, the FastAPI worker, and PostgreSQL all run together on a single \textbf{Tencent Cloud Lighthouse} VM via Docker Compose, with a \textbf{SaladPool} instance retained as a rarely-used failover worker. \textbf{GitHub Actions} builds and pushes a container image to GHCR on every push to \texttt{main} and redeploys the VM automatically, so no manual deployment step is required. All AI inference --- transcription, translation, quiz grading, and segment correction --- is delegated to externally hosted language models (Whisper Large v3 Turbo, DeepSeek-V4-Flash, and Llama 3.3 70B), so the deployment itself requires no GPU. The complete source code repository is publicly available on GitHub at \url{https://github.com/amer-adam/lexiflow}, and the live application is accessible at \url{https://lexiflow.amerai.top}.
 
 \begin{figure}[H]
     \centering
@@ -854,6 +854,43 @@ Figure~\ref{fig:deployment_topology} summarises where each part of the system ru
 The system was verified at two complementary levels. First, an automated end-to-end Playwright suite was run directly against the live test deployment, covering UC01 through UC14. This produced 25 passes, 4 failures, and 1 documented skip out of 30 test cases; the 4 failures traced to two genuine, reproducible defects (an undismissable onboarding tour and a missing single-page-application fallback route) rather than to flaws in the test scripts. The full methodology, per-test-case results, and root-cause analysis are presented in Appendix~\ref{app:test-execution-report}.
 
 Second, User Acceptance Testing was carried out with four participants spanning the user groups identified in Chapter 4: a previously-struggling Mandarin learner, a self-directed learner with a domain-specific vocabulary need, a native-speaker reviewer assessing transcription/translation accuracy, and the instructor stakeholder. Feedback confirmed the value of the tap-to-look-up, vocabulary-saving, and quiz-generation workflow, while surfacing two honest findings for future work: an accuracy gap against commercial-grade captioning, and the absence of classroom-management features, neither of which was scoped as a functional requirement in Chapter 4. Full participant profiles, scenarios, and acceptance-criteria analysis are presented in Appendix~\ref{app:uat-report}.
+
+\subsection{Non-Functional Requirement Verification}\label{sec:nfr_verification}
+To verify compliance with NFR-001 (Table~\ref{tab:non_functional_requirements}) --- that submitted content is processed within 10 minutes per hour of source-content duration --- 16 real videos ranging from 11 seconds to 55 minutes were submitted to the production media-processing pipeline running on CUDA-accelerated infrastructure, and their end-to-end processing times were recorded. Table~\ref{tab:nfr_performance} lists the results, sorted by content length, together with the ratio of processing time to content duration, the implied processing minutes per hour of content, and whether each run met the target.
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \caption{NFR-001 (Performance) verification results, 16 production processing runs}\label{tab:nfr_performance}
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Video} & \textbf{Content} & \textbf{Processing} & \textbf{Min./Hour} & \textbf{Meets} \\
+        & \textbf{Length} & \textbf{Time} & \textbf{of Content} & \textbf{Target} \\
+        \midrule
+        V1  & 0:11  & 0:12 & 65.5 & Fail \\
+        V2  & 3:00  & 0:40 & 13.3 & Fail \\
+        V3  & 3:18  & 0:41 & 12.4 & Fail \\
+        V4  & 9:03  & 1:23 & 9.2  & Pass \\
+        V5  & 9:35  & 1:00 & 6.3  & Pass \\
+        V6  & 11:24 & 2:27 & 12.9 & Fail \\
+        V7  & 14:25 & 1:59 & 8.3  & Pass \\
+        V8  & 16:41 & 2:19 & 8.3  & Pass \\
+        V9  & 18:52 & 6:55 & 22.0 & Fail \\
+        V10 & 20:47 & 2:35 & 7.5  & Pass \\
+        V11 & 24:10 & 3:01 & 7.5  & Pass \\
+        V12 & 25:00 & 3:31 & 8.4  & Pass \\
+        V13 & 43:39 & 5:09 & 7.1  & Pass \\
+        V14 & 47:26 & 5:26 & 6.9  & Pass \\
+        V15 & 51:44 & 6:04 & 7.0  & Pass \\
+        V16 & 55:02 & 7:14 & 7.9  & Pass \\
+        \bottomrule
+    \end{tabular}
+    \begin{flushleft}
+        \small Target: no more than 10 minutes of processing time per hour of source-content duration. Video identifiers are anonymised run labels from the underlying processing log, sorted by content length.
+    \end{flushleft}
+\end{table}
+
+Eleven of the sixteen runs (68.8\%) met the target. Content nine minutes or longer met the target in every run but one. The five runs that missed the target were, with one exception, all short clips under 11 minutes: each processing job carries a largely fixed startup cost (model and API connection setup, segmentation initialisation) that is independent of content length, so that overhead is proportionally larger, and the resulting minutes-per-hour ratio correspondingly worse, for short inputs. The one exception, V9 (18 minutes 52 seconds), took considerably longer than its neighbours in the dataset; this is treated as a genuine outlier rather than dismissed, and its cause (for example, a period of elevated load on an externally hosted API) was not isolated in this round of testing. Overall, the pipeline reliably meets its performance target for the long-form authentic content LexiFlow is designed around, while short-clip processing --- an edge case outside the platform's primary use case --- remains an area for future optimisation, such as amortising or reducing fixed per-job startup overhead.
 
 \section{Chapter Summary}
 This chapter showed how the Pipe and Filter architecture from Chapter 4 was implemented as an independently-substitutable pipeline, then detailed the implementation of the four core learning features --- subtitle generation, flashcards, quizzes, and crowd-sourced correction --- each combining a deterministic local algorithm (FSRS, threshold checks, pinyin/visual similarity) with an LLM where open-ended judgement is genuinely required. The deployment was kept deliberately lightweight by delegating all AI inference to external APIs, and the resulting system was verified through both automated end-to-end testing and User Acceptance Testing, with all defects found during verification traced to specific, reproducible root causes rather than to architectural flaws.
@@ -882,7 +919,7 @@ LexiFlow increases quality of life for its users in ways independently confirmed
 \section{Suggestions for Future Improvement}
 Building on the findings from automated testing and UAT, the following improvements are recommended for future iterations of LexiFlow. First, the two confirmed defects identified during test execution, the undismissable onboarding tour (LF-BUG-01) and the missing SPA fallback route causing direct navigation to return a raw 404 (LF-BUG-02), should be fixed before any production rollout, as both directly block or degrade core navigation for first-time and returning users respectively. Second, the accuracy gap identified by the native-speaker UAT participant, between LexiFlow's self-hosted faster-whisper and LibreTranslate pipeline and YouTube's own commercial-grade auto-captioning, should continue to be narrowed; the crowd-reporting and AI-assisted correction feature already implemented (Chapter 5) is well-positioned to do this over time, and its effectiveness should be measured directly in a future evaluation round. Third, and most significantly, a classroom-management module, allowing an instructor to create a class, assign specific videos or quizzes as coursework, and view a lecturer-facing progress dashboard across their students, should be scoped and implemented; this was identified as the primary unmet need by the instructor stakeholder during UAT and was never part of the original functional requirements, making it the clearest candidate for the next phase of development. Beyond these evidence-based priorities, the usage of a more lightweight, Mandarin-only local model instead of a large multilingual model would reduce processing time and server VRAM usage, in turn lowering server operating costs, and switching to more efficient model runtimes such as ONNX or TensorRT would further reduce processing time and resource usage. Together, these changes would make LexiFlow more accurate, more complete for institutional use, and more efficient to operate.
 
-\bibliographystyle{unsrtnat} % Use the "abbrvnat" BibTeX style for formatting the bibliography
+\bibliographystyle{utmthesis-numbering} % Official UTM numbered (IEEE-style) bibliography style
 \bibliography{reference} % Entries are in the refs.bib file
 
 \appendix

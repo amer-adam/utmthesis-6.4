@@ -26,16 +26,16 @@
 \newcommand\@classname    {utmthesis}
 \newcommand\@classabout   {Class File for Universiti Teknologi Malaysia Thesis Writing}
 \newcommand\@classdate    {2021/05/02}
-\newcommand\@classversion {v6.4}  
+\newcommand\@classversion {v6.4}
 \ProvidesClass{\@classname}[\@classdate\space\@classversion\space\@classabout]
 
 \RequirePackage{ifplatform}
 \RequirePackage{acronym}
 \RequirePackage{emptypage}
 \RequirePackage{newtxtext,newtxmath}
-\RequirePackage[hidelinks]{hyperref} 
+\RequirePackage[hidelinks]{hyperref}
 \pdfstringdefDisableCommands{%
-\let\MakeUppercase\relax
+    \let\MakeUppercase\relax
 }
 \let\maketitle\relax
 \let\appendix\relax
@@ -43,14 +43,14 @@
 % Initial code
 % ============
 \newcommand{\@initializeThesisAsEnglish}{
-  \def\utmthesis@language{en}
-  \def\abstract@filename{abstract}
-  \def\abstract@translated@filename{abstrak}
+    \def\utmthesis@language{en}
+    \def\abstract@filename{abstract}
+    \def\abstract@translated@filename{abstrak}
 }
 \newcommand{\@initializeThesisAsMalay}{
-  \def\utmthesis@language{ms}
-  \def\abstract@filename{abstrak}
-  \def\abstract@translated@filename{abstract}
+    \def\utmthesis@language{ms}
+    \def\abstract@filename{abstrak}
+    \def\abstract@translated@filename{abstract}
 }
 
 % Returns (english/malay) externalized string according to \utmthesis@language
@@ -68,7 +68,7 @@
 \DeclareOption{malay}{\@initializeThesisAsMalay}
 
 \DeclareOption*{%
-  \ClassWarning{\@classname}{Unknown option `\CurrentOption'}%
+    \ClassWarning{\@classname}{Unknown option `\CurrentOption'}%
 }
 
 % Execution of options
@@ -326,66 +326,66 @@
 %
 % Warn if user does not set the required variables in preamble
 \newcommand\checkpreamble{
-  \ifx\@title\@empty
-    \@latex@warning{\@classname: \@backslashchar title not defined in preamble}
-    \def\@title{Your Thesis Title}
-  \fi
-
-  \ifx\@author\@empty
-    \@latex@warning{\@classname: \@backslashchar author not defined in preamble}
-    \def\@author{Your Fullname}
-  \fi
-
-  \ifx\@degree\@empty
-    \@latex@warning{\@classname: \@backslashchar degree not defined in preamble}
-    \def\@degree{Your Degree}
-  \fi
-
-  \ifx\@specialization\@empty
-    \@latex@warning{\@classname: \@backslashchar specialization not defined in preamble}
-    \def\@specialization{Your Specialization}
-  \fi
-
-  \ifx\@intakeyear\@empty
-    \@latex@warning{\@classname: \@backslashchar specialization not defined in preamble}
-    \def\@intakeyear{\year}
-  \fi
-
-  \ifx\@award\@empty
-    \@latex@warning{\@classname: \@backslashchar award not defined in preamble}
-    \def\@award{5}% default to PhD
-  \else
-    \ifnum \@award <1
-      \@latex@warning{\@classname: \@backslashchar award valid value is 1-8}
-      \def\@award{5}% default to PhD
+    \ifx\@title\@empty
+        \@latex@warning{\@classname: \@backslashchar title not defined in preamble}
+        \def\@title{Your Thesis Title}
     \fi
-    \ifnum \@award >9
-      \@latex@warning{\@classname: \@backslashchar award valid valid is 1-8}
-      \def\@award{5}% default to PhD
+
+    \ifx\@author\@empty
+        \@latex@warning{\@classname: \@backslashchar author not defined in preamble}
+        \def\@author{Your Fullname}
     \fi
-  \fi
 
-  \ifx\@faculty\@empty
-    \@latex@warning{%
-      \@classname: \@backslashchar faculty not defined in preamble}
-    \def\@faculty{Your Faculty}
-  \fi
+    \ifx\@degree\@empty
+        \@latex@warning{\@classname: \@backslashchar degree not defined in preamble}
+        \def\@degree{Your Degree}
+    \fi
 
-  \ifx\@titledate\@empty
-    \@latex@warning{%
-      \@classname: \@backslashchar titledate not defined in preamble}
-    \def\@titledate{Month Year}
-  \fi
+    \ifx\@specialization\@empty
+        \@latex@warning{\@classname: \@backslashchar specialization not defined in preamble}
+        \def\@specialization{Your Specialization}
+    \fi
 
-  \ifx\@supervisorone\@empty
-    \@latex@warning{%
-      \@classname: \@backslashchar superone not defined in preamble}
-    \def\@supervisorone{Your Supervisor's Fullname}
-  \fi
+    \ifx\@intakeyear\@empty
+        \@latex@warning{\@classname: \@backslashchar specialization not defined in preamble}
+        \def\@intakeyear{\year}
+    \fi
+
+    \ifx\@award\@empty
+        \@latex@warning{\@classname: \@backslashchar award not defined in preamble}
+        \def\@award{5}% default to PhD
+    \else
+        \ifnum \@award <1
+            \@latex@warning{\@classname: \@backslashchar award valid value is 1-8}
+            \def\@award{5}% default to PhD
+        \fi
+        \ifnum \@award >9
+            \@latex@warning{\@classname: \@backslashchar award valid valid is 1-8}
+            \def\@award{5}% default to PhD
+        \fi
+    \fi
+
+    \ifx\@faculty\@empty
+        \@latex@warning{%
+            \@classname: \@backslashchar faculty not defined in preamble}
+        \def\@faculty{Your Faculty}
+    \fi
+
+    \ifx\@titledate\@empty
+        \@latex@warning{%
+            \@classname: \@backslashchar titledate not defined in preamble}
+        \def\@titledate{Month Year}
+    \fi
+
+    \ifx\@supervisorone\@empty
+        \@latex@warning{%
+            \@classname: \@backslashchar superone not defined in preamble}
+        \def\@supervisorone{Your Supervisor's Fullname}
+    \fi
 }
 % Check preamble variables right after \begin{document}
 \AtBeginDocument{
-  \checkpreamble
+    \checkpreamble
 }
 
 % ==========================
@@ -395,7 +395,7 @@
 % Define 2 parameters: one-line, two-line spacing (single-spacing line)
 \newlength{\@onelinespacing}
 \setlength{\@onelinespacing}{0.8\baselineskip}%  remove the 20% extra spacing
-                                              %  added by LaTeX, hence 0.8
+%  added by LaTeX, hence 0.8
 \newlength{\@twolinespacing}
 \setlength{\@twolinespacing}{2\@onelinespacing}
 
@@ -413,13 +413,13 @@
 
 % modify \parsep to .5\@onelinespacing
 \def\@listI{\leftmargin\leftmargini
-   \topsep\z@ \parsep .5\@onelinespacing \itemsep\z@}
+    \topsep\z@ \parsep .5\@onelinespacing \itemsep\z@}
 \let\@listi\@listI
 \@listi
 
 \def\@listii{\leftmargin\leftmarginii
-   \labelwidth\leftmarginii\advance\labelwidth-\labelsep
-   \topsep\z@ \parsep .5\@onelinespacing \itemsep\z@}
+    \labelwidth\leftmarginii\advance\labelwidth-\labelsep
+    \topsep\z@ \parsep .5\@onelinespacing \itemsep\z@}
 
 \def\@listiii{\leftmargin\leftmarginiii
     \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
@@ -582,47 +582,47 @@
 %   \@chapter   - called when there is a numbered chapter
 % Main ToC formating
 \renewcommand*\l@chapter[2]{%
-  \ifnum \c@tocdepth >\m@ne
-    \addpenalty{-\@highpenalty}%
-    \setlength\@tempdima{\toc@sep@a}
-    \begingroup
-      \parindent -\toc@sep@a 
-      \rightskip \@pnumwidth
-      \parfillskip -\@pnumwidth
-      \leavevmode \bfseries
-      \advance\leftskip  
-      \toc@sep@a
-      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth {\hss #2}\par
-      \penalty9999% to discourage chapter to appear at last line of page
-    \endgroup
-  \fi}
+    \ifnum \c@tocdepth >\m@ne
+        \addpenalty{-\@highpenalty}%
+        \setlength\@tempdima{\toc@sep@a}
+        \begingroup
+        \parindent -\toc@sep@a
+        \rightskip \@pnumwidth
+        \parfillskip -\@pnumwidth
+        \leavevmode \bfseries
+        \advance\leftskip
+        \toc@sep@a
+        #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth {\hss #2}\par
+        \penalty9999% to discourage chapter to appear at last line of page
+        \endgroup
+    \fi}
 
 
 \def\@chapter[#1]#2{%
-  \ifnum \c@secnumdepth >\m@ne
-     \if@mainmatter
-       \refstepcounter{chapter}%
-       \typeout{\@chapapp\space\thechapter.}%
-       \if@appendix
-         \addcontentsline{\ext@appendix}{appendix}%
-                         {\protect\numberline{\appendixname\space\thechapter}{#1}} 
-         \@makechapterhead{#2}%
-         \@afterheading
-       \else
-         \addtocontents{toc}{\protect\addvspace{\@twolinespacing}}%
-         \addcontentsline{toc}{chapter}{\protect\numberline{\MakeUppercase{\chapter@colname} \thechapter}\MakeUppercase{#1}}%
-         \@makechapterhead{\MakeUppercase{#2}}%
-         \@afterheading
-       \fi
-     \else
-       \addcontentsline{toc}{nonmainmatterchapter}{\MakeUppercase{#1}}%
-     \fi
-  \else
-    \addcontentsline{toc}{chapter}{\MakeUppercase{#1}}%
-  \fi
-  \chaptermark{#1}%
-  \@showpagenumber
-  }
+    \ifnum \c@secnumdepth >\m@ne
+        \if@mainmatter
+            \refstepcounter{chapter}%
+            \typeout{\@chapapp\space\thechapter.}%
+            \if@appendix
+                \addcontentsline{\ext@appendix}{appendix}%
+                {\protect\numberline{\appendixname\space\thechapter}{#1}}
+                \@makechapterhead{#2}%
+                \@afterheading
+            \else
+                \addtocontents{toc}{\protect\addvspace{\@twolinespacing}}%
+                \addcontentsline{toc}{chapter}{\protect\numberline{\MakeUppercase{\chapter@colname} \thechapter}\MakeUppercase{#1}}%
+                \@makechapterhead{\MakeUppercase{#2}}%
+                \@afterheading
+            \fi
+        \else
+            \addcontentsline{toc}{nonmainmatterchapter}{\MakeUppercase{#1}}%
+        \fi
+    \else
+        \addcontentsline{toc}{chapter}{\MakeUppercase{#1}}%
+    \fi
+    \chaptermark{#1}%
+    \@showpagenumber
+}
 
 
 % =====================
@@ -640,7 +640,7 @@
 %   \subsubsection{} does not show its numbering label.
 %
 \AtBeginDocument {
-  \setcounter{secnumdepth}{3}
+    \setcounter{secnumdepth}{3}
 }
 
 % [A9] The part separation sheets between parts is not be counted nor numbered.
@@ -650,87 +650,87 @@
 %   \@endpart - called at the end of the \part command
 %
 \renewcommand\part{%
-  \if@openright\cleardoublepage\@hidepagenumber\else\clearpage\@hidepagenumber\fi
-  \@hidepagenumber%  this page does not have page number
-  \if@twocolumn
-    \onecolumn
-    \@tempswatrue
-  \else
-    \@tempswafalse
-  \fi
-  \null\vfil
-  \secdef\@part\@spart}
+    \if@openright\cleardoublepage\@hidepagenumber\else\clearpage\@hidepagenumber\fi
+    \@hidepagenumber%  this page does not have page number
+    \if@twocolumn
+        \onecolumn
+        \@tempswatrue
+    \else
+        \@tempswafalse
+    \fi
+    \null\vfil
+    \secdef\@part\@spart}
 
 \newcounter{utmthesis@temp@page}% A temporary counter to store page counter
 
 \def\@endpart{%
-  \setcounter{utmthesis@temp@page}{\value{page}}% Store current page counter
-  \pagenumbering{Roman}% Change number style (implicitly reset page counter)
-  \setcounter{page}{\value{part}}% Set page counter to part counter
-  \vfil\newpage
-  \pagenumbering{arabic}% Restore number style (implicitly reset page counter)
-  \setcounter{page}{\value{utmthesis@temp@page}}% Restore page counter
-  \if@twoside
-    \if@openright
-      \null
-      \thispagestyle{empty}%
-      \newpage
+    \setcounter{utmthesis@temp@page}{\value{page}}% Store current page counter
+    \pagenumbering{Roman}% Change number style (implicitly reset page counter)
+    \setcounter{page}{\value{part}}% Set page counter to part counter
+    \vfil\newpage
+    \pagenumbering{arabic}% Restore number style (implicitly reset page counter)
+    \setcounter{page}{\value{utmthesis@temp@page}}% Restore page counter
+    \if@twoside
+        \if@openright
+            \null
+            \thispagestyle{empty}%
+            \newpage
+        \fi
     \fi
-  \fi
-  \if@tempswa
-    \twocolumn
-  \fi}
+    \if@tempswa
+        \twocolumn
+    \fi}
 
 % [B4] The part separation sheet should be printed with capital letters,
 %      e.g. PART 1, PART 2, PART 3
 % ----------------------------------------------------------------------------
 % Similar to \contentsline, but does not accept nor display page number
 \newcommand*\nonumcontentsline[1]{%
-  \ifnum \c@tocdepth >-2\relax
-    \addpenalty{-\@highpenalty}%
-    \addvspace{2.25em \@plus\p@}%
-    \settowidth{\@tempdima}{\partname~N }
-    \ifdim \@tempdima <\toc@sep@a
-      \setlength\@tempdima{\toc@sep@a}
-    \else
-      \setlength\@tempdima{\toc@sep@part}
-    \fi
-    \begingroup
-      \parindent \z@
-      {\leavevmode
-       \bfseries #1}\par
-       \nobreak
-         \global\@nobreaktrue
-         \everypar{\global\@nobreakfalse\everypar{}}%
-    \endgroup
-  \fi}
+    \ifnum \c@tocdepth >-2\relax
+        \addpenalty{-\@highpenalty}%
+        \addvspace{2.25em \@plus\p@}%
+        \settowidth{\@tempdima}{\partname~N }
+        \ifdim \@tempdima <\toc@sep@a
+            \setlength\@tempdima{\toc@sep@a}
+        \else
+            \setlength\@tempdima{\toc@sep@part}
+        \fi
+        \begingroup
+        \parindent \z@
+        {\leavevmode
+            \bfseries #1}\par
+        \nobreak
+        \global\@nobreaktrue
+        \everypar{\global\@nobreakfalse\everypar{}}%
+        \endgroup
+    \fi}
 
 % Copied from book.cls:
 %   \@part - format the part title
 \def\@part[#1]#2{%
     \ifnum \c@secnumdepth >-2\relax
-      \refstepcounter{part}%
-      %  add to TOC, but without page number (since this page is not counted)
-      \addtocontents{toc}{\protect
-          \nonumcontentsline{\numberline{\partname\space\thepart}\MakeUppercase{#1}}}
+        \refstepcounter{part}%
+        %  add to TOC, but without page number (since this page is not counted)
+        \addtocontents{toc}{\protect
+            \nonumcontentsline{\numberline{\partname\space\thepart}\MakeUppercase{#1}}}
     \else
-      %  add to TOC, but without page number
-      \addtocontents{toc}{\protect\nonumcontentsline{\MakeUppercase{#1}}}
+        %  add to TOC, but without page number
+        \addtocontents{toc}{\protect\nonumcontentsline{\MakeUppercase{#1}}}
     \fi
     \markboth{}{}%
     {\centering
+        \vfill
+        \interlinepenalty \@M
+        \normalfont
+        \ifnum \c@secnumdepth >-2\relax
+            % part number - UPPERCASE, and make it slightly larger
+            \large \bfseries \MakeUppercase{\partname\nobreakspace\thepart}
+            \par
+            \vskip 20\p@
+        \fi
+        % part title - make it slightly larger
+        \large \bfseries \MakeUppercase{#2}\par}%
     \vfill
-     \interlinepenalty \@M
-     \normalfont
-     \ifnum \c@secnumdepth >-2\relax
-       % part number - UPPERCASE, and make it slightly larger
-       \large \bfseries \MakeUppercase{\partname\nobreakspace\thepart}
-       \par
-       \vskip 20\p@
-     \fi
-     % part title - make it slightly larger
-     \large \bfseries \MakeUppercase{#2}\par}%
-     \vfill
     \@endpart}
 
 
@@ -744,38 +744,38 @@
 %   \@makechapterhead  - defines \chapter{} formatting
 %   \@makeschapterhead - defines \chapter*{} formatting
 \renewcommand\@makechapterhead[1]{%
-  \vspace*{-\topskip}
-  \vspace{-\parskip}
-  \nointerlineskip
-  { \parindent \z@ \centering \normalfont \bfseries
-    \ifnum \c@secnumdepth >\m@ne
-      \if@mainmatter
-        \@chapapp\space \thechapter% show chapter no.
-        \if@appendix
-          \quad #1% show chapter title
-        \else
-          \\*[2\@twolinespacing]% after chapter no.
-          \interlinepenalty\@M
-          #1% show chapter title
+    \vspace*{-\topskip}
+    \vspace{-\parskip}
+    \nointerlineskip
+    { \parindent \z@ \centering \normalfont \bfseries
+        \ifnum \c@secnumdepth >\m@ne
+            \if@mainmatter
+                \@chapapp\space \thechapter% show chapter no.
+                \if@appendix
+                    \quad #1% show chapter title
+                \else
+                    \\*[2\@twolinespacing]% after chapter no.
+                    \interlinepenalty\@M
+                    #1% show chapter title
+                \fi
+            \fi
         \fi
-      \fi
-    \fi
-    \\*[2\@twolinespacing]% after chapter title
-  }
-  \setstretch{1.435}
+        \\*[2\@twolinespacing]% after chapter title
+    }
+    \setstretch{1.435}
 }
 
 \renewcommand\@makeschapterhead[1]{%
-  \@hidepagenumber
-  \vspace*{-\topskip}
-  \vspace{-\parskip}
-  \nointerlineskip
-  {\parindent \z@ \centering \normalfont \bfseries
-    \interlinepenalty\@M
-    #1 % show chapter title
-    \\*[2\@twolinespacing]% after chapter title
-  }
-  \setstretch{1.435}
+    \@hidepagenumber
+    \vspace*{-\topskip}
+    \vspace{-\parskip}
+    \nointerlineskip
+    {\parindent \z@ \centering \normalfont \bfseries
+        \interlinepenalty\@M
+        #1 % show chapter title
+        \\*[2\@twolinespacing]% after chapter title
+    }
+    \setstretch{1.435}
 }
 
 % [C5] Title of (sub)section (bold)
@@ -795,40 +795,40 @@
 %                {afterskip} % must be positive to prevent run-in heading
 %                {styles}
 %
-\ifwindows 
-	\renewcommand\section{\@startsection {section}{1}{0pt}%
-	                                     {2\@twolinespacing}%
-	                                     {\@twolinespacing}%
-	                                     {\normalfont\normalsize\bfseries}}
+\ifwindows
+    \renewcommand\section{\@startsection {section}{1}{0pt}%
+      {2\@twolinespacing}%
+      {\@twolinespacing}%
+      {\normalfont\normalsize\bfseries}}
 \else
-	\renewcommand\section{\@startsection {section}{1}{0pt}%
-	                                     {\@twolinespacing}%
-	                                     {\@tinyskip}%
-	                                     {\normalfont\normalsize\bfseries}}
-\fi
-
-\ifwindows 
-	\renewcommand\subsection{\@startsection {subsection}{2}{0pt}%
-	                                     {2\@twolinespacing}%
-	                                     {\@twolinespacing}%
-	                                     {\normalfont\normalsize\bfseries}}
-\else
-	\renewcommand\subsection{\@startsection {subsection}{2}{0pt}%
-	                                     {\@twolinespacing}%
-	                                     {\@tinyskip}%
-	                                     {\normalfont\normalsize\bfseries}}
+    \renewcommand\section{\@startsection {section}{1}{0pt}%
+      {\@twolinespacing}%
+      {\@tinyskip}%
+      {\normalfont\normalsize\bfseries}}
 \fi
 
 \ifwindows
-	\renewcommand\subsubsection{\@startsection {subsubsection}{3}{0pt}%
-	                                     {2\@twolinespacing}%
-	                                     {\@twolinespacing}%
-	                                     {\normalfont\normalsize\bfseries}}
+    \renewcommand\subsection{\@startsection {subsection}{2}{0pt}%
+        {2\@twolinespacing}%
+        {\@twolinespacing}%
+        {\normalfont\normalsize\bfseries}}
 \else
-	\renewcommand\subsubsection{\@startsection {subsubsection}{3}{0pt}%
-	                                     {\@twolinespacing}%
-	                                     {\@tinyskip}%
-	                                     {\normalfont\normalsize\bfseries}}
+    \renewcommand\subsection{\@startsection {subsection}{2}{0pt}%
+        {\@twolinespacing}%
+        {\@tinyskip}%
+        {\normalfont\normalsize\bfseries}}
+\fi
+
+\ifwindows
+    \renewcommand\subsubsection{\@startsection {subsubsection}{3}{0pt}%
+        {2\@twolinespacing}%
+        {\@twolinespacing}%
+        {\normalfont\normalsize\bfseries}}
+\else
+    \renewcommand\subsubsection{\@startsection {subsubsection}{3}{0pt}%
+        {\@twolinespacing}%
+        {\@tinyskip}%
+        {\normalfont\normalsize\bfseries}}
 \fi
 
 % [D8] 2-line spacing between last-line of text & table/figure/illustration
@@ -915,113 +915,113 @@
 \newcommand{\degreetype@proposal}            		{\getstring{degreetype@proposal}}
 
 \renewcommand{\maketitle}{
-  \ifnum \@award=1
-    \def\@awardphrase{\awardphrase@degree}
-    \def\@degreetype{\degreetype@degree}
-  \fi
-  \ifnum \@award=2
-    \def\@awardphrase{\awardphrase@mastercourse}
-    \def\@degreetype{\degreetype@mastercourse}
-  \fi
-  \ifnum \@award=3
-    \def\@awardphrase{\awardphrase@mastercourseresearch}
-    \def\@degreetype{\degreetype@mastercourseresearch}
-  \fi
-  \ifnum \@award=4
-    \def\@awardphrase{\awardphrase@masterresearch}
-    \def\@degreetype{\degreetype@masterresearch}
-  \fi
-  \ifnum \@award=5
-    \def\@awardphrase{\awardphrase@phd}
-    \def\@degreetype{\degreetype@phd}
-  \fi
-  \ifnum \@award=6
-    \def\@awardphrase{\awardphrase@otherphd}
-    \def\@degreetype{\degreetype@otherphd}
-  \fi
-  \ifnum \@award=7
-    \def\@awardphrase{\awardphrase@genericphd}
-    \def\@degreetype{\degreetype@genericphd}
-  \fi
-  \ifnum \@award=8
-    \def\@awardphrase{\awardphrase@proposal}
-    \def\@degreetype{\degreetype@proposal}
-  \fi
+    \ifnum \@award=1
+        \def\@awardphrase{\awardphrase@degree}
+        \def\@degreetype{\degreetype@degree}
+    \fi
+    \ifnum \@award=2
+        \def\@awardphrase{\awardphrase@mastercourse}
+        \def\@degreetype{\degreetype@mastercourse}
+    \fi
+    \ifnum \@award=3
+        \def\@awardphrase{\awardphrase@mastercourseresearch}
+        \def\@degreetype{\degreetype@mastercourseresearch}
+    \fi
+    \ifnum \@award=4
+        \def\@awardphrase{\awardphrase@masterresearch}
+        \def\@degreetype{\degreetype@masterresearch}
+    \fi
+    \ifnum \@award=5
+        \def\@awardphrase{\awardphrase@phd}
+        \def\@degreetype{\degreetype@phd}
+    \fi
+    \ifnum \@award=6
+        \def\@awardphrase{\awardphrase@otherphd}
+        \def\@degreetype{\degreetype@otherphd}
+    \fi
+    \ifnum \@award=7
+        \def\@awardphrase{\awardphrase@genericphd}
+        \def\@degreetype{\degreetype@genericphd}
+    \fi
+    \ifnum \@award=8
+        \def\@awardphrase{\awardphrase@proposal}
+        \def\@degreetype{\degreetype@proposal}
+    \fi
 
-% start drawing title page
-  \if@openright\cleardoublepage\else\clearpage\fi
-  \phantomsection
-  \pdfbookmark[1]{TITLE PAGE}{pre:titlepage}
-  \begin{center}
-    %\null\vspace{0.4in}
-    \ifx\@titlefour\@empty
-    	\ifx\@titlethree\@empty
-            \ifx\@titletwo\@empty
-                \MakeUppercase{\@title}\\ 
+    % start drawing title page
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \phantomsection
+    \pdfbookmark[1]{TITLE PAGE}{pre:titlepage}
+    \begin{center}
+        %\null\vspace{0.4in}
+        \ifx\@titlefour\@empty
+            \ifx\@titlethree\@empty
+                \ifx\@titletwo\@empty
+                    \MakeUppercase{\@title}\\
+                \else
+                    \MakeUppercase{\@title} \\
+                    \MakeUppercase{\@titletwo}\\
+                \fi
             \else
                 \MakeUppercase{\@title} \\
-                \MakeUppercase{\@titletwo}\\ 
+                \MakeUppercase{\@titletwo} \\
+                \MakeUppercase{\@titlethree}\\
             \fi
         \else
-    	    \MakeUppercase{\@title} \\
+            \MakeUppercase{\@title} \\
             \MakeUppercase{\@titletwo} \\
-            \MakeUppercase{\@titlethree}\\ 
+            \MakeUppercase{\@titlethree}\\
+            \MakeUppercase{\@titlefour}\\
         \fi
-    \else
-	\MakeUppercase{\@title} \\
-        \MakeUppercase{\@titletwo} \\
-        \MakeUppercase{\@titlethree}\\ 
-        \MakeUppercase{\@titlefour}\\ 
-    \fi
-    \vspace{\stretch{2}}
-    \MakeUppercase{\@author}\\
-    \vspace{\stretch{2}}
-    \@awardphrase\\
-   	\ifnum \@award=1
-    		\@awardphrasetwodegree\\
-    \else
-    	    \ifnum \@award=8
- 		   \@awardphrasethree\\
- 		\else
-           \@awardphrasetwo\\
-    		\fi
-    \fi
+        \vspace{\stretch{2}}
+        \MakeUppercase{\@author}\\
+        \vspace{\stretch{2}}
+        \@awardphrase\\
+        \ifnum \@award=1
+            \@awardphrasetwodegree\\
+        \else
+            \ifnum \@award=8
+                \@awardphrasethree\\
+            \else
+                \@awardphrasetwo\\
+            \fi
+        \fi
 
-    \ifnum \@award=1
-    		\@degree\space(\@specialization)\\
-    	\else
-    		\ifnum \@award=2
-    			\@degree\space(\@specialization)\\
-    		\else
-    			\ifnum \@award=7
-    				\@degree\\
-    			\else
-    				\ifnum \@award=8
-    					\@degree\space(\@specialization)\\
-    				\else
-    					\ifnum \@intakeyear<2015
-    						\@degree\space(\@specialization)\\
-    					\else
-    						\@degree\\
-    					\fi
-    				\fi
-    			\fi
-    		\fi
-    	\fi
+        \ifnum \@award=1
+            \@degree\space(\@specialization)\\
+        \else
+            \ifnum \@award=2
+                \@degree\space(\@specialization)\\
+            \else
+                \ifnum \@award=7
+                    \@degree\\
+                \else
+                    \ifnum \@award=8
+                        \@degree\space(\@specialization)\\
+                    \else
+                        \ifnum \@intakeyear<2015
+                            \@degree\space(\@specialization)\\
+                        \else
+                            \@degree\\
+                        \fi
+                    \fi
+                \fi
+            \fi
+        \fi
 
-    \vspace{\stretch{1}}
-    \ifx\@school\@empty 
-    	\relax
-    \else
-        \@school\\
-    \fi     
-    \@faculty\\
-    Universiti Teknologi Malaysia\\
-    % changed to 2 to follow the manual
-    \vspace{\stretch{2}}
-    \expandafter\MakeUppercase{\@titledate}
-  \end{center}
-  \@hidepagenumber
+        \vspace{\stretch{1}}
+        \ifx\@school\@empty
+            \relax
+        \else
+            \@school\\
+        \fi
+        \@faculty\\
+        Universiti Teknologi Malaysia\\
+        % changed to 2 to follow the manual
+        \vspace{\stretch{2}}
+        \expandafter\MakeUppercase{\@titledate}
+    \end{center}
+    \@hidepagenumber
 }
 
 % -----------------
@@ -1055,47 +1055,47 @@
 %            [P0] Cover Page
 % ----------------------------------------
 \newcommand{\coverpage}{%
-  \pagenumbering{alph}
-  \phantomsection 
-  \@hidepagenumber
-  \pdfbookmark[1]{COVER PAGE}{pre:coverpage}
-  \begingroup
+    \pagenumbering{alph}
+    \phantomsection
+    \@hidepagenumber
+    \pdfbookmark[1]{COVER PAGE}{pre:coverpage}
+    \begingroup
     \null\vspace{0.4in}
     \begin{center}
-    \ifx\@titlefour\@empty
-    	\ifx\@titlethree\@empty
-            \ifx\@titletwo\@empty
-                \MakeUppercase{\@title}\\ 
+        \ifx\@titlefour\@empty
+            \ifx\@titlethree\@empty
+                \ifx\@titletwo\@empty
+                    \MakeUppercase{\@title}\\
+                \else
+                    \MakeUppercase{\@title} \\
+                    \MakeUppercase{\@titletwo}\\
+                \fi
             \else
                 \MakeUppercase{\@title} \\
-                \MakeUppercase{\@titletwo}\\ 
+                \MakeUppercase{\@titletwo} \\
+                \MakeUppercase{\@titlethree}\\
             \fi
         \else
-    		\MakeUppercase{\@title} \\
+            \MakeUppercase{\@title} \\
             \MakeUppercase{\@titletwo} \\
-            \MakeUppercase{\@titlethree}\\ 
+            \MakeUppercase{\@titlethree}\\
+            \MakeUppercase{\@titlefour}\\
         \fi
-    \else
-		\MakeUppercase{\@title} \\
-        \MakeUppercase{\@titletwo} \\
-        \MakeUppercase{\@titlethree}\\ 
-        \MakeUppercase{\@titlefour}\\ 
-    \fi
-    \vfill
-    \MakeUppercase{\@author}
-    \vfill
-    UNIVERSITI TEKNOLOGI MALAYSIA
+        \vfill
+        \MakeUppercase{\@author}
+        \vfill
+        UNIVERSITI TEKNOLOGI MALAYSIA
     \end{center}
     \null
     \vspace{0.75in}
-  \endgroup
- 
-  %Form PSZ 19:16
-  \if@openright\cleardoublepage\else\clearpage\fi 
-  \phantomsection 
-  \@hidepagenumber
-  \pdfbookmark[1]{PSZ FORM}{pre:declareform}
-  \includepdf{figs/library-form.pdf}
+    \endgroup
+
+    %Form PSZ 19:16
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \phantomsection
+    \@hidepagenumber
+    \pdfbookmark[1]{PSZ FORM}{pre:declareform}
+    \includepdf{figs/library-form-ori3.pdf}
 }
 
 % ========================================
@@ -1112,69 +1112,69 @@
 \newcommand{\pronouns@we@subject@en}          {we}
 \newcommand{\pronouns@we@possessive@en}       {our}
 \newcommand{\super@statement@en}              {%
-  \ifnum \@award=1
-    \def\@degreetype{\degreetype@degree}
-  \fi
-  \ifnum \@award=2
-    \def\@degreetype{\degreetype@mastercourse}
-  \fi
-  \ifnum \@award=3
-    \def\@degreetype{\degreetype@mastercourseresearch}
-  \fi
-  \ifnum \@award=4
-    \def\@degreetype{\degreetype@masterresearch}
-  \fi
-  \ifnum \@award=5
-    \def\@degreetype{\degreetype@phd}
-  \fi
-  \ifnum \@award=6
-    \def\@degreetype{\degreetype@otherphd}
-  \fi
-  \ifnum \@award=7
-    \def\@degreetype{\degreetype@genericphd}
-  \fi
-  \ifnum \@award=8
-    \def\@degreetype{\degreetype@proposal}
-  \fi
+    \ifnum \@award=1
+        \def\@degreetype{\degreetype@degree}
+    \fi
+    \ifnum \@award=2
+        \def\@degreetype{\degreetype@mastercourse}
+    \fi
+    \ifnum \@award=3
+        \def\@degreetype{\degreetype@mastercourseresearch}
+    \fi
+    \ifnum \@award=4
+        \def\@degreetype{\degreetype@masterresearch}
+    \fi
+    \ifnum \@award=5
+        \def\@degreetype{\degreetype@phd}
+    \fi
+    \ifnum \@award=6
+        \def\@degreetype{\degreetype@otherphd}
+    \fi
+    \ifnum \@award=7
+        \def\@degreetype{\degreetype@genericphd}
+    \fi
+    \ifnum \@award=8
+        \def\@degreetype{\degreetype@proposal}
+    \fi
 
     \ifnum \@award=1
-	 \begingroup
-       ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
-  award of the degree of \@degree \space (\@specialization)''
-     \endgroup
-  \else
-    \ifnum \@award=2
-	 \begingroup
-       ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
-  award of the degree of \@degree\space (\@specialization)''
-     \endgroup
-  \else
-    \ifnum \@award=7
-	 \begingroup
-       ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
-  award of the degree of \@degree''
-     \endgroup
-  \else
-    \ifnum \@award=8
-	 \begingroup
-       ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
-  First Stage Examination of \@degree \space (\@specialization)''
-     \endgroup
-  \else
-  	 \begingroup
-       ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
-  award of the degree of \@degree
-    		\ifnum \@intakeyear<2015
-    			\space(\@specialization)
-    		\else
-  			\space in \@specialization''
-  		\fi
-     \endgroup
-  \fi
-  \fi
-  \fi
-  \fi
-  }
+        \begingroup
+        ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
+        award of the degree of \@degree \space (\@specialization)''
+        \endgroup
+    \else
+        \ifnum \@award=2
+            \begingroup
+            ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
+            award of the degree of \@degree\space (\@specialization)''
+            \endgroup
+        \else
+            \ifnum \@award=7
+                \begingroup
+                ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
+                award of the degree of \@degree''
+                \endgroup
+            \else
+                \ifnum \@award=8
+                    \begingroup
+                    ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
+                    First Stage Examination of \@degree \space (\@specialization)''
+                    \endgroup
+                \else
+                    \begingroup
+                    ``\@addressone\space hereby declare that \@addresstwo\space have read this \@degreetype\space and in \@addressthree\space \\ opinion this \@degreetype\space is sufficient in terms of scope and quality for the \\
+                    award of the degree of \@degree
+                    \ifnum \@intakeyear<2015
+                        \space(\@specialization)
+                    \else
+                        \space in \@specialization''
+                    \fi
+                    \endgroup
+                \fi
+            \fi
+        \fi
+    \fi
+}
 % -- Malay
 \newcommand{\pronouns@me@subject@ms}          {Saya}
 \newcommand{\pronouns@me@possessive@ms}       {saya}
@@ -1182,59 +1182,59 @@
 \newcommand{\pronouns@we@subject@ms}          {kami}
 \newcommand{\pronouns@we@possessive@ms}       {kami}
 \newcommand{\super@statement@ms}              {%
-  \ifnum \@award=1
-    \def\@degreetype{\degreetype@degree}
-  \fi
-  \ifnum \@award=2
-    \def\@degreetype{\degreetype@mastercourse}
-  \fi
-  \ifnum \@award=3
-    \def\@degreetype{\degreetype@mastercourseresearch}
-  \fi
-  \ifnum \@award=4
-    \def\@degreetype{\degreetype@masterresearch}
-  \fi
-  \ifnum \@award=5
-    \def\@degreetype{\degreetype@phd}
-  \fi
-  \ifnum \@award=6
-    \def\@degreetype{\degreetype@otherphd}
-  \fi
-  \ifnum \@award=7
-    \def\@degreetype{\degreetype@genericphd}
-  \fi
-  \ifnum \@award=8
-    \def\@degreetype{\degreetype@proposal}
-  \fi
+    \ifnum \@award=1
+        \def\@degreetype{\degreetype@degree}
+    \fi
+    \ifnum \@award=2
+        \def\@degreetype{\degreetype@mastercourse}
+    \fi
+    \ifnum \@award=3
+        \def\@degreetype{\degreetype@mastercourseresearch}
+    \fi
+    \ifnum \@award=4
+        \def\@degreetype{\degreetype@masterresearch}
+    \fi
+    \ifnum \@award=5
+        \def\@degreetype{\degreetype@phd}
+    \fi
+    \ifnum \@award=6
+        \def\@degreetype{\degreetype@otherphd}
+    \fi
+    \ifnum \@award=7
+        \def\@degreetype{\degreetype@genericphd}
+    \fi
+    \ifnum \@award=8
+        \def\@degreetype{\degreetype@proposal}
+    \fi
 
-  \ifnum \@award=1
-    	\begingroup
-  	``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan penganugerahan \\ijazah \@degree''
-    \endgroup
-  \else
-  \ifnum \@award=2
-    	\begingroup
-  	``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan penganugerahan \\ijazah \@degree\space (\@specialization)''
-    \endgroup
-  \else
-  	 \ifnum \@award=7
-	 \begingroup
-       ``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\ pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan penganugerahan \\ijazah \@degree''
-    \endgroup
-  \else
-  \ifnum \@award=8
-    	\begingroup
-  	``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan\\ Peperiksaan Peringkat Pertama bagi ijazah \@degree \space(\@specialization)''
-    \endgroup
-  \else
-  	\begingroup
-  	``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan penganugerahan \\ijazah \@degree\space dalam \@specialization''
-    \endgroup
-  \fi
-  \fi
-  \fi
-  \fi
-  }
+    \ifnum \@award=1
+        \begingroup
+        ``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan penganugerahan \\ijazah \@degree''
+        \endgroup
+    \else
+        \ifnum \@award=2
+            \begingroup
+            ``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan penganugerahan \\ijazah \@degree\space (\@specialization)''
+            \endgroup
+        \else
+            \ifnum \@award=7
+                \begingroup
+                ``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\ pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan penganugerahan \\ijazah \@degree''
+                \endgroup
+            \else
+                \ifnum \@award=8
+                    \begingroup
+                    ``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan\\ Peperiksaan Peringkat Pertama bagi ijazah \@degree \space(\@specialization)''
+                    \endgroup
+                \else
+                    \begingroup
+                    ``\@addressone\space akui bahawa \MakeLowercase{\@addresstwo}\space telah membaca \@degreetype\space ini dan 	pada \\pandangan \@addressthree\space \@degreetype\space ini adalah memadai \\dari segi skop dan kualiti untuk tujuan penganugerahan \\ijazah \@degree\space dalam \@specialization''
+                    \endgroup
+                \fi
+            \fi
+        \fi
+    \fi
+}
 
 % --
 \newcommand{\pronouns@me@subject}           {\getstring{pronouns@me@subject}}
@@ -1257,99 +1257,99 @@
             \def\@addressthree{\pronouns@we@possessive}
         \fi
     \else
-            \def\@addressone{\pronouns@we@subject@firstword}
-            \def\@addresstwo{\pronouns@we@subject}
-            \def\@addressthree{\pronouns@we@possessive}
+        \def\@addressone{\pronouns@we@subject@firstword}
+        \def\@addresstwo{\pronouns@we@subject}
+        \def\@addressthree{\pronouns@we@possessive}
     \fi
 
-    \if@openright\cleardoublepage\else\clearpage\fi 
-    \phantomsection 
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \phantomsection
     \@hidepagenumber
     \pdfbookmark[1]{SUPERVISOR(S) DECLARATION}{pre:svdeclaration}
     \vspace*{\fill}
     \begin{center}
-    	\super@statement
+        \super@statement
     \end{center}
     \par\noindent
     \vspace*{0cm}
-	\ifx\@supervisorfive\@empty
-   		\ifx\@supervisorfour\@empty
-   			\ifx\@supervisorthree\@empty
-       				\ifx\@supervisortwo\@empty
-         				\begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
-                				\signature@label & & & \\ \cline{4-4}
-                				\name@label & & & \MakeUppercase{\@supervisorone} \\ 
-                				\date@label & & & \MakeUppercase{\@date} \\ 
-           				\end{tabular}
-       				\else
-            				\begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
-                				\signature@label & & & \\ \cline{4-4}
-                				\name@label \space I & & & \MakeUppercase{\@supervisorone} \\ 
-                				\date@label & & & \MakeUppercase{\@date} \\ 
-                				\\
-                				\signature@label & & & \\ \cline{4-4}
-                				\name@label \space II & & & \MakeUppercase{\@supervisortwo} \\ 
-                				\date@label & & & \MakeUppercase{\@date} \\ 
-            				\end{tabular}
-        			\fi
-    			\else
- 				\begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
-  					\signature@label & & & \\ \cline{4-4}
-    					\name@label \space I & & & \MakeUppercase{\@supervisorone} \\ 
-    					\date@label & & & \MakeUppercase{\@date} \\ 
-    					\\
-    					\signature@label & & & \\ \cline{4-4}
-    					\name@label \space II & & & \MakeUppercase{\@supervisortwo} \\ 
-    					\date@label & & & \MakeUppercase{\@date} \\ \
-    					\\
-    					\signature@label & & & \\ \cline{4-4}
-    					\name@label \space III & & & \MakeUppercase{\@supervisorthree} \\ 
-    					\date@label & & & \MakeUppercase{\@date} \\ 
-    				\end{tabular}
-    			\fi
-    		\else
- 			\begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
-    				\signature@label & & & \\ \cline{4-4}
-    				\name@label \space I & & & \MakeUppercase{\@supervisorone} \\ 
-    				\date@label & & & \MakeUppercase{\@date} \\ 
-    				\\
-    				\signature@label & & & \\ \cline{4-4}
-    				\name@label \space II & & & \MakeUppercase{\@supervisortwo} \\ 
-    				\date@label & & & \MakeUppercase{\@date} \\ \
-    				\\
-    				\signature@label & & & \\ \cline{4-4}
-    				\name@label \space III & & & \MakeUppercase{\@supervisorthree} \\ 
-    				\date@label & & & \MakeUppercase{\@date} \\ 
-    				\\
-    				\signature@label & & & \\ \cline{4-4}
-    				\name@label \space IV & & & \MakeUppercase{\@supervisorfour} \\ 
-    				\date@label & & & \MakeUppercase{\@date} \\
-    			\end{tabular}
-    		\fi
-    	\else
-  		\begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
-    			\signature@label & & & \\ \cline{4-4}
-    			\name@label \space I & & & \MakeUppercase{\@supervisorone} \\ 
-    			\date@label & & & \MakeUppercase{\@date} \\
-    			\\
-    			\signature@label & & & \\ \cline{4-4}
-    			\name@label \space II & & & \MakeUppercase{\@supervisortwo} \\
-    			\date@label & & & \MakeUppercase{\@date} \\ 
-    			\\
-    			\signature@label & & & \\ \cline{4-4}
-    			\name@label \space III & & & \MakeUppercase{\@supervisorthree} \\ 
-    			\date@label & & & \MakeUppercase{\@date} \\ \
-    			\\
-    			\signature@label & & & \\ \cline{4-4}
-    			\name@label \space IV & & & \MakeUppercase{\@supervisorfour} \\
-    			\date@label & & & \MakeUppercase{\@date} \\ 
-    			\\
-    			\signature@label & & & \\ \cline{4-4}
-    			\name@label \space V & & & \MakeUppercase{\@supervisorfive} \\ 
-    			\date@label & & & \MakeUppercase{\@date} \\ 
-    		\end{tabular}
-    	\fi
-  \vfill
+    \ifx\@supervisorfive\@empty
+        \ifx\@supervisorfour\@empty
+            \ifx\@supervisorthree\@empty
+                \ifx\@supervisortwo\@empty
+                    \begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
+                        \signature@label &  &  &                                 \\ \cline{4-4}
+                        \name@label      &  &  & \MakeUppercase{\@supervisorone} \\
+                        \date@label      &  &  & \MakeUppercase{\@date}          \\
+                    \end{tabular}
+                \else
+                    \begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
+                        \signature@label      &  &  &                                 \\ \cline{4-4}
+                        \name@label \space I  &  &  & \MakeUppercase{\@supervisorone} \\
+                        \date@label           &  &  & \MakeUppercase{\@date}          \\
+                        \\
+                        \signature@label      &  &  &                                 \\ \cline{4-4}
+                        \name@label \space II &  &  & \MakeUppercase{\@supervisortwo} \\
+                        \date@label           &  &  & \MakeUppercase{\@date}          \\
+                    \end{tabular}
+                \fi
+            \else
+                \begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
+                    \signature@label       &  &  &                                   \\ \cline{4-4}
+                    \name@label \space I   &  &  & \MakeUppercase{\@supervisorone}   \\
+                    \date@label            &  &  & \MakeUppercase{\@date}            \\
+                    \\
+                    \signature@label       &  &  &                                   \\ \cline{4-4}
+                    \name@label \space II  &  &  & \MakeUppercase{\@supervisortwo}   \\
+                    \date@label            &  &  & \MakeUppercase{\@date}            \\ \
+                    \\
+                    \signature@label       &  &  &                                   \\ \cline{4-4}
+                    \name@label \space III &  &  & \MakeUppercase{\@supervisorthree} \\
+                    \date@label            &  &  & \MakeUppercase{\@date}            \\
+                \end{tabular}
+            \fi
+        \else
+            \begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
+                \signature@label       &  &  &                                   \\ \cline{4-4}
+                \name@label \space I   &  &  & \MakeUppercase{\@supervisorone}   \\
+                \date@label            &  &  & \MakeUppercase{\@date}            \\
+                \\
+                \signature@label       &  &  &                                   \\ \cline{4-4}
+                \name@label \space II  &  &  & \MakeUppercase{\@supervisortwo}   \\
+                \date@label            &  &  & \MakeUppercase{\@date}            \\ \
+                \\
+                \signature@label       &  &  &                                   \\ \cline{4-4}
+                \name@label \space III &  &  & \MakeUppercase{\@supervisorthree} \\
+                \date@label            &  &  & \MakeUppercase{\@date}            \\
+                \\
+                \signature@label       &  &  &                                   \\ \cline{4-4}
+                \name@label \space IV  &  &  & \MakeUppercase{\@supervisorfour}  \\
+                \date@label            &  &  & \MakeUppercase{\@date}            \\
+            \end{tabular}
+        \fi
+    \else
+        \begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
+            \signature@label       &  &  &                                   \\ \cline{4-4}
+            \name@label \space I   &  &  & \MakeUppercase{\@supervisorone}   \\
+            \date@label            &  &  & \MakeUppercase{\@date}            \\
+            \\
+            \signature@label       &  &  &                                   \\ \cline{4-4}
+            \name@label \space II  &  &  & \MakeUppercase{\@supervisortwo}   \\
+            \date@label            &  &  & \MakeUppercase{\@date}            \\
+            \\
+            \signature@label       &  &  &                                   \\ \cline{4-4}
+            \name@label \space III &  &  & \MakeUppercase{\@supervisorthree} \\
+            \date@label            &  &  & \MakeUppercase{\@date}            \\ \
+            \\
+            \signature@label       &  &  &                                   \\ \cline{4-4}
+            \name@label \space IV  &  &  & \MakeUppercase{\@supervisorfour}  \\
+            \date@label            &  &  & \MakeUppercase{\@date}            \\
+            \\
+            \signature@label       &  &  &                                   \\ \cline{4-4}
+            \name@label \space V   &  &  & \MakeUppercase{\@supervisorfive}  \\
+            \date@label            &  &  & \MakeUppercase{\@date}            \\
+        \end{tabular}
+    \fi
+    \vfill
 }
 
 % ========================================
@@ -1357,21 +1357,21 @@
 % ----------------------------------------
 % The cooperation declaration form is only by research degree.
 \newcommand{\certification}{
-	\ifnum \@award>3
-		\ifnum \@award<8
-  			\if@openright\cleardoublepage\else\clearpage\fi 
-			\phantomsection 
-  			\pdfbookmark[1]{COOPERATION DECLARATION}{pre:cooperationdeclaration}
-  			\@hidepagenumber
- 	 		% For now, just notify the student to attach the Cooperation Declaration here.
-  			\null\vspace{-2.5cm}
-  			\null\vfill
-  			\begin{center}
-    				\textit{Replace this page with the Cooperation Declaration form, which can be obtained from SPS or your faculty. This page is \textbf{OPTIONAL} when your research is done in collaboration with other institutions that requires their consent to publish the finding in this document.}
-  			\end{center}
-  			\vfill
-		\fi
-	\fi
+    \ifnum \@award>3
+        \ifnum \@award<8
+            \if@openright\cleardoublepage\else\clearpage\fi
+            \phantomsection
+            \pdfbookmark[1]{COOPERATION DECLARATION}{pre:cooperationdeclaration}
+            \@hidepagenumber
+            % For now, just notify the student to attach the Cooperation Declaration here.
+            \null\vspace{-2.5cm}
+            \null\vfill
+            \begin{center}
+                \textit{Replace this page with the Cooperation Declaration form, which can be obtained from SPS or your faculty. This page is \textbf{OPTIONAL} when your research is done in collaboration with other institutions that requires their consent to publish the finding in this document.}
+            \end{center}
+            \vfill
+        \fi
+    \fi
 }
 
 
@@ -1383,63 +1383,63 @@
 % +++++++++++++++++++++
 % -- English
 \newcommand{\declaration@statement@en}{%
-	I declare that this \@degreetype\space entitled
-    	\ifx\@titlefour\@empty
-    		\ifx\@titlethree\@empty
-    			\ifx\@titletwo\@empty
-        			\emph{``\@title''}\space
-    			\else
-    				\emph{``\@title}\space\emph{\@titletwo''}\space
-        		\fi
-    		\else
-    			\emph{``\@title}\space\emph{\@titletwo}\space\emph{\@titlethree''}\space
-    		\fi
-	\else
-		\emph{``\@title}\space\emph{\@titletwo}\space\emph{\@titlethree}\space\emph{\@titlefour''}\space
-	\fi
-	is the result of my own research except as cited in the references. The \@degreetype\space has not been accepted for any degree and is not concurrently submitted in candidature of any other degree.
-    }
+    I declare that this \@degreetype\space entitled
+    \ifx\@titlefour\@empty
+        \ifx\@titlethree\@empty
+            \ifx\@titletwo\@empty
+                \emph{``\@title''}\space
+            \else
+                \emph{``\@title}\space\emph{\@titletwo''}\space
+            \fi
+        \else
+            \emph{``\@title}\space\emph{\@titletwo}\space\emph{\@titlethree''}\space
+        \fi
+    \else
+        \emph{``\@title}\space\emph{\@titletwo}\space\emph{\@titlethree}\space\emph{\@titlefour''}\space
+    \fi
+    is the result of my own research except as cited in the references. The \@degreetype\space has not been accepted for any degree and is not concurrently submitted in candidature of any other degree.
+}
 
 % -- Malay
 \newcommand{\declaration@statement@ms}{%
-	Saya akui \@degreetype\space ini bertajuk
-	\ifx\@titlefour\@empty
-    		\ifx\@titlethree\@empty
-    			\ifx\@titletwo\@empty
-        			\emph{``\@title''}\space
-    			\else
-    				\emph{``\@title}\space\emph{\@titletwo''}\space
-        		\fi
-    		\else
-    			\emph{``\@title}\space\emph{\@titletwo}\space\emph{\@titlethree''}\space
-    		\fi
-	\else
-		\emph{``\@title}\space\emph{\@titletwo}\space\emph{\@titlethree}\space\emph{\@titlefour''}\space
-	\fi
-	adalah hasil kerja saya sendiri kecuali nukilan dan ringkasan yang tiap-tiap satunya telah saya jelaskan sumbernya.}
+    Saya akui \@degreetype\space ini bertajuk
+    \ifx\@titlefour\@empty
+        \ifx\@titlethree\@empty
+            \ifx\@titletwo\@empty
+                \emph{``\@title''}\space
+            \else
+                \emph{``\@title}\space\emph{\@titletwo''}\space
+            \fi
+        \else
+            \emph{``\@title}\space\emph{\@titletwo}\space\emph{\@titlethree''}\space
+        \fi
+    \else
+        \emph{``\@title}\space\emph{\@titletwo}\space\emph{\@titlethree}\space\emph{\@titlefour''}\space
+    \fi
+    adalah hasil kerja saya sendiri kecuali nukilan dan ringkasan yang tiap-tiap satunya telah saya jelaskan sumbernya.}
 % --
 
 \newcommand{\declaration@statement}{\getstring{declaration@statement}}
 
 
 \newcommand{\declaration}{%
-  \if@openright\cleardoublepage\else\clearpage\fi
-  \section*{\centering\declarationname}
-  \phantomsection
-  \label{pre:declaration}
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\declarationname}}
-  \vspace{1.0cm}
-  \vfill
-  \noindent\declaration@statement
-  \vspace{1cm} 
-  \begin{center}
-    \begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
-      \signature@label & & & \\ \cline{4-4}
-      \authname@label & & & \MakeUppercase{\@author} \\ \cline{4-4}
-      \date@label & & & \MakeUppercase{\@date} \\ \cline{4-4}
-    \end{tabular}
-  \end{center}
-  \vfill
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \section*{\centering\declarationname}
+    \phantomsection
+    \label{pre:declaration}
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\declarationname}}
+    \vspace{1.0cm}
+    \vfill
+    \noindent\declaration@statement
+    \vspace{1cm}
+    \begin{center}
+        \begin{tabular}{l p{0.4in} @{:} p{0.3in} l}
+            \signature@label &  &  &                          \\ \cline{4-4}
+            \authname@label  &  &  & \MakeUppercase{\@author} \\ \cline{4-4}
+            \date@label      &  &  & \MakeUppercase{\@date}   \\ \cline{4-4}
+        \end{tabular}
+    \end{center}
+    \vfill
 }
 
 
@@ -1447,59 +1447,59 @@
 %            [P7] Dedication
 % ----------------------------------------
 \newenvironment{dedication}{%
-  \clearpage
-  \section*{\centering\dedicationname} 
-  \phantomsection 
-  \vspace{-2.8cm}
-  \label{pre:dedication}
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\dedicationname}}
-  \vspace*{\fill}
-  \begin{center}
+    \clearpage
+    \section*{\centering\dedicationname}
+    \phantomsection
+    \vspace{-2.8cm}
+    \label{pre:dedication}
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\dedicationname}}
+    \vspace*{\fill}
+    \begin{center}
 }{%
-  \end{center}
-  \vspace{\fill}
+    \end{center}
+    \vspace{\fill}
 }
 
 % ========================================
 %         [P8] Acknowledgements
 % ----------------------------------------
 \newenvironment{acknowledgement}{%
-  \clearpage  
-  \phantomsection
-  \section*{\centering\acknowledgementname}
-  \vspace{20pt}
-  \label{pre:acknowledgement}
-  \@showpagenumber
-  %added
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\acknowledgementname}}
+    \clearpage
+    \phantomsection
+    \section*{\centering\acknowledgementname}
+    \vspace{20pt}
+    \label{pre:acknowledgement}
+    \@showpagenumber
+    %added
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\acknowledgementname}}
 }
 
 % ========================================
 %            [P9] Abstract
 % ----------------------------------------
 \newenvironment{abstract}{%
-  \if@openright\cleardoublepage\else\clearpage\fi  
-  \phantomsection 
-  \section*{\centering\abstractname}
-  \vspace{20pt}
-  \label{pre:abstract}
-  \@showpagenumber
-  %added
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\abstractname}}
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \phantomsection
+    \section*{\centering\abstractname}
+    \vspace{20pt}
+    \label{pre:abstract}
+    \@showpagenumber
+    %added
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\abstractname}}
 }
 
 % ========================================
 %       [P10] Abstrak (Translated)
 % ----------------------------------------
 \newenvironment{abstrak}{%
-  \clearpage  
-  \phantomsection 
-  \section*{\centering\abstractlocalname}
-  \label{pre:abstrak}
-  \vspace{20pt}
-  \@showpagenumber
-  %added
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\abstractlocalname}}    
+    \clearpage
+    \phantomsection
+    \section*{\centering\abstractlocalname}
+    \label{pre:abstrak}
+    \vspace{20pt}
+    \@showpagenumber
+    %added
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\abstractlocalname}}
 }
 
 % +++++++++++++++++++++
@@ -1541,26 +1541,26 @@
 % Copied from book.cls:
 %   \tableofcontents  - to generate 'Table of Contents' page
 \renewcommand{\tableofcontents}{%
-  \clearpage
-  \phantomsection 
-  \section*{\centering\contentsname}
-  \vspace{23pt}
-  \label{pre:tableofcontents}
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\contentsname}}  
-  \@showpagenumber
- 
-  \begingroup 
+    \clearpage
+    \phantomsection
+    \section*{\centering\contentsname}
+    \vspace{23pt}
+    \label{pre:tableofcontents}
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\contentsname}}
+    \@showpagenumber
+
+    \begingroup
     \begin{center}
-      \bfseries\MakeUppercase{%
-        \hspace{3em}\hfill%
-        \toctitle@colname\hfill%
-        \page@colname}
-      \linebreak
+        \bfseries\MakeUppercase{%
+            \hspace{3em}\hfill%
+            \toctitle@colname\hfill%
+            \page@colname}
+        \linebreak
     \end{center}
-  \endgroup   
-  \setstretch{1.435}
-  \vspace{-17pt}
-  \@starttoc{toc}
+    \endgroup
+    \setstretch{1.435}
+    \vspace{-17pt}
+    \@starttoc{toc}
 }
 
 
@@ -1570,28 +1570,28 @@
 % Copied from book.cls:
 %   \listoftables  - to generate 'List of Tables' page
 \renewcommand{\listoftables}{
-  \clearpage
-  \phantomsection 
-  \section*{\centering\listtablename}
-  \vspace{23pt}
+    \clearpage
+    \phantomsection
+    \section*{\centering\listtablename}
+    \vspace{23pt}
 
-  \label{pre:listoftables}
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listtablename}} 
-  \@showpagenumber
+    \label{pre:listoftables}
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listtablename}}
+    \@showpagenumber
 
-  \begingroup
+    \begingroup
     \setlength{\parindent}{0pt}
     \begin{center}
-      \bfseries\MakeUppercase{%
-        \tablenum@colname\hfill%
-        \title@colname\hfill\hspace{2.5em}%
-        \page@colname}
-      \linebreak
+        \bfseries\MakeUppercase{%
+            \tablenum@colname\hfill%
+            \title@colname\hfill\hspace{2.5em}%
+            \page@colname}
+        \linebreak
     \end{center}
-  \endgroup
-  \setstretch{1.435}
-  \vspace{-17pt}
-  \@starttoc{lot}
+    \endgroup
+    \setstretch{1.435}
+    \vspace{-17pt}
+    \@starttoc{lot}
 }
 
 % ========================================
@@ -1600,28 +1600,28 @@
 % Copied from book.cls:
 %   \listoffigures  - to generate 'List of Figures' page
 \renewcommand{\listoffigures}{
-  \clearpage
-  \phantomsection 
-  \section*{\centering\listfigurename}
-  \label{pre:listoffigures}
-  \vspace{23pt}
-  
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listfigurename}} 
-  \@showpagenumber
+    \clearpage
+    \phantomsection
+    \section*{\centering\listfigurename}
+    \label{pre:listoffigures}
+    \vspace{23pt}
 
-  \begingroup
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listfigurename}}
+    \@showpagenumber
+
+    \begingroup
     \setlength{\parindent}{0pt}
     \begin{center}
-      \bfseries\MakeUppercase{%
-        \figurenum@colname\hfill%
-        \title@colname\hfill\hspace{3em}%
-        \page@colname}
-      \linebreak
-    \end{center}  
-  \endgroup
-  \setstretch{1.435}
-  \vspace{-17pt}
-  \@starttoc{lof}
+        \bfseries\MakeUppercase{%
+            \figurenum@colname\hfill%
+            \title@colname\hfill\hspace{3em}%
+            \page@colname}
+        \linebreak
+    \end{center}
+    \endgroup
+    \setstretch{1.435}
+    \vspace{-17pt}
+    \@starttoc{lof}
 }
 
 
@@ -1633,34 +1633,34 @@
 % package by adding \usepackage{acronym} in preamble.
 %
 \AtBeginDocument{
-  \@ifpackageloaded{acronym}{
-    \newlength{\minlabelwidth}% 
-    \renewcommand*{\aclabelfont}[1]{\textrm{\acsfont{#1}}}
-    % Customize label format
-    \def\bflabel#1{\textrm{#1}\hfill --}
-    % Set minimal label width
-    \setlength{\minlabelwidth}{.2\textwidth}%
-    % Set fixed blank width after label
-    \setlength{\labelsep}{2em}%
+    \@ifpackageloaded{acronym}{
+        \newlength{\minlabelwidth}% 
+        \renewcommand*{\aclabelfont}[1]{\textrm{\acsfont{#1}}}
+        % Customize label format
+        \def\bflabel#1{\textrm{#1}\hfill --}
+        % Set minimal label width
+        \setlength{\minlabelwidth}{.2\textwidth}%
+        % Set fixed blank width after label
+        \setlength{\labelsep}{2em}%
 
-    % Copied from acronym.sty
-    \renewenvironment{AC@deflist}[1]%
-    {\ifAC@nolist%
-       \else%
-         \raggedright\begin{list}{}%
-           {\settowidth{\labelwidth}{\textrm{#1} --}% based on \bflabel
-            \ifdim \labelwidth <\minlabelwidth% enforce min label width
-              \setlength{\labelwidth}{\minlabelwidth}%
-            \fi
-            \setlength{\leftmargin}{\labelwidth}%
-            \addtolength{\leftmargin}{\labelsep}%
-            \renewcommand{\makelabel}{\bflabel}}%
-       \fi}%
-    {\ifAC@nolist%
-     \else%
-       \end{list}%
-     \fi}
-  }{}
+        % Copied from acronym.sty
+        \renewenvironment{AC@deflist}[1]%
+        {\ifAC@nolist%
+            \else%
+                \raggedright\begin{list}{}%
+                {\settowidth{\labelwidth}{\textrm{#1} --}% based on \bflabel
+                    \ifdim \labelwidth <\minlabelwidth% enforce min label width
+                        \setlength{\labelwidth}{\minlabelwidth}%
+                    \fi
+                    \setlength{\leftmargin}{\labelwidth}%
+                    \addtolength{\leftmargin}{\labelsep}%
+                    \renewcommand{\makelabel}{\bflabel}}%
+            \fi}%
+        {\ifAC@nolist%
+            \else%
+                \end{list}%
+            \fi}
+    }{}
 }
 
 % ========================================
@@ -1668,15 +1668,15 @@
 % ----------------------------------------
 %  Adapted from losymbol.sty by Gerry Van Dooren
 \newcommand\listofsymbols{
-  \clearpage
-  \phantomsection
-  \section*{\centering\listsymbolname}
-  \label{pre:listofsymbols}
-  \vspace{1.5cm}
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listsymbolname}} 
-  \@showpagenumber
-  \setstretch{1.435}
-  \@starttoc{los}
+    \clearpage
+    \phantomsection
+    \section*{\centering\listsymbolname}
+    \label{pre:listofsymbols}
+    \vspace{1.5cm}
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listsymbolname}}
+    \@showpagenumber
+    \setstretch{1.435}
+    \@starttoc{los}
 }
 
 % New user command:
@@ -1685,7 +1685,7 @@
 %                e.g. \addsymbol{Symbol}{description}
 % ==============---------------------------------------------------============
 \newcommand{\addsymbol}[2]{%
-\addtocontents{los}{\protect\makesymboltable{#1}{#2}}%
+    \addtocontents{los}{\protect\makesymboltable{#1}{#2}}%
 }
 
 \newdimen\@lmsymbol %width of left margin column
@@ -1709,12 +1709,12 @@
 \advance\@rcsymbol by -\@pcsymbol %subtract page number
 
 \def\makesymboltable#1#2{%
-\noindent\vspace{-0.3\baselineskip}\begin{minipage}[t]{\@lcsymbol}
-\hspace{\@lmsymbol}#1
-\end{minipage}
-\begin{minipage}[t]{\@pcsymbol}-\end{minipage}
-$\hspace{\@scsymbol}$
-\begin{minipage}[t]{\@rcsymbol}#2\end{minipage}
+    \noindent\vspace{-0.3\baselineskip}\begin{minipage}[t]{\@lcsymbol}
+        \hspace{\@lmsymbol}#1
+    \end{minipage}
+    \begin{minipage}[t]{\@pcsymbol}-\end{minipage}
+    $\hspace{\@scsymbol}$
+    \begin{minipage}[t]{\@rcsymbol}#2\end{minipage}
 }
 
 % ========================================
@@ -1722,15 +1722,15 @@ $\hspace{\@scsymbol}$
 % ----------------------------------------
 %  Adapted from losymbol.sty by Gerry Van Dooren
 \newcommand\listofabbre{
-  \clearpage
-  \phantomsection 
-  \section*{\centering\listabbrename}
-  \label{pre:listofabbre}
-  \vspace{1.5cm}
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listabbrename}} 
-  \@showpagenumber
-  \setstretch{1.435}
-  \@starttoc{loabbre}
+    \clearpage
+    \phantomsection
+    \section*{\centering\listabbrename}
+    \label{pre:listofabbre}
+    \vspace{1.5cm}
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listabbrename}}
+    \@showpagenumber
+    \setstretch{1.435}
+    \@starttoc{loabbre}
 }
 
 % New user command:
@@ -1739,7 +1739,7 @@ $\hspace{\@scsymbol}$
 %                e.g. \addabbre{XML}{Extensible Markup Language}
 % ==============---------------------------------------------------============
 \newcommand{\addabbre}[2]{
-  \addtocontents{loabbre}{\protect \makeabbretable{#1}{#2}}
+    \addtocontents{loabbre}{\protect \makeabbretable{#1}{#2}}
 }
 \newdimen\@lmabbre %width of left margin column
 \@lmabbre=0.6em
@@ -1757,12 +1757,12 @@ $\hspace{\@scsymbol}$
 \advance\@rcabbre by -\@pcabbre %subtract page number
 
 \def\makeabbretable#1#2{%
-\noindent\vspace{-0.3\baselineskip}\begin{minipage}[t]{\@lcabbre}
-\hspace{\@lmabbre}#1
-\end{minipage}
-\begin{minipage}[t]{\@pcabbre}-\end{minipage}
-$\hspace{\@scabbre}$
-\begin{minipage}[t]{\@rcabbre}#2\end{minipage}
+    \noindent\vspace{-0.3\baselineskip}\begin{minipage}[t]{\@lcabbre}
+        \hspace{\@lmabbre}#1
+    \end{minipage}
+    \begin{minipage}[t]{\@pcabbre}-\end{minipage}
+    $\hspace{\@scabbre}$
+    \begin{minipage}[t]{\@rcabbre}#2\end{minipage}
 }
 
 
@@ -1770,57 +1770,57 @@ $\hspace{\@scabbre}$
 %       [P15] List of Appendices
 % ----------------------------------------
 \newcommand{\listofappendices}{
-  \clearpage
-  \section*{\centering\listappendixname}
-  \phantomsection 
-  \label{pre:listofappendices}
-  \vspace{23pt}
-  \setstretch{1.435} 
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listappendixname}} 
-  \@showpagenumber
+    \clearpage
+    \section*{\centering\listappendixname}
+    \phantomsection
+    \label{pre:listofappendices}
+    \vspace{23pt}
+    \setstretch{1.435}
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listappendixname}}
+    \@showpagenumber
 
-  \begingroup
+    \begingroup
     \setlength{\parindent}{0pt}
     \begin{center}
-      \bfseries\MakeUppercase{%
-        \appendixnum@colname\hfill%
-        \title@colname\hfill\hspace{2.5em}%
-        \page@colname}
-      \linebreak
-    \end{center}  
-  \endgroup
-  \setstretch{1.435}
-  \vspace{-17pt}
-  \@starttoc{loapp}
+        \bfseries\MakeUppercase{%
+            \appendixnum@colname\hfill%
+            \title@colname\hfill\hspace{2.5em}%
+            \page@colname}
+        \linebreak
+    \end{center}
+    \endgroup
+    \setstretch{1.435}
+    \vspace{-17pt}
+    \@starttoc{loapp}
 }
 
 % ========================================
 %       [P16] List of Algorithms (optional)
 % ----------------------------------------
 \renewcommand{\listofalgorithms}{
-  \clearpage
-  \section*{\centering\listalgorithmname}
-  \label{pre:listofalgorithm}
-  \vspace{23pt}
-  \setstretch{1.435} 
-  \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listalgorithmname}} 
-  \@showpagenumber
+    \clearpage
+    \section*{\centering\listalgorithmname}
+    \label{pre:listofalgorithm}
+    \vspace{23pt}
+    \setstretch{1.435}
+    \addcontentsline{toc}{chapter}{\hspace{\toc@tab@a}\MakeUppercase{\listalgorithmname}}
+    \@showpagenumber
 
-  \begingroup
+    \begingroup
     \setlength{\parindent}{0pt}
-	\begin{flushleft}
-		\bfseries\MakeUppercase{\algorithmnum@colname}\vspace*{-1.07\toc@tab@jumps}
+    \begin{flushleft}
+        \bfseries\MakeUppercase{\algorithmnum@colname}\vspace*{-1.07\toc@tab@jumps}
     \end{flushleft}
     \begin{center}
-		\bfseries\MakeUppercase{\title@colname}\vspace*{-1.03\toc@tab@jumps}
+        \bfseries\MakeUppercase{\title@colname}\vspace*{-1.03\toc@tab@jumps}
     \end{center}
     \begin{flushright}
-		\bfseries\MakeUppercase{\page@colname}
-		\linebreak
+        \bfseries\MakeUppercase{\page@colname}
+        \linebreak
     \end{flushright}
-  \endgroup
-  \setstretch{1.435}
-  \@starttoc{loa}
+    \endgroup
+    \setstretch{1.435}
+    \@starttoc{loa}
 }
 
 % ========================================
@@ -1828,46 +1828,46 @@ $\hspace{\@scabbre}$
 % ----------------------------------------
 % Custom heading section for References page
 \newcommand\utmthesis@bibheading{
-  \if@openright\cleardoublepage\@hidepagenumber\else\clearpage\@hidepagenumber\fi 
-  \phantomsection
+    \if@openright\cleardoublepage\@hidepagenumber\else\clearpage\@hidepagenumber\fi
+    \phantomsection
 
-  \chapter*{\bibname}%
-  \@showpagenumber
-  \label{pre:references}
-  \addtocontents{toc}{\protect\addvspace{\@twolinespacing}}
-  \addcontentsline{toc}{chapter}{\protect\MakeUppercase{\bibname}}
+    \chapter*{\bibname}%
+    \@showpagenumber
+    \label{pre:references}
+    \addtocontents{toc}{\protect\addvspace{\@twolinespacing}}
+    \addcontentsline{toc}{chapter}{\protect\MakeUppercase{\bibname}}
 }
 
 % Copied from book.cls:
 %   thebibliography environment
 \renewenvironment{thebibliography}[1]
-     {\utmthesis@bibheading
-      \list{\@biblabel{\@arabic\c@enumiv}}%
-           {\settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \@openbib@code
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m%
-    }
-    {\def\@noitemerr
-     {\@latex@warning{Empty `thebibliography' environment}}%
-     \endlist}
+{\utmthesis@bibheading
+    \list{\@biblabel{\@arabic\c@enumiv}}%
+    {\settowidth\labelwidth{\@biblabel{#1}}%
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep
+        \@openbib@code
+        \usecounter{enumiv}%
+        \let\p@enumiv\@empty
+        \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy
+    \clubpenalty4000
+    \@clubpenalty \clubpenalty
+    \widowpenalty4000%
+    \sfcode`\.\@m%
+}
+{\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+    \endlist}
 
 \AtBeginDocument{
-  % As natbib package redefines \thebibliography environemnt,
-  % when it is loaded,we need to inject the custom heading section back into it
-  % through natbib's \bibsection.
-  %
-  \@ifpackageloaded{natbib}{
-    \renewcommand\bibsection{\utmthesis@bibheading}
-  }{}
+    % As natbib package redefines \thebibliography environemnt,
+    % when it is loaded,we need to inject the custom heading section back into it
+    % through natbib's \bibsection.
+    %
+    \@ifpackageloaded{natbib}{
+        \renewcommand\bibsection{\utmthesis@bibheading}
+    }{}
 }
 
 % For bibliography default (number) scheme, each bibliography item is
@@ -1879,44 +1879,44 @@ $\hspace{\@scabbre}$
 % ----------------------------------------
 % Copied from book.cls:
 % \appendix  - to indicate the start of appendix section
-  \renewcommand{\appendix}{%
-  \renewcommand{\theHchapter}{A\arabic{chapter}}
-  \@appendixtrue
-  \settocdepth{chapter}
-  \setcounter{chapter}{0}%
-  \setcounter{section}{0}%
-  \gdef\@chapapp{\appendixname}%
-  \gdef\thechapter{\@Alph\c@chapter}
-  \phantomsection
-  %\addtocontents{toc}{\protect\vspace{\@twolinespacing}}
-  %\addtocontents{toc}{\protect\noindent\MakeUppercase{\bf\appendicesname}}
-  %\addtocontents{toc}{\protect\addvspace{\@twolinespacing}}%
+\renewcommand{\appendix}{%
+    \renewcommand{\theHchapter}{A\arabic{chapter}}
+    \@appendixtrue
+    \settocdepth{chapter}
+    \setcounter{chapter}{0}%
+    \setcounter{section}{0}%
+    \gdef\@chapapp{\appendixname}%
+    \gdef\thechapter{\@Alph\c@chapter}
+    \phantomsection
+    %\addtocontents{toc}{\protect\vspace{\@twolinespacing}}
+    %\addtocontents{toc}{\protect\noindent\MakeUppercase{\bf\appendicesname}}
+    %\addtocontents{toc}{\protect\addvspace{\@twolinespacing}}%
 }
 
 % ========================================
 %       [P13] List of Publications
 % ----------------------------------------
 \newenvironment{listofpublications}{%
-  \if@openright\cleardoublepage\else\clearpage\fi 
-  \chapter*{\listpublicationname}   
-  \phantomsection
-  \label{LoPublication}
-  \addcontentsline{toc}{chapter}{\listpublicationname} 
-  \@showpagenumber
-  \settocdepth{chapter}
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \chapter*{\listpublicationname}
+    \phantomsection
+    \label{LoPublication}
+    \addcontentsline{toc}{chapter}{\listpublicationname}
+    \@showpagenumber
+    \settocdepth{chapter}
 }
 
 % Needed for correct ToC, LoF, LoT
 \def\endmatter{
-	\@appendixtoctrue
+    \@appendixtoctrue
     \settocdepth{subsection}
-    \phantomsection 
+    \phantomsection
 }
 
 %making box to align section head left indent
 \makeatletter
 \def\@seccntformat#1{\protect\makebox[0.5in][l]{\csname
-the#1\endcsname\quad}}
+        the#1\endcsname\quad}}
 \makeatother
 \setstretch{1.435}
 
